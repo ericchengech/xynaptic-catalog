@@ -38,6 +38,8 @@ DEEP TRADING ANALYSIS
    CRYPTO VALIDATE ──→ AI AGENT
 ```
 
+**New — the deep read is now fully wired:** `crypto-deep-trading-analysis` synthesizes 5 dimensions in one conviction score — multi-timeframe trend, volatility regime, news sentiment, orderflow (CVD from the live tape) and derivatives (funding, OI, basis). Example: "BTCUSD: neutral (-0.2) — 4h bearish but flow 0.96, funding 0.11%/yr".
+
 Every response chains to the next API you might need (`agent.related_xynaptic_apis`): buy one, discover the rest.
 
 ## Quick start
