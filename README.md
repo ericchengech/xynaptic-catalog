@@ -1,6 +1,6 @@
 # Xynaptic — Real-world data for AI agents
 
-**54 pay-per-request data APIs. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
+**56 pay-per-request data & AI APIs. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -21,9 +21,31 @@ GET https://api.xynaptic.io/v1/energy-price
 | ⚡ Energy | 8 | `ev-charge-window` — cheapest EV charging (50 kWh ~€0.19, save 71%) · `battery-arbitrage` — buy/sell spread · `energy-opportunity` — load-shift windows · solar/wind forecasts, grid status |
 | 🚆 French rail | 7 | `connection-risk` — "will I make my 15-min transfer?" scored 0-1 · live departures, train status, trip brief (SNCF real-time) |
 | ✈️ Aviation | 5 | `flight-route-risk` — composite risk · `flight-alternatives` — nearest airports with live METAR |
+| 🤖 AI Layer | 2 | `ai-agent` — ONE payment, full task: orchestrates Xynaptic data services as tools (registry, financials, officers, KYB signals) + LLM synthesis → structured report ($0.10... $0.05) · `ai-chat` — LLM inference pay-per-call, OpenAI-compatible, model auto (glm-5.3-flash / deepseek-4.1-flash), token usage ($0.005) |
 | 🏢 Companies (FR) | 13 | `company-kyb` — full due-diligence dossier with agent verdict ($0.10): identity, officers, financials, risk signals, VAT · `company-relationship` — links between two companies (shared officers) · `company-monitor` — watch a company, detect changes over time (recurring checks) · `company-brief-live` — the daily decisional read · `company-compare` — A vs B · `company-changes` — what changed recently · `company-financial` — annual accounts (Danone: revenue $27.4B, margin 7.7%) · search, profile, people, network. French state registry (RNE) |
 | 📰 News (v2) | 9 | Structured events: importance, lifecycle, entities, verification |
 | 🧠 Orchestrator | 1 | `ao` — free-form question → picks the right services, synthesizes |
+
+## The AI layer (new)
+
+```
+POST /v1/ai/chat — $0.005 per call
+  OpenAI-compatible {model, messages[]}
+  → x402 payment → glm-5.3-flash
+    (fallback: deepseek-4.1-flash)
+  → JSON answer + token usage
+
+POST /v1/ai/agent — $0.05 per task
+  {task, siren?}
+  → ONE x402 payment
+  → internal tools (company registry,
+    financials, officers, KYB signals)
+    — free for us, data-true
+  → LLM synthesis (cites the numbers)
+  → structured report
+```
+
+The agent client pays once; Xynaptic monetizes data + orchestration + inference. The LLM is instructed to use ONLY the tool data — if the context is empty, it says so instead of inventing (verified in QA).
 
 ## The company funnel
 
