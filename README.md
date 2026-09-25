@@ -1,6 +1,6 @@
 # Xynaptic — Real-world data for AI agents
 
-**56 pay-per-request data & AI APIs. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
+**58 pay-per-request data & AI APIs. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -21,12 +21,43 @@ GET https://api.xynaptic.io/v1/energy-price
 | ⚡ Energy | 8 | `ev-charge-window` — cheapest EV charging (50 kWh ~€0.19, save 71%) · `battery-arbitrage` — buy/sell spread · `energy-opportunity` — load-shift windows · solar/wind forecasts, grid status |
 | 🚆 French rail | 7 | `connection-risk` — "will I make my 15-min transfer?" scored 0-1 · live departures, train status, trip brief (SNCF real-time) |
 | ✈️ Aviation | 5 | `flight-route-risk` — composite risk · `flight-alternatives` — nearest airports with live METAR |
-| 🤖 AI Layer | 2 | `ai-agent` — ONE payment, full task: orchestrates Xynaptic data services as tools (registry, financials, officers, KYB signals) + LLM synthesis → structured report ($0.10... $0.05) · `ai-chat` — LLM inference pay-per-call, OpenAI-compatible, model auto (glm-5.3-flash / deepseek-4.1-flash), token usage ($0.005) |
+| 🤖 AI Layer | 4 | `ai-company` — VERTICAL AGENT: deep French company dossier (5 registry tools: identity, officers, multi-year accounts, footprint, KYB risk signals) + LLM KYB specialist report with verdict and confidence ($0.10) · `ai-finance` — VERTICAL AGENT: full market analysis (5 crypto tools: price, market, orderflow, derivatives, risk) + LLM analyst synthesis, sources cited, no financial advice ($0.05) · `ai-agent` — general orchestrator: task + tools + LLM, one payment ($0.05) · `ai-chat` — LLM inference pay-per-call, OpenAI-compatible, model auto glm-5.3-flash/deepseek-4.1-flash ($0.005) | `ai-agent` — ONE payment, full task: orchestrates Xynaptic data services as tools (registry, financials, officers, KYB signals) + LLM synthesis → structured report ($0.10... $0.05) · `ai-chat` — LLM inference pay-per-call, OpenAI-compatible, model auto (glm-5.3-flash / deepseek-4.1-flash), token usage ($0.005) |
 | 🏢 Companies (FR) | 13 | `company-kyb` — full due-diligence dossier with agent verdict ($0.10): identity, officers, financials, risk signals, VAT · `company-relationship` — links between two companies (shared officers) · `company-monitor` — watch a company, detect changes over time (recurring checks) · `company-brief-live` — the daily decisional read · `company-compare` — A vs B · `company-changes` — what changed recently · `company-financial` — annual accounts (Danone: revenue $27.4B, margin 7.7%) · search, profile, people, network. French state registry (RNE) |
 | 📰 News (v2) | 9 | Structured events: importance, lifecycle, entities, verification |
 | 🧠 Orchestrator | 1 | `ao` — free-form question → picks the right services, synthesizes |
 
 ## The AI layer (new)
+
+```
+INFERENCE
+  POST /v1/ai/chat — $0.005
+  OpenAI-compatible {model, messages[]}
+  → x402 → glm-5.3-flash (fallback: deepseek)
+  → JSON answer + token usage
+
+ORCHESTRATION
+  POST /v1/ai/agent — $0.05
+  {task, siren?} → ONE payment
+  → internal tools (registry data — free)
+  → LLM synthesis → structured report
+
+VERTICAL AGENTS
+  POST /v1/ai/company — $0.10
+  {siren, focus?: risk|financial|overview}
+  → 5 registry tools (deep dossier)
+  → LLM KYB specialist: identity,
+    management, financials, risk signals,
+    VERDICT (proceed/review/stop) + confidence
+
+  POST /v1/ai/finance — $0.05
+  {asset, question?}
+  → 5 market tools (price, orderflow,
+    derivatives, risk)
+  → LLM analyst: sourced report
+    (Kraken, Hyperliquid), no financial advice
+```
+
+The client agent pays once; Xynaptic monetizes data + orchestration + inference. The LLM uses ONLY tool data — empty context = honest "no data" instead of invention (verified in QA twice).
 
 ```
 POST /v1/ai/chat — $0.005 per call
