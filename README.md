@@ -1,6 +1,6 @@
 # Xynaptic — Real-world data for AI agents
 
-**50 pay-per-request data APIs. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
+**54 pay-per-request data APIs. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -21,7 +21,7 @@ GET https://api.xynaptic.io/v1/energy-price
 | ⚡ Energy | 8 | `ev-charge-window` — cheapest EV charging (50 kWh ~€0.19, save 71%) · `battery-arbitrage` — buy/sell spread · `energy-opportunity` — load-shift windows · solar/wind forecasts, grid status |
 | 🚆 French rail | 7 | `connection-risk` — "will I make my 15-min transfer?" scored 0-1 · live departures, train status, trip brief (SNCF real-time) |
 | ✈️ Aviation | 5 | `flight-route-risk` — composite risk · `flight-alternatives` — nearest airports with live METAR |
-| 🏢 Companies (FR) | 7 | `company-kyb` — full due-diligence dossier with agent verdict ($0.10): identity, officers, financials, risk signals, VAT · `company-relationship` — links between two companies (shared officers) · `company-financial` — annual accounts (Danone: revenue $27.4B, margin 7.7%) · search, profile, people, network. French state registry (RNE) |
+| 🏢 Companies (FR) | 13 | `company-kyb` — full due-diligence dossier with agent verdict ($0.10): identity, officers, financials, risk signals, VAT · `company-relationship` — links between two companies (shared officers) · `company-monitor` — watch a company, detect changes over time (recurring checks) · `company-brief-live` — the daily decisional read · `company-compare` — A vs B · `company-changes` — what changed recently · `company-financial` — annual accounts (Danone: revenue $27.4B, margin 7.7%) · search, profile, people, network. French state registry (RNE) |
 | 📰 News (v2) | 9 | Structured events: importance, lifecycle, entities, verification |
 | 🧠 Orchestrator | 1 | `ao` — free-form question → picks the right services, synthesizes |
 
@@ -31,6 +31,8 @@ GET https://api.xynaptic.io/v1/energy-price
 SEARCH → PROFILE → PEOPLE / NETWORK / FINANCIAL
                         │
                     RELATIONSHIP (two companies)
+                        │
+              RELATIONSHIP / COMPARE (two companies)
                         │
               KYB — the $0.10 dossier
           (identity, officers, accounts, risk,
