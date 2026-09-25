@@ -1,6 +1,6 @@
 # Xynaptic — Real-world data for AI agents
 
-**43 pay-per-request data APIs. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
+**50 pay-per-request data APIs. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -21,8 +21,25 @@ GET https://api.xynaptic.io/v1/energy-price
 | ⚡ Energy | 8 | `ev-charge-window` — cheapest EV charging (50 kWh ~€0.19, save 71%) · `battery-arbitrage` — buy/sell spread · `energy-opportunity` — load-shift windows · solar/wind forecasts, grid status |
 | 🚆 French rail | 7 | `connection-risk` — "will I make my 15-min transfer?" scored 0-1 · live departures, train status, trip brief (SNCF real-time) |
 | ✈️ Aviation | 5 | `flight-route-risk` — composite risk · `flight-alternatives` — nearest airports with live METAR |
+| 🏢 Companies (FR) | 7 | `company-kyb` — full due-diligence dossier with agent verdict ($0.10): identity, officers, financials, risk signals, VAT · `company-relationship` — links between two companies (shared officers) · `company-financial` — annual accounts (Danone: revenue $27.4B, margin 7.7%) · search, profile, people, network. French state registry (RNE) |
 | 📰 News (v2) | 9 | Structured events: importance, lifecycle, entities, verification |
 | 🧠 Orchestrator | 1 | `ao` — free-form question → picks the right services, synthesizes |
+
+## The company funnel
+
+```
+SEARCH → PROFILE → PEOPLE / NETWORK / FINANCIAL
+                        │
+                    RELATIONSHIP (two companies)
+                        │
+              KYB — the $0.10 dossier
+          (identity, officers, accounts, risk,
+           VAT, verified sources, agent verdict)
+                        │
+                AI AGENT DECISION
+```
+
+Built on the French state registry (RNE) — open data, no key required. Danone example: "minimal risk (0) — active, 13 officers, 2025 accounts, VAT present. Action: proceed."
 
 ## The crypto funnel
 
@@ -50,6 +67,9 @@ curl https://api.xynaptic.io/
 
 # See live activity
 curl https://api.xynaptic.io/v1/popularity
+
+# Company due diligence (the premium dossier):
+curl https://api.xynaptic.io/v1/company-kyb?siren=552032534
 
 # Any x402 SDK pays automatically, e.g. TypeScript:
 # const data = await client.fetch("https://api.xynaptic.io/v1/crypto-validate?address=0x...")
