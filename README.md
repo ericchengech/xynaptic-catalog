@@ -1,6 +1,6 @@
 # Xynaptic — Real-world data for AI agents
 
-**58 pay-per-request data & AI APIs. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
+**67 pay-per-request data & AI APIs — full agent ecosystem: data, AI, ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -21,6 +21,7 @@ GET https://api.xynaptic.io/v1/energy-price
 | ⚡ Energy | 8 | `ev-charge-window` — cheapest EV charging (50 kWh ~€0.19, save 71%) · `battery-arbitrage` — buy/sell spread · `energy-opportunity` — load-shift windows · solar/wind forecasts, grid status |
 | 🚆 French rail | 7 | `connection-risk` — "will I make my 15-min transfer?" scored 0-1 · live departures, train status, trip brief (SNCF real-time) |
 | ✈️ Aviation | 5 | `flight-route-risk` — composite risk · `flight-alternatives` — nearest airports with live METAR |
+| 🧺 Ecosystem | 11 | `store-put`/`store-get` — encrypted ephemeral storage, claim_secret is the only key, TTL 1-30 days, then cryptographically destroyed ($0.001) · `watch-put`/`watch-status` — the agent daycare: we watch your conditions hourly (crypto price/change, company registry), result delivered encrypted ($0.01 / $0.001) · `ai-translate` — bring your own data: raw text/CSV → clean structured JSON ($0.01) · `ai-brief-me` — the shopping basket: ONE payment = companies + assets + news composite brief with LLM synthesis ($0.05) · `ai-validate` — devil's advocate premium: your thesis stress-tested against real data, verdict + confidence ($0.10) · `ticket-buy`/`ticket-status` — prepaid credit 0.5-20 USDC, then consume ANY service via `X-TICKET` header at 20% off, no per-call blockchain payment, 90 days (status check free) |
 | 🤖 AI Layer | 4 | `ai-company` — VERTICAL AGENT: deep French company dossier (5 registry tools: identity, officers, multi-year accounts, footprint, KYB risk signals) + LLM KYB specialist report with verdict and confidence ($0.10) · `ai-finance` — VERTICAL AGENT: full market analysis (5 crypto tools: price, market, orderflow, derivatives, risk) + LLM analyst synthesis, sources cited, no financial advice ($0.05) · `ai-agent` — general orchestrator: task + tools + LLM, one payment ($0.05) · `ai-chat` — LLM inference pay-per-call, OpenAI-compatible, model auto glm-5.3-flash/deepseek-4.1-flash ($0.005) | `ai-agent` — ONE payment, full task: orchestrates Xynaptic data services as tools (registry, financials, officers, KYB signals) + LLM synthesis → structured report ($0.10... $0.05) · `ai-chat` — LLM inference pay-per-call, OpenAI-compatible, model auto (glm-5.3-flash / deepseek-4.1-flash), token usage ($0.005) |
 | 🏢 Companies (FR) | 13 | `company-kyb` — full due-diligence dossier with agent verdict ($0.10): identity, officers, financials, risk signals, VAT · `company-relationship` — links between two companies (shared officers) · `company-monitor` — watch a company, detect changes over time (recurring checks) · `company-brief-live` — the daily decisional read · `company-compare` — A vs B · `company-changes` — what changed recently · `company-financial` — annual accounts (Danone: revenue $27.4B, margin 7.7%) · search, profile, people, network. French state registry (RNE) |
 | 📰 News (v2) | 9 | Structured events: importance, lifecycle, entities, verification |
@@ -77,6 +78,38 @@ POST /v1/ai/agent — $0.05 per task
 ```
 
 The agent client pays once; Xynaptic monetizes data + orchestration + inference. The LLM is instructed to use ONLY the tool data — if the context is empty, it says so instead of inventing (verified in QA).
+
+## The agent ecosystem (new)
+
+Six bricks that make an agent **live** in Xynaptic — not just query it:
+
+```
+STORE       deposit any JSON, encrypted at rest, claim_secret = the only key
+            TTL 1-30 days, then cryptographically destroyed. Handoff-friendly:
+            share {store_id, claim_secret} to pass an object to another agent.
+
+WATCH       the daycare: "tell me when BTC < 80000" or "alert if company
+            552032534 changes" — our evaluator checks hourly (cron), result
+            is encrypted with your watch_secret, delivered via watch-status.
+
+TRANSLATE   bring your own data: paste raw text (CSV, email, notice, listing)
+            → clean structured JSON matching your target_schema.
+
+BRIEF-ME    the shopping basket: ONE payment → up to 3 companies + 5 assets +
+            2 news regions, collected internally + LLM morning brief synthesis.
+
+VALIDATE    the devil's advocate: submit a thesis, we stress-test it against
+            real data (registry, market) — strengths, weaknesses, factual
+            contradictions with cited figures, counter-thesis, verdict + confidence.
+
+TICKETS     prepaid credit, no account: pay once (0.5-20 USDC), then send
+            header `X-TICKET: ticket_id|ticket_secret` on ANY service —
+            20% off, no per-call blockchain payment, valid 90 days.
+            Balance check: POST /v1/ticket-status (free).
+```
+
+Each brick is QA-proven with real on-chain settlement, encrypted at rest
+where it stores anything, and expires honestly (TTL destroys, no dark patterns).
 
 ## The company funnel
 
