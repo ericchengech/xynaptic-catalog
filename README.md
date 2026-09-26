@@ -1,6 +1,6 @@
 # Xynaptic — Real-world data for AI agents
 
-**67 pay-per-request data & AI APIs — full agent ecosystem: data, AI, ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
+**98 pay-per-request data & AI APIs — full agent ecosystem: data, AI, banking, securities, worldwide companies, ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org).**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -22,6 +22,9 @@ GET https://api.xynaptic.io/v1/energy-price
 | 🚆 French rail | 7 | `connection-risk` — "will I make my 15-min transfer?" scored 0-1 · live departures, train status, trip brief (SNCF real-time) |
 | ✈️ Aviation | 5 | `flight-route-risk` — composite risk · `flight-alternatives` — nearest airports with live METAR |
 | 🧺 Ecosystem | 11 | `store-put`/`store-get` — encrypted ephemeral storage, claim_secret is the only key, TTL 1-30 days, then cryptographically destroyed ($0.001) · `watch-put`/`watch-status` — the agent daycare: we watch your conditions hourly (crypto price/change, company registry), result delivered encrypted ($0.01 / $0.001) · `ai-translate` — bring your own data: raw text/CSV → clean structured JSON ($0.01) · `ai-brief-me` — the shopping basket: ONE payment = companies + assets + news composite brief with LLM synthesis ($0.05) · `ai-validate` — devil's advocate premium: your thesis stress-tested against real data, verdict + confidence ($0.10) · `ticket-buy`/`ticket-status` — prepaid credit 0.5-20 USDC, then consume ANY service via `X-TICKET` header at 20% off, no per-call blockchain payment, 90 days (status check free) |
+| 📈 Securities | 13 | `security-search` — ticker → SEC EDGAR identity: CIK, exchanges, SIC, 10 latest filings ($0.005) · `security-price` — spot + 52w range + up to 30d OHLCV history ($0.01) · `security-fundamentals` — multi-year EDGAR XBRL: revenues, net income, assets, equity + YoY ($0.03) · `security-technical` — SMA 20/50/200, EMA, RSI-14, momentum, trend ($0.02) · `security-risk` — annualized vol, max drawdown, VaR95, Sharpe proxy, risk level ($0.02) · `security-analysis` — premium LLM analyst report with verdict ($0.10) · `security-filings` — EDGAR full-text search ($0.02) · `security-insider` — Form 4 insider transactions ($0.02) · `security-dividends` — XBRL DPS history + live yield ($0.02) · `security-earnings` — quarterly EPS/net income/revenue from XBRL ($0.02) · `security-watch` — daycare for stocks: price/RSI watched hourly ($0.01) · `security-validate` — market devil's advocate: thesis stress-tested against real data ($0.10) · `portfolio-analysis` — bring your holdings: concentration HHI, weighted vol, risk ($0.05) |
+| 🏦 Banking | 16 | `bank-statement-parse` — raw statement text → clean transactions ($0.01) · `bank-transaction-categorize` — hybrid rules+LLM categories, merchants, recurrence ($0.02) · `bank-cashflow` — inflows/outflows, burn rate, recurring detection, 30d projection ($0.03) · `bank-financial-health` — liquidity trend, concentration, anomalies, health score ($0.05) · `bank-spending-goals` — goal vs capacity, category cuts, action plan ($0.02) · `bank-reconciliation` — bank vs internal matching, adjustments ($0.03) · `bank-payment-risk` — payment instruction screening: jurisdictions, urgency, amount signals ($0.03) · `bank-counterparty-profile` — full registry profile + payment signals before paying ($0.05) · `bank-beneficiary-watch` — daycare: registry changes on a counterparty ($0.01) · `bank-sanctions-screen` — batch screening up to 100 beneficiaries ($0.03) · `card-bin-check` — BIN → scheme/issuer/type/country ($0.005) · `bank-iban-validate` — mod-97 + country format + FR parts parsing ($0.005) · `bank-bic-check` — ISO 9362 structural + SEPA zone ($0.005) · `card-transaction-intelligence` — fraud patterns: card testing, impossible geo-velocity, outliers ($0.02) · `card-chargeback-analysis` — genuine vs friendly fraud classification + recommendation ($0.03) · `payment-routing-advice` — SEPA/instant/card/SWIFT compared, best rail recommended ($0.02) |
+| 🌍 International | 2 | `company-international-search` — worldwide company search by name (GLEIF LEI, 200+ jurisdictions: EU, US, UK, Asia, Canada, Australia) ($0.01) · `company-international-profile` — full global identity by LEI: legal name, address, jurisdiction, legal form, status dates ($0.03) |
 | 🤖 AI Layer | 4 | `ai-company` — VERTICAL AGENT: deep French company dossier (5 registry tools: identity, officers, multi-year accounts, footprint, KYB risk signals) + LLM KYB specialist report with verdict and confidence ($0.10) · `ai-finance` — VERTICAL AGENT: full market analysis (5 crypto tools: price, market, orderflow, derivatives, risk) + LLM analyst synthesis, sources cited, no financial advice ($0.05) · `ai-agent` — general orchestrator: task + tools + LLM, one payment ($0.05) · `ai-chat` — LLM inference pay-per-call, OpenAI-compatible, model auto glm-5.3-flash/deepseek-4.1-flash ($0.005) | `ai-agent` — ONE payment, full task: orchestrates Xynaptic data services as tools (registry, financials, officers, KYB signals) + LLM synthesis → structured report ($0.10... $0.05) · `ai-chat` — LLM inference pay-per-call, OpenAI-compatible, model auto (glm-5.3-flash / deepseek-4.1-flash), token usage ($0.005) |
 | 🏢 Companies (FR) | 13 | `company-kyb` — full due-diligence dossier with agent verdict ($0.10): identity, officers, financials, risk signals, VAT · `company-relationship` — links between two companies (shared officers) · `company-monitor` — watch a company, detect changes over time (recurring checks) · `company-brief-live` — the daily decisional read · `company-compare` — A vs B · `company-changes` — what changed recently · `company-financial` — annual accounts (Danone: revenue $27.4B, margin 7.7%) · search, profile, people, network. French state registry (RNE) |
 | 📰 News (v2) | 9 | Structured events: importance, lifecycle, entities, verification |
@@ -110,6 +113,22 @@ TICKETS     prepaid credit, no account: pay once (0.5-20 USDC), then send
 
 Each brick is QA-proven with real on-chain settlement, encrypted at rest
 where it stores anything, and expires honestly (TTL destroys, no dark patterns).
+
+## The resident domains (new)
+
+Full verticals so an agent never has to leave Xynaptic:
+
+- **BANKING/MONETICS (16 services)** — from raw statement parsing to fraud detection,
+  chargeback classification, counterparty KYB and payment routing: the complete
+  journey of a banking agent. Bring-your-own-data, nothing stored, disclaimers on
+  every decision-adjacent route.
+- **SECURITIES (13 services)** — the full funnel on official US regulator data
+  (SEC EDGAR) + live prices: identity, fundamentals, technicals, risk, filings
+  full-text, insider transactions, dividends, earnings, daycare watches,
+  devil's-advocate validation and portfolio analysis.
+- **INTERNATIONAL COMPANIES (2 services)** — GLEIF LEI registry, 200+ jurisdictions
+  worldwide: search by name, full identity by LEI. French registry (11 services)
+  remains the deep end; LEI is the global layer.
 
 ## The company funnel
 
