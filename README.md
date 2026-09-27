@@ -129,7 +129,7 @@ Full verticals so an agent never has to leave Xynaptic:
   chargeback classification, counterparty KYB and payment routing: the complete
   journey of a banking agent. Bring-your-own-data, nothing stored, disclaimers on
   every decision-adjacent route.
-- **SECURITIES (13 services)** — the full funnel on official US regulator data
+- **SECURITIES (19 services)** — the full funnel on official US regulator data (EDGAR filings, XBRL fundamentals, insider, earnings, dividends) + 6 EU routes (Yahoo Finance EU markets): live prices Paris/XETRA/LSE/Amsterdam, technicals RSI/momentum, analysis, compare, risk — local currency + EUR
   (SEC EDGAR) + live prices: identity, fundamentals, technicals, risk, filings
   full-text, insider transactions, dividends, earnings, daycare watches,
   devil's-advocate validation and portfolio analysis.
