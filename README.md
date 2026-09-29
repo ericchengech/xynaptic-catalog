@@ -1,6 +1,6 @@
 # Xynaptic — Real-world data for AI agents
 
-**180 pay-per-request data & AI APIs — full agent ecosystem: 12 data domains, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
+**184 pay-per-request data & AI APIs — full agent ecosystem: 12 data domains, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, invoice factoring risk (debtor & portfolio scoring), ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
