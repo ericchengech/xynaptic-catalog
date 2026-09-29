@@ -4,6 +4,7 @@
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
+- **Trust Layer**: machine-readable trust card at https://api.xynaptic.io/trust (free) — identity, x402 compliance, external probes (Market402 A 100/100, vet402 paid PASS), delivery evidence, and a live BTC cross-check CEX (Coinbase) vs DEX (DexScreener on-chain), refreshed on every call.
 → 402 Payment Required (price: $0.005)
 → sign EIP-3009 (or your x402 client)
 → retry with PAYMENT-SIGNATURE
