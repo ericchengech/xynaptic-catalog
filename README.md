@@ -1,5 +1,8 @@
 # Xynaptic — Real-world data for AI agents
 
+[![mcp.xynaptic MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic/badges/score.svg)](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic)
+
+
 **190 pay-per-request data & AI APIs — full agent ecosystem: 15 data domains, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, crypto global metrics & movers (CMC), French legal watch, ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
 
 ```
