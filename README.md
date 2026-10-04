@@ -3,7 +3,7 @@
 [![mcp.xynaptic MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic/badges/score.svg)](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic)
 
 
-**192 pay-per-request data & AI APIs — full agent ecosystem: 15 data domains, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, crypto global metrics & movers (CMC), French legal watch, live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
+**195 pay-per-request data & AI APIs — full agent ecosystem: 15 data domains, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, pre-transaction wallet screening, crypto global metrics & movers (CMC), French legal watch, live French jobs (France Travail API) & recruitment tensions (BMO Dares), live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -21,7 +21,7 @@ GET https://api.xynaptic.io/v1/energy-price
 
 | Vertical | Routes | Highlights |
 |---|---|---|
-| 📈 Crypto | 19 | `crypto-orderflow` — CVD, whale trades, book imbalance · `crypto-derivatives` — funding, OI, basis · `crypto-validate` — full pre-purchase token security audit · `crypto-trading-analysis` — RSI/MACD/EMA · `crypto-deep-trading-analysis` — multi-TF conviction · `crypto-defi` — TVL by chain · `crypto-tokenomics` — FDV, dilution · briefs, news, market, onchain, risk · `crypto-portfolio` ($0.05) · `crypto-historical` ($0.02) · `crypto-correlation` ($0.02) · `crypto-screener` ($0.02) · `crypto-gas-fees` ($0.005) |
+| 📈 Crypto | 20 | `crypto-orderflow` — CVD, whale trades, book imbalance · `crypto-derivatives` — funding, OI, basis · `crypto-validate` — full pre-purchase token security audit · `crypto-trading-analysis` — RSI/MACD/EMA · `crypto-deep-trading-analysis` — multi-TF conviction · `crypto-defi` — TVL by chain · `crypto-tokenomics` — FDV, dilution · briefs, news, market, onchain, risk · `crypto-portfolio` ($0.05) · `crypto-historical` ($0.02) · `crypto-correlation` ($0.02) · `crypto-screener` ($0.02) · `crypto-gas-fees` ($0.005) · `wallet-screen` — pre-transaction wallet risk screening, BTC/EVM ($0.03) |
 | ⚡ Energy | 10 | `ev-charge-window` — cheapest EV charging (50 kWh ~€0.19, save 71%) · `battery-arbitrage` — buy/sell spread · `energy-opportunity` — load-shift windows · solar/wind forecasts, grid status | · `gas-tariff-zone` — official CRE gas price zone by postcode ($0.005)
 | 🚆 French rail | 7 | `connection-risk` — "will I make my 15-min transfer?" scored 0-1 · live departures, train status, trip brief (SNCF real-time) | · `intermodal-compare` — real SNCF train vs estimated plane, verdict ($0.03)
 | ✈️ Aviation | 7 | `flight-route-risk` — composite risk · `flight-alternatives` — nearest airports with live METAR · `notam-brief` — official FAA NOTAMs by airport · `notam-area` — FAA NOTAMs within a radius |
@@ -40,6 +40,7 @@ GET https://api.xynaptic.io/v1/energy-price
 | 📰 News (v2) | 9 | Structured events: importance, lifecycle, entities, verification |
 | 🇫🇷 News FR Éco | 1 | `news-economy-fr` — live French economy press (Google News RSS, sourced LLM synthesis) ($0.01) |
 | 🧠 Orchestrator | 1 | `ao` — free-form question → picks the right services, synthesizes |
+| 💼 Jobs FR | 2 | `job-search` — live French job offers, official France Travail API v2: keyword + dept + contract filters, salary when published ($0.02) · `job-market-brief` — recruitment tensions by dept/métier from the BMO 2026 survey (France Travail/Dares open data), difficulty share + verdict ($0.02) |
 
 ## The AI layer (new)
 
