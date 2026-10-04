@@ -3,7 +3,7 @@
 [![mcp.xynaptic MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic/badges/score.svg)](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic)
 
 
-**200 pay-per-request data & AI APIs — full agent ecosystem: 14 data domains + 3 agent skills, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, pre-transaction wallet screening, crypto global metrics & movers (CMC), French legal watch, live French jobs (France Travail API) & recruitment tensions (BMO Dares), supplier compliance screening, used-car dealer check (anti-fraud before buying), the first x402-paid agent SKILLS (supplier due-diligence, payment fraud screening, crypto token audit — method + bundled data calls), live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
+**201 pay-per-request data & AI APIs — full agent ecosystem: 14 data domains + 3 agent skills, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, pre-transaction wallet screening, crypto global metrics & movers (CMC), French legal watch, live French jobs (France Travail API) & recruitment tensions (BMO Dares), supplier compliance screening, used-car dealer check (anti-fraud before buying), the first x402-paid agent SKILLS (supplier due-diligence, payment fraud screening, crypto token audit — method + bundled data calls), battery-metals EV brief (lithium, copper, platinum, palladium), live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -40,6 +40,7 @@ GET https://api.xynaptic.io/v1/energy-price
 | 📰 News (v2) | 9 | Structured events: importance, lifecycle, entities, verification |
 | 🇫🇷 News FR Éco | 1 | `news-economy-fr` — live French economy press (Google News RSS, sourced LLM synthesis) ($0.01) |
 | 🧠 Orchestrator | 1 | `ao` — free-form question → picks the right services, synthesizes |
+| ⚡ Battery metals | 1 | `battery-metals-brief` — EV-transition metals reading: lithium, copper, platinum, palladium, aluminum, silver with composite tension verdict ($0.03) |
 | 💼 Jobs FR | 2 | `job-search` — live French job offers, official France Travail API v2: keyword + dept + contract filters, salary when published ($0.02) · `job-market-brief` — recruitment tensions by dept/métier from the BMO 2026 survey (France Travail/Dares open data), difficulty share + verdict ($0.02) |
 
 
