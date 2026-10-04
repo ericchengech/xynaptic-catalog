@@ -42,6 +42,26 @@ GET https://api.xynaptic.io/v1/energy-price
 | 🧠 Orchestrator | 1 | `ao` — free-form question → picks the right services, synthesizes |
 | 💼 Jobs FR | 2 | `job-search` — live French job offers, official France Travail API v2: keyword + dept + contract filters, salary when published ($0.02) · `job-market-brief` — recruitment tensions by dept/métier from the BMO 2026 survey (France Travail/Dares open data), difficulty share + verdict ($0.02) |
 
+
+## Agent Skills — the first x402-paid skills
+
+A skill is a complete method (SKILL.md, Claude/OpenClaw-compatible) that chains several catalog services with decision grids, thresholds and abort rules. Buy the method once ($0.25), then execute it: each data call is paid per-use via x402 as usual.
+
+| Skill | What it does | Chains | Price |
+|---|---|---|---|
+| `skill-supplier-due-diligence` | Vet a French supplier before contracting: 5-step method (identity, KYB, compliance, financials, press) with GO / GO-WITH-CONDITIONS / NO-GO grid | company-search, company-kyb, supplier-compliance, company-financial, company-news | $0.25 |
+| `skill-payment-fraud-screening` | Screen any outgoing payment (fiat or crypto) before sending: sanctions signals, wallet screening, structure risk, with SEND / SEND-WITH-CHECKS / BLOCK rules | bank-payment-risk, bank-sanctions-screen, wallet-screen | $0.25 |
+| `skill-crypto-token-audit` | Audit a token before buying: contract security, tokenomics, market state, flow — BUY / CAUTION / AVOID grid | crypto-validate, crypto-tokenomics, crypto-price, crypto-risk, crypto-orderflow | $0.25 |
+
+```
+GET https://api.xynaptic.io/v1/skill-supplier-due-diligence
+-> 402 Payment Required (price: $0.25)
+-> pay via x402, retry with PAYMENT-SIGNATURE
+-> 200 JSON: { skill_md: "<full SKILL.md — method, grids, exact endpoint calls>" }
+```
+
+The returned `skill_md` is a standard SKILL.md (YAML frontmatter + step-by-step method): an agent can execute it directly, calling the chained services as it goes.
+
 ## The AI layer (new)
 
 ```
