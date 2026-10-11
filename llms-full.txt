@@ -1,0 +1,263 @@
+# Xynaptic — Full Catalog
+> Complete reference for AI agents. 201 live services. Prices $0.001-$0.50, USDC via x402 (HTTP 402). No API key. Every response Ed25519-signed. Verify at https://xynaptic.io/trust
+
+This is the full detail file referenced by https://xynaptic.io/llms.txt
+- Map (short): https://xynaptic.io/llms.txt
+- Machine-readable JSON catalog: https://api.xynaptic.io/
+- Trust: https://xynaptic.io/trust
+- MCP: https://mcp.xynaptic.io/mcp
+
+## Quick index
+- [Company Registry FR](#company-registry-fr)
+- [Crypto & DeFi](#crypto-defi)
+- [Finance & SEC](#finance-sec)
+- [Banking & Payments](#banking-payments)
+- [AI & LLM](#ai-llm)
+- [Energy & Grid](#energy-grid)
+- [Agent Runtime & Storage](#agent-runtime-storage)
+- [Real Estate FR](#real-estate-fr)
+- [Industrial & Commodities](#industrial-commodities)
+- [Insurance](#insurance)
+- [News & Media](#news-media)
+- [Aviation](#aviation)
+- [Rail & Transport](#rail-transport)
+- [Health & Medical](#health-medical)
+- [Travel & Navigation](#travel-navigation)
+- [Jobs & Public Data](#jobs-public-data)
+
+---
+
+
+
+### Company Registry (FR) (31)
+- [company-search](https://api.xynaptic.io/v1/company-search) $0.005 — Xynaptic Company Search — find French companies by name or SIREN: identity, activity, status. The entry point 
+- [card-bin-check](https://api.xynaptic.io/v1/card-bin-check) $0.005 — Xynaptic Card BIN Check — the first 6-8 digits of a card number identify the issuer: we return scheme (Visa/Ma
+- [company-international-search](https://api.xynaptic.io/v1/company-international-search) $0.01 — Xynaptic International Company Search — worldwide company search by name (GLEIF LEI registry, 200+ jurisdictio
+- [company-profile](https://api.xynaptic.io/v1/company-profile) $0.02 — Xynaptic Company Profile — consolidated identity from the French state registry: SIREN, legal form, NAF, headc
+- [company-people](https://api.xynaptic.io/v1/company-people) $0.02 — Xynaptic Company People — officers and directors from the RNE: names, roles, birth year. Parameter: ?siren=.
+- [card-transaction-intelligence](https://api.xynaptic.io/v1/card-transaction-intelligence) $0.02 — Xynaptic Card Transaction Intelligence — bring the card transactions (with merchant + country when available):
+- [company-news](https://api.xynaptic.io/v1/company-news) $0.02 — Xynaptic Company News — the press radar for due diligence: bring a company name or French SIREN, get its lates
+- [supplier-search](https://api.xynaptic.io/v1/supplier-search) $0.02 — Xynaptic Supplier Search — find French suppliers by activity: search the official companies registry (NAF acti
+- [artisan-plombier](https://api.xynaptic.io/v1/artisan-plombier) $0.02 — Xynaptic Plombier Search — find plombiers in any French department: official companies registry (active busine
+- [artisan-electricien](https://api.xynaptic.io/v1/artisan-electricien) $0.02 — Xynaptic Electricien Search — find electriciens in any French department: official companies registry (active 
+- [artisan-menuisier](https://api.xynaptic.io/v1/artisan-menuisier) $0.02 — Xynaptic Menuisier Search — find menuisiers in any French department: official companies registry (active busi
+- [artisan-chauffagiste](https://api.xynaptic.io/v1/artisan-chauffagiste) $0.02 — Xynaptic Chauffagiste Search — find chauffagistes in any French department: official companies registry (activ
+- [artisan-carreleur](https://api.xynaptic.io/v1/artisan-carreleur) $0.02 — Xynaptic Carreleur Search — find carreleurs in any French department: official companies registry (active busi
+- [artisan-peintre](https://api.xynaptic.io/v1/artisan-peintre) $0.02 — Xynaptic Peintre en batiment Search — find peintre en batiments in any French department: official companies r
+- [artisan-jardinier](https://api.xynaptic.io/v1/artisan-jardinier) $0.02 — Xynaptic Paysagiste jardinier Search — find paysagiste jardiniers in any French department: official companies
+- [artisan-couvreur](https://api.xynaptic.io/v1/artisan-couvreur) $0.02 — Xynaptic Couvreur Search — find couvreurs in any French department: official companies registry (active busine
+- [artisan-macon](https://api.xynaptic.io/v1/artisan-macon) $0.02 — Xynaptic Macon Search — find macons in any French department: official companies registry (active businesses o
+- [artisan-serrurier](https://api.xynaptic.io/v1/artisan-serrurier) $0.02 — Xynaptic Serrurier Search — find serruriers in any French department: official companies registry (active busi
+- [company-network](https://api.xynaptic.io/v1/company-network) $0.03 — Xynaptic Company Network — HQ and establishment footprint: locations, activities, open/closed count. Parameter
+- [company-changes](https://api.xynaptic.io/v1/company-changes) $0.03 — Xynaptic Company Changes — what recently changed in a French company: officers, status, HQ, activity, accounts
+- [card-chargeback-analysis](https://api.xynaptic.io/v1/card-chargeback-analysis) $0.03 — Xynaptic Card Chargeback Analysis — bring one disputed transaction + its context (delay, cardholder history): 
+- [supplier-compliance](https://api.xynaptic.io/v1/supplier-compliance) $0.03 — Xynaptic Supplier Compliance — compliance screening of a French supplier before contracting: registry status (
+- [car-dealer-check](https://api.xynaptic.io/v1/car-dealer-check) $0.03 — Xynaptic Car Dealer Check — screen a used-car seller (French dealer or individual) before you buy: official re
+- [company-international-profile](https://api.xynaptic.io/v1/company-international-profile) $0.03 — Xynaptic International Company Profile — full global identity by LEI: legal name, legal address, country, lega
+- [company-financial](https://api.xynaptic.io/v1/company-financial) $0.05 — Xynaptic Company Financial — annual accounts from the registry: revenue, net income, per year available. Param
+- [company-relationship](https://api.xynaptic.io/v1/company-relationship) $0.05 — Xynaptic Company Relationship — the link between two French companies: shared officers, same activity, same ci
+- [company-monitor](https://api.xynaptic.io/v1/company-monitor) $0.05 — Xynaptic Company Monitor — watch a French company over time: first call sets the baseline, next calls detect w
+- [company-brief-live](https://api.xynaptic.io/v1/company-brief-live) $0.05 — Xynaptic Company Brief Live — the real-time decisional brief: identity, officers, accounts, risk signals, grow
+- [company-compare](https://api.xynaptic.io/v1/company-compare) $0.05 — Xynaptic Company Compare — two French companies side by side: size, activity, financials, geography, officers,
+- [supplier-risk](https://api.xynaptic.io/v1/supplier-risk) $0.05 — Xynaptic Supplier Risk — bring a supplier (SIREN or name): we compile the official registry profile, financial
+- [company-kyb](https://api.xynaptic.io/v1/company-kyb) $0.1 — Xynaptic Company KYB — the full due-diligence dossier in one call: identity, officers, financials, risk signal
+
+### Crypto & DeFi (26)
+- [crypto-gas-fees](https://api.xynaptic.io/v1/crypto-gas-fees) $0.005 — Xynaptic Gas Fees — live gas prices across chains (Ethereum, Base) with slow/average/fast tiers in Gwei + esti
+- [crypto-fear-greed](https://api.xynaptic.io/v1/crypto-fear-greed) $0.005 — Xynaptic Crypto Fear & Greed — the market sentiment thermometer (alternative.me index, 0-100): current value, 
+- [crypto-brief-live](https://api.xynaptic.io/v1/crypto-brief-live) $0.01 — Xynaptic Crypto Live — real-time crypto prices (BTC, ETH, SOL, ADA + top coins) fetched at the exact moment of
+- [crypto-price](https://api.xynaptic.io/v1/crypto-price) $0.01 — Xynaptic Crypto Price — real-time snapshot of 6 major crypto assets (BTC, ETH, SOL, ADA, LINK, DOT) with 24h c
+- [crypto-global](https://api.xynaptic.io/v1/crypto-global) $0.01 — Xynaptic Crypto Global — global crypto market snapshot (CoinMarketCap Pro): total market cap, BTC/ETH dominanc
+- [crypto-brief](https://api.xynaptic.io/v1/crypto-brief) $0.015 — Xynaptic Crypto Brief — daily crypto market digest (BTC, ETH, SOL, ADA prices, 24h moves, major headlines) as 
+- [crypto-market](https://api.xynaptic.io/v1/crypto-market) $0.02 — Xynaptic Crypto Market — real-time market regime analysis: top 100 assets by market cap, gainers/losers, bread
+- [crypto-news](https://api.xynaptic.io/v1/crypto-news) $0.02 — Xynaptic Crypto News — top crypto headlines (BTC, ETH, regulation, macro) with importance scoring, timestamp a
+- [crypto-historical](https://api.xynaptic.io/v1/crypto-historical) $0.02 — Xynaptic Crypto Historical — OHLCV history for backtests: 30, 90 or 365 days, daily candles from CoinGecko. GE
+- [crypto-correlation](https://api.xynaptic.io/v1/crypto-correlation) $0.02 — Xynaptic Crypto Correlation — Pearson correlation matrix of daily returns for 2-5 coins over 90 days: the hone
+- [crypto-screener](https://api.xynaptic.io/v1/crypto-screener) $0.02 — Xynaptic Crypto Screener — the market pulse: top gainers and losers 24h, highest volumes, most extreme moves f
+- [crypto-whales](https://api.xynaptic.io/v1/crypto-whales) $0.02 — Xynaptic Crypto Whales — live large Bitcoin transfers straight from the network: biggest mempool transactions 
+- [crypto-wallet-health](https://api.xynaptic.io/v1/crypto-wallet-health) $0.02 — Xynaptic Crypto Wallet Health — score any Bitcoin or EVM address: balance, tx count, first/last activity (age)
+- [fiat-usdc-rate](https://api.xynaptic.io/v1/fiat-usdc-rate) $0.02 — Xynaptic Fiat-USDC Rate — best fiat↔USDC conversion rate per payment rail (Base, Polygon, Solana): Coinbase sp
+- [crypto-movers](https://api.xynaptic.io/v1/crypto-movers) $0.02 — Xynaptic Crypto Movers — top gainers and losers 24h with volume filter (CoinMarketCap Pro): clean lists of rea
+- [crypto-tokenomics](https://api.xynaptic.io/v1/crypto-tokenomics) $0.03 — Xynaptic Crypto Tokenomics — supply structure: circulating, total, max supply, FDV, market cap, ATH distance, 
+- [wallet-screen](https://api.xynaptic.io/v1/wallet-screen) $0.03 — Xynaptic Wallet Screen — pre-transaction risk screening of any Bitcoin or EVM address: on-chain profile (balan
+- [crypto-trading-analysis](https://api.xynaptic.io/v1/crypto-trading-analysis) $0.05 — Xynaptic Crypto Trading Analysis — technical analysis of any Kraken pair: RSI(14), MACD, EMA 20/50/200, recent
+- [crypto-orderflow](https://api.xynaptic.io/v1/crypto-orderflow) $0.05 — Xynaptic Crypto Orderflow — real-time market microstructure: CVD (cumulative volume delta), buy/sell pressure 
+- [crypto-derivatives](https://api.xynaptic.io/v1/crypto-derivatives) $0.05 — Xynaptic Crypto Derivatives — perp market vitals: funding rate (hourly + annualized), open interest in USD, fu
+- [crypto-defi](https://api.xynaptic.io/v1/crypto-defi) $0.05 — Xynaptic Crypto DeFi — protocol health in one call: current TVL, 24h change, chain breakdown, category. Parame
+- [crypto-portfolio](https://api.xynaptic.io/v1/crypto-portfolio) $0.05 — Xynaptic Crypto Portfolio — bring your holdings [{coin, weight or amount}]: we fetch live prices and compute p
+- [crypto-risk](https://api.xynaptic.io/v1/crypto-risk) $0.05 — Xynaptic Crypto Risk — drawdowns from ATH, 7d/30d momentum and risk grade for major crypto assets. Refreshed e
+- [crypto-deep-trading-analysis](https://api.xynaptic.io/v1/crypto-deep-trading-analysis) $0.1 — Xynaptic Deep Trading Analysis — the premium multi-dimensional read: multi-timeframes (1h/4h/1d aligned), vola
+- [crypto-validate](https://api.xynaptic.io/v1/crypto-validate) $0.1 — Xynaptic Token Validate — full pre-purchase security audit of any token: contract checks (open source, proxy),
+- [crypto-onchain](https://api.xynaptic.io/v1/crypto-onchain) $0.1 — Xynaptic Crypto Onchain — live Bitcoin network data: recommended fees, mempool congestion, difficulty adjustme
+
+### Finance & SEC (19)
+- [security-search](https://api.xynaptic.io/v1/security-search) $0.005 — Xynaptic Security Search — ticker US (e.g. AAPL) -> company identity from SEC EDGAR: name, CIK, exchanges, SIC
+- [security-eu-price](https://api.xynaptic.io/v1/security-eu-price) $0.005 — Xynaptic Security EU Price — live European stock price with local currency + EUR conversion: Paris (MC.PA), Lo
+- [security-price](https://api.xynaptic.io/v1/security-price) $0.01 — Xynaptic Security Price — spot market data for US stocks: price, previous close, day range, 52-week range, cur
+- [security-eu-search](https://api.xynaptic.io/v1/security-eu-search) $0.01 — Xynaptic Security EU Search — European ticker identity: name, exchange, currency, market state. GET ?query=LVM
+- [security-watch](https://api.xynaptic.io/v1/security-watch) $0.01 — Xynaptic Security Watch — the daycare for stocks: we watch price above/below a threshold or RSI-14 zones, chec
+- [security-technical](https://api.xynaptic.io/v1/security-technical) $0.02 — Xynaptic Security Technical — technical indicators computed on price history: SMA 20/50/200, EMA 12/26, RSI 14
+- [security-risk](https://api.xynaptic.io/v1/security-risk) $0.02 — Xynaptic Security Risk — risk profile from price history: annualized volatility, max drawdown, worst day, VaR 
+- [security-eu-technical](https://api.xynaptic.io/v1/security-eu-technical) $0.02 — Xynaptic Security EU Technical — RSI, momentum, moving averages on 60-day European price history. GET ?ticker=
+- [security-eu-risk](https://api.xynaptic.io/v1/security-eu-risk) $0.02 — Xynaptic Security EU Risk — volatility, drawdown, liquidity profile of a European stock. GET ?ticker=SHEL.L&da
+- [security-filings](https://api.xynaptic.io/v1/security-filings) $0.02 — Xynaptic Security Filings — full-text search across SEC EDGAR filings: find which 10-K/10-Q/8-K mention your t
+- [security-insider](https://api.xynaptic.io/v1/security-insider) $0.02 — Xynaptic Security Insider — insider transactions (Form 4) of a US listed company: the 15 most recent filings w
+- [security-dividends](https://api.xynaptic.io/v1/security-dividends) $0.02 — Xynaptic Security Dividends — dividend history from SEC XBRL filings (official DPS declared) + current yield c
+- [security-earnings](https://api.xynaptic.io/v1/security-earnings) $0.02 — Xynaptic Security Earnings — quarterly results from EDGAR: EPS and net income per quarter (XBRL, durations 60-
+- [security-fundamentals](https://api.xynaptic.io/v1/security-fundamentals) $0.03 — Xynaptic Security Fundamentals — multi-year financial statements from SEC EDGAR XBRL (official regulator data)
+- [security-eu-analysis](https://api.xynaptic.io/v1/security-eu-analysis) $0.03 — Xynaptic Security EU Analysis — full European stock profile: live price, trend, volatility, range + agent-read
+- [security-eu-compare](https://api.xynaptic.io/v1/security-eu-compare) $0.05 — Xynaptic Security EU Compare — two European stocks side by side: prices, trends, risk. GET ?a=MC.PA&b=SAP.DE
+- [security-portfolio-analysis](https://api.xynaptic.io/v1/security-portfolio-analysis) $0.05 — Xynaptic Portfolio Analysis — bring your portfolio [{ticker, weight}]: we fetch prices and compute per-holding
+- [security-analysis](https://api.xynaptic.io/v1/security-analysis) $0.1 — Xynaptic Security Analysis — premium devil's-advocate-grade report: we collect fundamentals (EDGAR), technical
+- [security-validate](https://api.xynaptic.io/v1/security-validate) $0.1 — Xynaptic Security Validate — the market devil's advocate: submit an investment thesis about a US stock, we str
+
+### Banking & Payments (15)
+- [bank-iban-validate](https://api.xynaptic.io/v1/bank-iban-validate) $0.005 — Xynaptic IBAN Validate — full structural validation: mod-97 checksum, country-specific length and format, embe
+- [bank-bic-check](https://api.xynaptic.io/v1/bank-bic-check) $0.005 — Xynaptic BIC/SWIFT Check — structural validation of the business identifier code: 8/11 chars, institution code
+- [bank-statement-parse](https://api.xynaptic.io/v1/bank-statement-parse) $0.01 — Xynaptic Bank Statement Parse — paste a raw bank statement (text, any bank layout) and get clean structured tr
+- [bank-beneficiary-watch](https://api.xynaptic.io/v1/bank-beneficiary-watch) $0.01 — Xynaptic Bank Beneficiary Watch — the daycare for banking: we watch a French counterparty in the registry and 
+- [bank-transaction-categorize](https://api.xynaptic.io/v1/bank-transaction-categorize) $0.02 — Xynaptic Bank Transaction Categorize — categorize raw bank transactions (CSV or objects) into standard categor
+- [bank-spending-goals](https://api.xynaptic.io/v1/bank-spending-goals) $0.02 — Xynaptic Bank Spending Goals — bring transactions + a goal (e.g. save 500/month): we compute the gap, category
+- [payment-routing-advice](https://api.xynaptic.io/v1/payment-routing-advice) $0.02 — Xynaptic Payment Routing Advice — one payment instruction, compared across rails: SEPA transfer, card, SWIFT w
+- [bank-cashflow](https://api.xynaptic.io/v1/bank-cashflow) $0.03 — Xynaptic Bank Cashflow — bring transactions, get the treasury picture: inflows, outflows, net, burn rate, recu
+- [bank-payment-risk](https://api.xynaptic.io/v1/bank-payment-risk) $0.03 — Xynaptic Bank Payment Risk — bring one payment instruction (beneficiary, IBAN or country, amount, label, date)
+- [bank-reconciliation](https://api.xynaptic.io/v1/bank-reconciliation) $0.03 — Xynaptic Bank Reconciliation — bring TWO lists (bank_statement + internal/invoices): we match them (exact, fuz
+- [bank-sanctions-screen](https://api.xynaptic.io/v1/bank-sanctions-screen) $0.03 — Xynaptic Bank Sanctions Screen — bring a LIST of beneficiaries (up to 100): we screen each (jurisdiction risk,
+- [bank-financial-health](https://api.xynaptic.io/v1/bank-financial-health) $0.05 — Xynaptic Bank Financial Health — bring the transactions of an account, get the full synthesis: liquidity trend
+- [bank-counterparty-profile](https://api.xynaptic.io/v1/bank-counterparty-profile) $0.05 — Xynaptic Bank Counterparty Profile — about to pay a French company? Get its full registry profile before payin
+- [factoring-debtor-risk](https://api.xynaptic.io/v1/factoring-debtor-risk) $0.05 — Xynaptic Factoring Debtor Risk — pre-advance credit assessment of an invoice debtor (French company): registry
+- [factoring-portfolio-risk](https://api.xynaptic.io/v1/factoring-portfolio-risk) $0.1 — Xynaptic Factoring Portfolio Risk — upload a set of invoices, get the portfolio risk profile: sector concentra
+
+### AI & LLM (14)
+- [ai-chat](https://api.xynaptic.io/v1/ai-chat) $0.005 — Xynaptic AI Chat — LLM inference pay-per-call: OpenAI-compatible messages, model auto-routing (glm-5.3-flash /
+- [ai-translate](https://api.xynaptic.io/v1/ai-translate) $0.01 — Xynaptic AI Translate — bring your own data: paste raw text (CSV, table, email, notice, listing, any messy con
+- [ai-search](https://api.xynaptic.io/v1/ai-search) $0.02 — Xynaptic AI Search — the web access your agent is missing: ask any question, we run a REAL web search (DuckDuc
+- [ai-agent](https://api.xynaptic.io/v1/ai-agent) $0.05 — Xynaptic AI Agent — one payment, full task: orchestrates Xynaptic data services as tools (company registry, fi
+- [ai-finance](https://api.xynaptic.io/v1/ai-finance) $0.05 — Xynaptic AI Finance Agent — one payment, full market analysis: crypto price, orderflow, derivatives and risk d
+- [ai-brief-me](https://api.xynaptic.io/v1/ai-brief-me) $0.05 — Xynaptic Brief-Me — the shopping basket: ONE payment, a composite morning brief. Pick up to 3 companies (SIREN
+- [ai-energy](https://api.xynaptic.io/v1/ai-energy) $0.06 — Xynaptic AI Energy — the energy vertical agent: live spot prices, industrial energy costs + an LLM synthesis. 
+- [ai-health](https://api.xynaptic.io/v1/ai-health) $0.06 — Xynaptic AI Health — the health vertical agent: official drug labels (openFDA), live health press + an LLM syn
+- [ai-industry](https://api.xynaptic.io/v1/ai-industry) $0.06 — Xynaptic AI Industry — the industry vertical agent: live commodities, industrial market profile, supplier risk
+- [ai-bank](https://api.xynaptic.io/v1/ai-bank) $0.08 — Xynaptic AI Bank — the banking/card vertical agent: bring a question + IBAN/BIC/BIN/name, we run the official 
+- [ai-insurance](https://api.xynaptic.io/v1/ai-insurance) $0.08 — Xynaptic AI Insurance — the insurance vertical agent: coverage families, ORIAS broker registry, premium decomp
+- [ai-company](https://api.xynaptic.io/v1/ai-company) $0.1 — Xynaptic AI Company Agent — the vertical deep-dive: full French company dossier (identity, officers, multi-yea
+- [ai-validate](https://api.xynaptic.io/v1/ai-validate) $0.1 — Xynaptic AI Validate — the devil's advocate: submit your thesis (an investment idea, a company assessment, a m
+- [ai-property](https://api.xynaptic.io/v1/ai-property) $0.1 — Xynaptic AI Property — the vertical real-estate agent: bring a question, it orchestrates the property-* tools 
+
+### Energy & Grid (12)
+- [energy-price](https://api.xynaptic.io/v1/energy-price) $0.005 — Xynaptic Energy Price — current electricity spot price (EUR/MWh) with 24h trend and hourly profile. Europe (aw
+- [gas-tariff-zone](https://api.xynaptic.io/v1/gas-tariff-zone) $0.005 — Xynaptic Gas Tariff Zone — the official regulated gas price zone (1-6) for any French postcode, from CRE open 
+- [energy-solar-forecast](https://api.xynaptic.io/v1/energy-solar-forecast) $0.02 — Xynaptic Solar Forecast — 48h solar production forecast for a European region (radiation, cloud cover, peak ho
+- [energy-wind-forecast](https://api.xynaptic.io/v1/energy-wind-forecast) $0.02 — Xynaptic Wind Forecast — 48h wind power forecast for a European region (wind speed at 100m, capacity factor es
+- [energy-brief](https://api.xynaptic.io/v1/energy-brief) $0.02 — Xynaptic Energy Brief Live — one-shot energy synthesis: spot price + trend, solar and wind forecast, renewable
+- [energy-grid-status](https://api.xynaptic.io/v1/energy-grid-status) $0.02 — Xynaptic Grid Status — current European grid health proxy: price volatility, renewable stress signals, load-sh
+- [energy-demand](https://api.xynaptic.io/v1/energy-demand) $0.02 — Xynaptic Energy Demand FR — live French electricity demand (RTE éCO2mix official): consumption MW, day-ahead f
+- [energy-interconnections](https://api.xynaptic.io/v1/energy-interconnections) $0.02 — Xynaptic Energy Interconnections FR — live French cross-border power flows (RTE official): England, Italy, Ger
+- [energy-charge-window](https://api.xynaptic.io/v1/energy-charge-window) $0.03 — Xynaptic EV Charge Window — the optimal charging window for an electric vehicle: cheapest contiguous hours fit
+- [battery-metals-brief](https://api.xynaptic.io/v1/battery-metals-brief) $0.03 — Xynaptic Battery Metals Brief — the EV-transition metals reading in one call: lithium, copper, platinum, palla
+- [energy-opportunity](https://api.xynaptic.io/v1/energy-opportunity) $0.05 — Xynaptic Energy Opportunity — the premium signal: cheapest consumption windows in the next 24h, renewable surp
+- [energy-battery-arbitrage](https://api.xynaptic.io/v1/energy-battery-arbitrage) $0.05 — Xynaptic Battery Arbitrage — when to charge and when to discharge a battery/home storage in the next 24h: buy 
+
+### Agent Runtime & Storage (11)
+- [ticket-status](https://api.xynaptic.io/v1/ticket-status) FREE — Xynaptic Ticket Status — free: check remaining prepaid credit and validity. POST body: {ticket_id, ticket_secr
+- [store-put](https://api.xynaptic.io/v1/store-put) $0.001 — Xynaptic Ephemeral Store — encrypted scratchpad for agents: deposit a JSON payload (64KB max), we store it enc
+- [store-get](https://api.xynaptic.io/v1/store-get) $0.001 — Xynaptic Ephemeral Store — retrieve a stored object: POST body: { store_id, claim_secret, delete_after_read?: 
+- [store-append](https://api.xynaptic.io/v1/store-append) $0.001 — Xynaptic Ephemeral Store append — merge new JSON into an existing stored object without re-uploading: POST bod
+- [watch-status](https://api.xynaptic.io/v1/watch-status) $0.001 — Xynaptic Watch status — check if your watch triggered. POST body: { watch_id, watch_secret }. Returns { status
+- [watch-put](https://api.xynaptic.io/v1/watch-put) $0.01 — Xynaptic Watch — the agent daycare: we watch a condition for you, checked hourly up to 30 days; when triggered
+- [ao](https://api.xynaptic.io/v1/ao) $0.05 — Xynaptic AO Digest — filtered French public procurement calls (trade + department, France).
+- [skill-supplier-due-diligence](https://api.xynaptic.io/v1/skill-supplier-due-diligence) $0.25 — Xynaptic Skill — Supplier Due Diligence (France): the complete step-by-step method to vet a French supplier be
+- [skill-payment-fraud-screening](https://api.xynaptic.io/v1/skill-payment-fraud-screening) $0.25 — Xynaptic Skill — Payment Fraud Screening: the method to screen any outgoing payment (fiat or crypto) before se
+- [skill-crypto-token-audit](https://api.xynaptic.io/v1/skill-crypto-token-audit) $0.25 — Xynaptic Skill — Crypto Token Audit: the complete pre-purchase method to audit a token — contract security, to
+- [ticket-buy](https://api.xynaptic.io/v1/ticket-buy) $0.5 — Xynaptic Ticket — prepaid credit: pay once (0.5-20 USDC), get a ticket_id|ticket_secret, consume any service w
+
+### Real Estate (FR) (11)
+- [property-search](https://api.xynaptic.io/v1/property-search) $0.01 — Xynaptic Property Search — find French communes and their official transaction stats (DVF 2024, DGFiP): median
+- [property-location](https://api.xynaptic.io/v1/property-location) $0.01 — Xynaptic Property Location — commune profile from official transactions: sales volume by type, median prices, 
+- [property-transactions](https://api.xynaptic.io/v1/property-transactions) $0.02 — Xynaptic Property Transactions — real estate sales from the official DVF registry (915k+ clean 2024 transactio
+- [property-price](https://api.xynaptic.io/v1/property-price) $0.02 — Xynaptic Property Price — official median price per sqm for a French commune and property type, computed from 
+- [property-rent](https://api.xynaptic.io/v1/property-rent) $0.02 — Xynaptic Property Rent — indicative monthly rent estimate for a city and surface, derived from the local price
+- [property-mortgage](https://api.xynaptic.io/v1/property-mortgage) $0.02 — Xynaptic Property Mortgage — clean mortgage calculator: monthly payment, total cost, amortization overview for
+- [property-market](https://api.xynaptic.io/v1/property-market) $0.03 — Xynaptic Property Market — full market profile of a commune: all property types, median prices, volumes, price
+- [property-yield](https://api.xynaptic.io/v1/property-yield) $0.03 — Xynaptic Property Yield — gross rental yield computed honestly: bring city, type, monthly rent (or use market 
+- [property-risk](https://api.xynaptic.io/v1/property-risk) $0.03 — Xynaptic Property Risk — local market risk profile: price volatility (DVF dispersion), liquidity (sales volume
+- [property-valuation](https://api.xynaptic.io/v1/property-valuation) $0.05 — Xynaptic Property Valuation — bring a property (city, surface, rooms, type), get an honest valuation range com
+- [property-compare](https://api.xynaptic.io/v1/property-compare) $0.05 — Xynaptic Property Compare — two communes side by side from official DVF data: median prices per sqm, volumes, 
+
+### Industrial & Commodities (10)
+- [industrial-news](https://api.xynaptic.io/v1/industrial-news) $0.01 — Xynaptic Industrial News — live industrial/manufacturing press feed (Google News RSS): real titled articles + 
+- [commodity-price](https://api.xynaptic.io/v1/commodity-price) $0.02 — Xynaptic Commodity Price — live commodity prices: Brent, WTI, natural gas, copper, aluminum, gold, silver, pla
+- [industrial-raw-materials](https://api.xynaptic.io/v1/industrial-raw-materials) $0.02 — Xynaptic Raw Materials — the raw materials panorama by family: energy (oil, gas, coal), metals (copper, alumin
+- [industrial-price](https://api.xynaptic.io/v1/industrial-price) $0.02 — Xynaptic Industrial Price — French industrial producer price indices (IPPI) from INSEE official statistics: mo
+- [industrial-energy](https://api.xynaptic.io/v1/industrial-energy) $0.02 — Xynaptic Industrial Energy — energy costs for industrial users: spot electricity prices, gas prices, and the e
+- [industrial-supply](https://api.xynaptic.io/v1/industrial-supply) $0.02 — Xynaptic Industrial Supply — supply/demand tension reading for a sector: input price evolution (commodities + 
+- [industrial-factory-status](https://api.xynaptic.io/v1/industrial-factory-status) $0.02 — Xynaptic Factory Status — the publicly known state of an industrial site: press mentions, company registry (ac
+- [industrial-market](https://api.xynaptic.io/v1/industrial-market) $0.03 — Xynaptic Industrial Market — industrial sector profile: producer price indices (INSEE), commodity input costs,
+- [industrial-production-risk](https://api.xynaptic.io/v1/industrial-production-risk) $0.03 — Xynaptic Production Risk — describe your production chain (suppliers, materials, locations), we analyze fragil
+- [industrial-logistics-risk](https://api.xynaptic.io/v1/industrial-logistics-risk) $0.03 — Xynaptic Logistics Risk — current logistics disruptions affecting French/European flows: rail strikes (SNCF of
+
+### Insurance (10)
+- [insurance-search](https://api.xynaptic.io/v1/insurance-search) $0.01 — Xynaptic Insurance Search — the insurance type panorama: standard coverage families for auto/home/health/pro, 
+- [insurance-premium](https://api.xynaptic.io/v1/insurance-premium) $0.02 — Xynaptic Insurance Premium — the pedagogical price decomposition: taxes, legal contributions, pure premium vs 
+- [insurance-eligibility](https://api.xynaptic.io/v1/insurance-eligibility) $0.02 — Xynaptic Insurance Eligibility — general eligibility check + your legal rights: borrower insurance substitutio
+- [insurance-profile](https://api.xynaptic.io/v1/insurance-profile) $0.03 — Xynaptic Insurance Profile — the insurance KYB: is this broker/agent officially registered? We find the ORIAS 
+- [insurance-policy](https://api.xynaptic.io/v1/insurance-policy) $0.03 — Xynaptic Insurance Policy — bring a policy text, get its structured reading: coverages, exclusions, deductible
+- [insurance-coverage](https://api.xynaptic.io/v1/insurance-coverage) $0.03 — Xynaptic Insurance Coverage — bring a policy and describe an incident: are you covered? Honest analysis of cov
+- [insurance-risk](https://api.xynaptic.io/v1/insurance-risk) $0.03 — Xynaptic Insurance Risk — bring your profile/situation, get a readable risk scoring: aggravating/mitigating fa
+- [insurance-claim](https://api.xynaptic.io/v1/insurance-claim) $0.05 — Xynaptic Insurance Claim — describe your incident in free language, get a structured claim form: date, place, 
+- [insurance-quote](https://api.xynaptic.io/v1/insurance-quote) $0.05 — Xynaptic Insurance Quote — honest parametric auto insurance estimator: legal bonus/malus coefficient, public r
+- [insurance-compare](https://api.xynaptic.io/v1/insurance-compare) $0.05 — Xynaptic Insurance Compare — bring two policy texts, get the side-by-side: coverage differences, caps, deducti
+
+### News & Media (9)
+- [news-eu](https://api.xynaptic.io/v1/news-eu) $0.01 — Xynaptic EU News v2 — structured events from Europe (last 3h): importance, lifecycle, entities, geography, sec
+- [news-tech](https://api.xynaptic.io/v1/news-tech) $0.01 — Xynaptic Tech News v2 — structured events (AI/LLM, GPU, quantum computing, last 3h): importance, lifecycle, en
+- [economy-news-fr](https://api.xynaptic.io/v1/economy-news-fr) $0.01 — Xynaptic News Economy FR — the live French economy press feed: latest macro and business news from a real web 
+- [news-us](https://api.xynaptic.io/v1/news-us) $0.01 — Xynaptic US News v2 — structured events from the United States (last 3h): importance, lifecycle, entities, sec
+- [news-asia](https://api.xynaptic.io/v1/news-asia) $0.01 — Xynaptic Asia News v2 — structured events across Asia (China, Japan, India, Korea, ASEAN, last 3h): importance
+- [news-mideast](https://api.xynaptic.io/v1/news-mideast) $0.01 — Xynaptic Middle East News v2 — structured events (geopolitics, energy, conflicts, last 3h): importance, lifecy
+- [news-russia](https://api.xynaptic.io/v1/news-russia) $0.01 — Xynaptic Russia News v2 — structured events (politics, economy, Ukraine war, last 3h): importance, lifecycle, 
+- [news-stars](https://api.xynaptic.io/v1/news-stars) $0.01 — Xynaptic Stars & Awards v2 — structured events (celebrities, cinema, awards, Nobel Prize, last 3h): importance
+- [news-world](https://api.xynaptic.io/v1/news-world) $0.02 — Xynaptic World News Briefing v2 — curated global events (importance >= medium) aggregated from all 7 Xynaptic 
+
+### Aviation (9)
+- [flight-news](https://api.xynaptic.io/v1/flight-news) $0.02 — Xynaptic Aviation News v2 — structured aviation events (airlines, airports, airspace, regulation, incidents, l
+- [flight-airport-brief](https://api.xynaptic.io/v1/flight-airport-brief) $0.02 — Xynaptic Flight Airport Brief — any airport worldwide by name or IATA code: country, IATA/ICAO codes, coordina
+- [notam-brief](https://api.xynaptic.io/v1/notam-brief) $0.02 — Xynaptic NOTAM Brief — official FAA NOTAMs for any US airport: active notices with effective dates, plain text
+- [notam-area](https://api.xynaptic.io/v1/notam-area) $0.02 — Xynaptic NOTAM Area — official FAA NOTAMs within a radius around any point (latitude/decimal degrees, radius i
+- [flight-asia-brief](https://api.xynaptic.io/v1/flight-asia-brief) $0.03 — Xynaptic Flight Asia Brief — aviation panorama of any Asian (or world) country: major airports with IATA codes
+- [flight-airport-situation](https://api.xynaptic.io/v1/flight-airport-situation) $0.05 — Xynaptic Airport Situation — real-time weather and operating conditions of any airport by ICAO code (METAR + T
+- [flight-status](https://api.xynaptic.io/v1/flight-status) $0.05 — Xynaptic Flight Status — real-time status of any flight by callsign (e.g. AFR7TE): airborne/ground phase, alti
+- [flight-route-risk](https://api.xynaptic.io/v1/flight-route-risk) $0.1 — Xynaptic Flight Route Risk — real-time risk assessment of an air route (departure/arrival ICAO): weather at bo
+- [flight-alternatives](https://api.xynaptic.io/v1/flight-alternatives) $0.15 — Xynaptic Flight Alternatives — when a destination is disrupted, find the 3 nearest major alternative airports 
+
+### Rail & Transport (8)
+- [rail-departures](https://api.xynaptic.io/v1/rail-departures) $0.005 — Xynaptic Station Departures FR — next departures from any French rail station (search by name, e.g. ?station=L
+- [rail-train-status](https://api.xynaptic.io/v1/rail-train-status) $0.005 — Xynaptic Train Status FR — real-time status of a French train by number (e.g. ?number=1234): line, direction, 
+- [rail-news](https://api.xynaptic.io/v1/rail-news) $0.01 — Xynaptic Train News FR — structured French rail events (SNCF, TGV, TER, Transilien, last 12h): importance, lif
+- [rail-disruptions](https://api.xynaptic.io/v1/rail-disruptions) $0.01 — Xynaptic Rail Disruptions FR — active French rail disruptions (grèves, travaux, suppressions, incidents, dérai
+- [rail-connection-risk](https://api.xynaptic.io/v1/rail-connection-risk) $0.02 — Xynaptic Connection Risk FR — will you make your connection? Given a transfer station and planned margin (?at=
+- [rail-train-route-risk](https://api.xynaptic.io/v1/rail-train-route-risk) $0.03 — Xynaptic Train Route Risk FR — composite risk assessment of a French rail journey (?from=Lyon Part-Dieu&to=Par
+- [rail-trip-brief](https://api.xynaptic.io/v1/rail-trip-brief) $0.03 — Xynaptic Rail Trip Brief FR — complete one-shot synthesis of a French rail journey (?from&to): next departures
+- [rail-intermodal-compare](https://api.xynaptic.io/v1/rail-intermodal-compare) $0.03 — Xynaptic Intermodal Compare — train vs plane between two cities: REAL next train journeys (Navitia/SNCF: times
+
+### Health & Medical (8)
+- [health-news](https://api.xynaptic.io/v1/health-news) $0.01 — Xynaptic Health News — live health/medicine press feed (Google News RSS): real titled articles from medical me
+- [health-drug-info](https://api.xynaptic.io/v1/health-drug-info) $0.02 — Xynaptic Health Drug Info — official drug fact sheet: active ingredient, brand/generic names, form, route, dos
+- [health-clinical-trials](https://api.xynaptic.io/v1/health-clinical-trials) $0.02 — Xynaptic Health Clinical Trials — search worldwide clinical trials (ClinicalTrials.gov): status, phase, eligib
+- [health-medical-literature](https://api.xynaptic.io/v1/health-medical-literature) $0.02 — Xynaptic Health Medical Literature — PubMed search for medical research: articles, abstracts, journals, dates,
+- [health-hospital-info](https://api.xynaptic.io/v1/health-hospital-info) $0.02 — Xynaptic Health Hospital Info — French healthcare establishments from official ScopeSanté (HAS): name, city, c
+- [health-medical-guidelines](https://api.xynaptic.io/v1/health-medical-guidelines) $0.03 — Xynaptic Health Medical Guidelines — official recommendations for a condition: HAS (Haute Autorité de Santé) F
+- [health-healthcare-provider](https://api.xynaptic.io/v1/health-healthcare-provider) $0.03 — Xynaptic Health Healthcare Provider — French health professionals from the official RPPS directory (Annuaire S
+- [health-drug-interaction](https://api.xynaptic.io/v1/health-drug-interaction) $0.05 — Xynaptic Health Drug Interaction — bring 2-6 drug names: we fetch their official labels (openFDA), extract doc
+
+### Travel & Navigation (4)
+- [travel-weather](https://api.xynaptic.io/v1/travel-weather) $0.01 — Xynaptic Travel Weather — 7-day daily forecast for any destination (open-meteo): min/max temperature, precipit
+- [destination-brief](https://api.xynaptic.io/v1/destination-brief) $0.02 — Xynaptic Destination Brief — travel context for any city: Wikipedia summary, coordinates, population, country,
+- [route-brief](https://api.xynaptic.io/v1/route-brief) $0.02 — Xynaptic Route Brief — road itinerary between two points (OSRM): distance, duration, step-by-step directions a
+- [trip-planner](https://api.xynaptic.io/v1/trip-planner) $0.03 — Xynaptic Trip Planner FR — full train itinerary between two French stations or cities (SNCF): times, duration,
+
+### Jobs & Public Data (4)
+- [legal-brief](https://api.xynaptic.io/v1/legal-brief) $0.02 — Xynaptic Legal Brief FR — French legal watch by keyword: official sources (Légifrance, service-public.gouv.fr,
+- [tender-search](https://api.xynaptic.io/v1/tender-search) $0.02 — Xynaptic Tender Search — French public procurement notices (BOAMP): search tenders by keyword, buyer, departme
+- [job-market-brief](https://api.xynaptic.io/v1/job-market-brief) $0.02 — Xynaptic Job Market Brief — recruitment tensions for any French department, from the official BMO survey (Fran
+- [job-search](https://api.xynaptic.io/v1/job-search) $0.02 — Xynaptic Job Search — live French job offers from the official France Travail API v2: keyword + department + c
