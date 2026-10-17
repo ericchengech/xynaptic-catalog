@@ -17,6 +17,10 @@ GET https://api.xynaptic.io/v1/energy-price
 **Machine-readable catalog (free):** https://api.xynaptic.io
 **Live activity counter (free):** https://api.xynaptic.io/v1/popularity
 
+## Full service reference (new)
+
+Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — 200 services, 19 domains, names and prices matching the live catalog.
+
 ## Verticals
 
 | Vertical | Routes | Highlights |
