@@ -19,7 +19,7 @@ GET https://api.xynaptic.io/v1/energy-price
 
 ## Full service reference (new)
 
-Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — 200 services, 19 domains, names and prices matching the live catalog.
+Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — 201 services, 16 domains, same taxonomy as the live docs at https://xynaptic.io/docs.
 
 ## Verticals
 
