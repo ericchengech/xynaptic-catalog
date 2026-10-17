@@ -1,76 +1,8 @@
-# Flight & Aviation — Xynaptic service reference
+# Flight — Xynaptic service reference
 
 > 9 pay-per-request services. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon. Machine-readable catalog: https://api.xynaptic.io
 
-**How x402 works:** `GET` any endpoint → `402 Payment Required` with the price → sign EIP-3009 (or any x402 client / Solana / Polygon) → retry with `PAYMENT-SIGNATURE` header → `200` JSON, agent-ready.
-
----
-
-## `flight-airport-brief` — $0.02
-
-`GET https://api.xynaptic.io/v1/flight-airport-brief — `(q)``
-
-**What it does.** Xynaptic Flight Airport Brief — any airport worldwide by name or IATA code: country, IATA/ICAO codes, coordinates, elevation, runway count, served airlines hint. Open data (Wikidata). GET ?q=Jakarta or ?q=CGK.
-
-**How to use.**
-
-```
-GET https://api.xynaptic.io/v1/flight-airport-brief (q)
--> 402 Payment Required (price: $0.02)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
-```
-
----
-
-## `flight-airport-situation` — $0.05
-
-`GET https://api.xynaptic.io/v1/flight-airport-situation`
-
-**What it does.** Xynaptic Airport Situation — real-time weather and operating conditions of any airport by ICAO code (METAR + TAF): wind, visibility, ceiling, temperature, forecast trends, and an agent-ready assessment. On-demand, parameter: ?code=LFPG.
-
-**How to use.**
-
-```
-GET https://api.xynaptic.io/v1/flight-airport-situation
--> 402 Payment Required (price: $0.05)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
-```
-
----
-
-## `flight-alternatives` — $0.15
-
-`GET https://api.xynaptic.io/v1/flight-alternatives`
-
-**What it does.** Xynaptic Flight Alternatives — when a destination is disrupted, find the 3 nearest major alternative airports with their real-time weather and operating conditions, ranked with an agent-ready recommendation. On-demand, parameter: ?to=LFPG
-
-**How to use.**
-
-```
-GET https://api.xynaptic.io/v1/flight-alternatives
--> 402 Payment Required (price: $0.15)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
-```
-
----
-
-## `flight-asia-brief` — $0.03
-
-`GET https://api.xynaptic.io/v1/flight-asia-brief — `(country)``
-
-**What it does.** Xynaptic Flight Asia Brief — aviation panorama of any Asian (or world) country: major airports with IATA codes and coordinates, local airlines with hubs. Open data (Wikidata). GET ?country=Indonesia.
-
-**How to use.**
-
-```
-GET https://api.xynaptic.io/v1/flight-asia-brief (country)
--> 402 Payment Required (price: $0.03)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
-```
+**How x402 works:** `GET` any endpoint → `402 Payment Required` → sign EIP-3009 (or any x402 client / Solana / Polygon) → retry with `PAYMENT-SIGNATURE` header → `200` JSON, agent-ready.
 
 ---
 
@@ -78,7 +10,7 @@ GET https://api.xynaptic.io/v1/flight-asia-brief (country)
 
 `GET https://api.xynaptic.io/v1/flight-news`
 
-**What it does.** Xynaptic Aviation News v2 — structured aviation events (airlines, airports, airspace, regulation, incidents, last 12h): importance, lifecycle, entities, sectors, multi-source verification, agent-ready actions. Refreshed every 2 hours.
+**What it does.** structured aviation events (airlines, airports, airspace, regulation, incidents, last 12h): imp
 
 **How to use.**
 
@@ -91,17 +23,17 @@ GET https://api.xynaptic.io/v1/flight-news
 
 ---
 
-## `flight-route-risk` — $0.1
+## `flight-airport-situation` — $0.05
 
-`GET https://api.xynaptic.io/v1/flight-route-risk`
+`GET https://api.xynaptic.io/v1/flight-airport-situation`
 
-**What it does.** Xynaptic Flight Route Risk — real-time risk assessment of an air route (departure/arrival ICAO): weather at both airports, recent aviation events, regional traffic density, composite risk score with agent-ready verdict. On-demand, parameters: ?from=LFPG&to=EGLL
+**What it does.** real-time weather and operating conditions of any airport by ICAO code (METAR + TAF): wind, vis
 
 **How to use.**
 
 ```
-GET https://api.xynaptic.io/v1/flight-route-risk
--> 402 Payment Required (price: $0.1)
+GET https://api.xynaptic.io/v1/flight-airport-situation
+-> 402 Payment Required (price: $0.05)
 -> sign & retry with PAYMENT-SIGNATURE header
 -> 200 JSON: facts, assessment, summary — agent-ready
 ```
@@ -112,7 +44,7 @@ GET https://api.xynaptic.io/v1/flight-route-risk
 
 `GET https://api.xynaptic.io/v1/flight-status`
 
-**What it does.** Xynaptic Flight Status — real-time status of any flight by callsign (e.g. AFR7TE): airborne/ground phase, altitude, speed, position, vertical trend, and an agent-ready assessment. On-demand, parameter: ?callsign=AFR7TE.
+**What it does.** real-time status of any flight by callsign (e.g. AFR7TE): airborne/ground phase, altitude, spee
 
 **How to use.**
 
@@ -125,17 +57,68 @@ GET https://api.xynaptic.io/v1/flight-status
 
 ---
 
-## `notam-area` — $0.02
+## `flight-route-risk` — $0.1
 
-`GET https://api.xynaptic.io/v1/notam-area — `(latitude+longitude+radius — FAA NOTAMs geospatiaux)``
+`GET https://api.xynaptic.io/v1/flight-route-risk`
 
-**What it does.** Xynaptic NOTAM Area — official FAA NOTAMs within a radius around any point (latitude/decimal degrees, radius in nautical miles, max 100): airspace closures, obstacles, works. Official FAA NMS-API source. GET ?latitude=49.01&longitude=2.55&radius=50.
+**What it does.** real-time risk assessment of an air route (departure/arrival ICAO): weather at both airports, r
 
 **How to use.**
 
 ```
-GET https://api.xynaptic.io/v1/notam-area (latitude+longitude+radius — FAA NOTAMs geospatiaux)
+GET https://api.xynaptic.io/v1/flight-route-risk
+-> 402 Payment Required (price: $0.1)
+-> sign & retry with PAYMENT-SIGNATURE header
+-> 200 JSON: facts, assessment, summary — agent-ready
+```
+
+---
+
+## `flight-alternatives` — $0.15
+
+`GET https://api.xynaptic.io/v1/flight-alternatives`
+
+**What it does.** when a destination is disrupted, find the 3 nearest major alternative airports with their real-
+
+**How to use.**
+
+```
+GET https://api.xynaptic.io/v1/flight-alternatives
+-> 402 Payment Required (price: $0.15)
+-> sign & retry with PAYMENT-SIGNATURE header
+-> 200 JSON: facts, assessment, summary — agent-ready
+```
+
+---
+
+## `flight-airport-brief` — $0.02
+
+`GET https://api.xynaptic.io/v1/flight-airport-brief` — `(q)`
+
+**What it does.** any airport worldwide by name or IATA code: country, IATA/ICAO codes, coordinates, elevation, r
+
+**How to use.**
+
+```
+GET https://api.xynaptic.io/v1/flight-airport-brief (q)
 -> 402 Payment Required (price: $0.02)
+-> sign & retry with PAYMENT-SIGNATURE header
+-> 200 JSON: facts, assessment, summary — agent-ready
+```
+
+---
+
+## `flight-asia-brief` — $0.03
+
+`GET https://api.xynaptic.io/v1/flight-asia-brief` — `(country)`
+
+**What it does.** aviation panorama of any Asian (or world) country: major airports with IATA codes and coordinat
+
+**How to use.**
+
+```
+GET https://api.xynaptic.io/v1/flight-asia-brief (country)
+-> 402 Payment Required (price: $0.03)
 -> sign & retry with PAYMENT-SIGNATURE header
 -> 200 JSON: facts, assessment, summary — agent-ready
 ```
@@ -144,14 +127,31 @@ GET https://api.xynaptic.io/v1/notam-area (latitude+longitude+radius — FAA NOT
 
 ## `notam-brief` — $0.02
 
-`GET https://api.xynaptic.io/v1/notam-brief — `(location — FAA NOTAMs officiels par aeroport)``
+`GET https://api.xynaptic.io/v1/notam-brief` — `(location — FAA NOTAMs officiels par aeroport)`
 
-**What it does.** Xynaptic NOTAM Brief — official FAA NOTAMs for any US airport: active notices with effective dates, plain text and ICAO format. GET ?location=KDFW.
+**What it does.** official FAA NOTAMs for any US airport: active notices with effective dates, plain text and ICA
 
 **How to use.**
 
 ```
 GET https://api.xynaptic.io/v1/notam-brief (location — FAA NOTAMs officiels par aeroport)
+-> 402 Payment Required (price: $0.02)
+-> sign & retry with PAYMENT-SIGNATURE header
+-> 200 JSON: facts, assessment, summary — agent-ready
+```
+
+---
+
+## `notam-area` — $0.02
+
+`GET https://api.xynaptic.io/v1/notam-area` — `(latitude+longitude+radius — FAA NOTAMs geospatiaux)`
+
+**What it does.** official FAA NOTAMs within a radius around any point (latitude/decimal degrees, radius in nauti
+
+**How to use.**
+
+```
+GET https://api.xynaptic.io/v1/notam-area (latitude+longitude+radius — FAA NOTAMs geospatiaux)
 -> 402 Payment Required (price: $0.02)
 -> sign & retry with PAYMENT-SIGNATURE header
 -> 200 JSON: facts, assessment, summary — agent-ready
