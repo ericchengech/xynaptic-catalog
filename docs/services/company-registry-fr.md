@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/company-search`
 
-**What it does.** find French companies by name or SIREN: identity, activity, status. The entry point to the comp
+**What it does.**
+
+find French companies by name or SIREN: identity, activity, status. The entry point to the comp
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/company-search
 
 `GET https://api.xynaptic.io/v1/company-profile`
 
-**What it does.** consolidated identity from the French state registry: SIREN, legal form, NAF, headcount, HQ, VA
+**What it does.**
+
+consolidated identity from the French state registry: SIREN, legal form, NAF, headcount, HQ, VA
 
 **How to use.**
 
@@ -44,7 +48,9 @@ GET https://api.xynaptic.io/v1/company-profile
 
 `GET https://api.xynaptic.io/v1/company-people`
 
-**What it does.** officers and directors from the RNE: names, roles, birth year. Parameter: ?siren=.
+**What it does.**
+
+officers and directors from the RNE: names, roles, birth year. Parameter: ?siren=.
 
 **How to use.**
 
@@ -61,7 +67,9 @@ GET https://api.xynaptic.io/v1/company-people
 
 `GET https://api.xynaptic.io/v1/company-network`
 
-**What it does.** HQ and establishment footprint: locations, activities, open/closed count. Parameter: ?siren=.
+**What it does.**
+
+HQ and establishment footprint: locations, activities, open/closed count. Parameter: ?siren=.
 
 **How to use.**
 
@@ -78,7 +86,9 @@ GET https://api.xynaptic.io/v1/company-network
 
 `GET https://api.xynaptic.io/v1/company-financial`
 
-**What it does.** annual accounts from the registry: revenue, net income, per year available. Parameter: ?siren=.
+**What it does.**
+
+annual accounts from the registry: revenue, net income, per year available. Parameter: ?siren=.
 
 **How to use.**
 
@@ -95,7 +105,9 @@ GET https://api.xynaptic.io/v1/company-financial
 
 `GET https://api.xynaptic.io/v1/company-kyb`
 
-**What it does.** the full due-diligence dossier in one call: identity, officers, financials, risk signals, VAT c
+**What it does.**
+
+the full due-diligence dossier in one call: identity, officers, financials, risk signals, VAT c
 
 **How to use.**
 
@@ -112,7 +124,9 @@ GET https://api.xynaptic.io/v1/company-kyb
 
 `GET https://api.xynaptic.io/v1/company-relationship`
 
-**What it does.** the link between two French companies: shared officers, same activity, same city, size comparis
+**What it does.**
+
+the link between two French companies: shared officers, same activity, same city, size comparis
 
 **How to use.**
 
@@ -129,7 +143,9 @@ GET https://api.xynaptic.io/v1/company-relationship
 
 `GET https://api.xynaptic.io/v1/company-monitor`
 
-**What it does.** watch a French company over time: first call sets the baseline, next calls detect what changed 
+**What it does.**
+
+watch a French company over time: first call sets the baseline, next calls detect what changed 
 
 **How to use.**
 
@@ -146,7 +162,9 @@ GET https://api.xynaptic.io/v1/company-monitor
 
 `GET https://api.xynaptic.io/v1/company-brief-live`
 
-**What it does.** the real-time decisional brief: identity, officers, accounts, risk signals, growth signals, age
+**What it does.**
+
+the real-time decisional brief: identity, officers, accounts, risk signals, growth signals, age
 
 **How to use.**
 
@@ -163,7 +181,9 @@ GET https://api.xynaptic.io/v1/company-brief-live
 
 `GET https://api.xynaptic.io/v1/company-compare`
 
-**What it does.** two French companies side by side: size, activity, financials, geography, officers, risk signal
+**What it does.**
+
+two French companies side by side: size, activity, financials, geography, officers, risk signal
 
 **How to use.**
 
@@ -180,7 +200,9 @@ GET https://api.xynaptic.io/v1/company-compare
 
 `GET https://api.xynaptic.io/v1/company-changes`
 
-**What it does.** what recently changed in a French company: officers, status, HQ, activity, accounts
+**What it does.**
+
+what recently changed in a French company: officers, status, HQ, activity, accounts
 
 **How to use.**
 
@@ -197,7 +219,9 @@ GET https://api.xynaptic.io/v1/company-changes
 
 `GET https://api.xynaptic.io/v1/company-international-search` — `(name)`
 
-**What it does.** worldwide company search by name (GLEIF LEI registry, 200+ jurisdictions: EU, US, UK, Asia, Can
+**What it does.**
+
+worldwide company search by name (GLEIF LEI registry, 200+ jurisdictions: EU, US, UK, Asia, Can
 
 **How to use.**
 
@@ -214,7 +238,9 @@ GET https://api.xynaptic.io/v1/company-international-search (name)
 
 `GET https://api.xynaptic.io/v1/company-news` — `(name ou siren + summarize?)`
 
-**What it does.** the press radar for due diligence: bring a company name or French SIREN, get its latest news fr
+**What it does.**
+
+the press radar for due diligence: bring a company name or French SIREN, get its latest news fr
 
 **How to use.**
 
@@ -231,7 +257,9 @@ GET https://api.xynaptic.io/v1/company-news (name ou siren + summarize?)
 
 `GET https://api.xynaptic.io/v1/supplier-search` — `(activity + city?)`
 
-**What it does.** find French suppliers by activity: search the official companies registry (NAF activity codes) 
+**What it does.**
+
+find French suppliers by activity: search the official companies registry (NAF activity codes) 
 
 **How to use.**
 
@@ -248,7 +276,9 @@ GET https://api.xynaptic.io/v1/supplier-search (activity + city?)
 
 `GET https://api.xynaptic.io/v1/supplier-risk` — `(siren ou name)`
 
-**What it does.** bring a supplier (SIREN or name): we compile the official registry profile, financial accounts,
+**What it does.**
+
+bring a supplier (SIREN or name): we compile the official registry profile, financial accounts,
 
 **How to use.**
 
@@ -265,7 +295,9 @@ GET https://api.xynaptic.io/v1/supplier-risk (siren ou name)
 
 `GET https://api.xynaptic.io/v1/supplier-compliance` — `(siren ou name — screening conformité fournisseur)`
 
-**What it does.** compliance screening of a French supplier before contracting: registry status (active/closed), 
+**What it does.**
+
+compliance screening of a French supplier before contracting: registry status (active/closed), 
 
 **How to use.**
 
@@ -282,7 +314,9 @@ GET https://api.xynaptic.io/v1/supplier-compliance (siren ou name — screening 
 
 `GET https://api.xynaptic.io/v1/car-dealer-check` — `(siren ou name — screening vendeur auto avant achat)`
 
-**What it does.** screen a used-car seller (French dealer or individual) before you buy: official registry identi
+**What it does.**
+
+screen a used-car seller (French dealer or individual) before you buy: official registry identi
 
 **How to use.**
 
@@ -299,7 +333,9 @@ GET https://api.xynaptic.io/v1/car-dealer-check (siren ou name — screening ven
 
 `GET https://api.xynaptic.io/v1/company-international-profile` — `(lei)`
 
-**What it does.** full global identity by LEI: legal name, legal address, country, legal jurisdiction, legal form
+**What it does.**
+
+full global identity by LEI: legal name, legal address, country, legal jurisdiction, legal form
 
 **How to use.**
 

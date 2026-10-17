@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/commodity-price` — `(asset ou assets)`
 
-**What it does.** live commodity prices: Brent, WTI, natural gas, copper, aluminum, gold, silver, platinum, palla
+**What it does.**
+
+live commodity prices: Brent, WTI, natural gas, copper, aluminum, gold, silver, platinum, palla
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/commodity-price (asset ou assets)
 
 `GET https://api.xynaptic.io/v1/battery-metals-brief` — `(?assets=filtre — brief metaux batterie/EV : lithium, cuivre, platine, palladium)`
 
-**What it does.** the EV-transition metals reading in one call: lithium, copper, platinum, palladium prices with 
+**What it does.**
+
+the EV-transition metals reading in one call: lithium, copper, platinum, palladium prices with 
 
 **How to use.**
 
@@ -44,7 +48,9 @@ GET https://api.xynaptic.io/v1/battery-metals-brief (?assets=filtre — brief me
 
 `GET https://api.xynaptic.io/v1/industrial-raw-materials`
 
-**What it does.** the raw materials panorama by family: energy (oil, gas, coal), metals (copper, aluminum, gold, 
+**What it does.**
+
+the raw materials panorama by family: energy (oil, gas, coal), metals (copper, aluminum, gold, 
 
 **How to use.**
 
@@ -61,7 +67,9 @@ GET https://api.xynaptic.io/v1/industrial-raw-materials
 
 `GET https://api.xynaptic.io/v1/industrial-price` — `(sector?)`
 
-**What it does.** French industrial producer price indices (IPPI) from INSEE official statistics: monthly price e
+**What it does.**
+
+French industrial producer price indices (IPPI) from INSEE official statistics: monthly price e
 
 **How to use.**
 
@@ -78,7 +86,9 @@ GET https://api.xynaptic.io/v1/industrial-price (sector?)
 
 `GET https://api.xynaptic.io/v1/industrial-market` — `(sector?)`
 
-**What it does.** industrial sector profile: producer price indices (INSEE), commodity input costs, live sector p
+**What it does.**
+
+industrial sector profile: producer price indices (INSEE), commodity input costs, live sector p
 
 **How to use.**
 
@@ -95,7 +105,9 @@ GET https://api.xynaptic.io/v1/industrial-market (sector?)
 
 `GET https://api.xynaptic.io/v1/industrial-news` — `(summarize?)`
 
-**What it does.** live industrial/manufacturing press feed (Google News RSS): real titled articles + optional LLM
+**What it does.**
+
+live industrial/manufacturing press feed (Google News RSS): real titled articles + optional LLM
 
 **How to use.**
 
@@ -112,7 +124,9 @@ GET https://api.xynaptic.io/v1/industrial-news (summarize?)
 
 `GET https://api.xynaptic.io/v1/industrial-energy` — `(region?)`
 
-**What it does.** energy costs for industrial users: spot electricity prices, gas prices, and the energy transiti
+**What it does.**
+
+energy costs for industrial users: spot electricity prices, gas prices, and the energy transiti
 
 **How to use.**
 
@@ -129,7 +143,9 @@ GET https://api.xynaptic.io/v1/industrial-energy (region?)
 
 `GET https://api.xynaptic.io/v1/industrial-production-risk`
 
-**What it does.** describe your production chain (suppliers, materials, locations), we analyze fragility points: 
+**What it does.**
+
+describe your production chain (suppliers, materials, locations), we analyze fragility points: 
 
 **How to use.**
 
@@ -146,7 +162,9 @@ GET https://api.xynaptic.io/v1/industrial-production-risk
 
 `GET https://api.xynaptic.io/v1/industrial-supply` — `(sector)`
 
-**What it does.** supply/demand tension reading for a sector: input price evolution (commodities + IPPI), sector 
+**What it does.**
+
+supply/demand tension reading for a sector: input price evolution (commodities + IPPI), sector 
 
 **How to use.**
 
@@ -163,7 +181,9 @@ GET https://api.xynaptic.io/v1/industrial-supply (sector)
 
 `GET https://api.xynaptic.io/v1/industrial-logistics-risk`
 
-**What it does.** current logistics disruptions affecting French/European flows: rail strikes (SNCF official data
+**What it does.**
+
+current logistics disruptions affecting French/European flows: rail strikes (SNCF official data
 
 **How to use.**
 
@@ -180,7 +200,9 @@ GET https://api.xynaptic.io/v1/industrial-logistics-risk
 
 `GET https://api.xynaptic.io/v1/industrial-factory-status`
 
-**What it does.** the publicly known state of an industrial site: press mentions, company registry (active?), rec
+**What it does.**
+
+the publicly known state of an industrial site: press mentions, company registry (active?), rec
 
 **How to use.**
 

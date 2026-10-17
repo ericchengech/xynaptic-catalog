@@ -10,7 +10,9 @@
 
 `POST https://api.xynaptic.io/v1/ai-chat` — `(body: messages[])`
 
-**What it does.** LLM inference pay-per-call: OpenAI-compatible messages, model auto-routing (glm-5.3-flash / dee
+**What it does.**
+
+LLM inference pay-per-call: OpenAI-compatible messages, model auto-routing (glm-5.3-flash / dee
 
 **How to use.**
 
@@ -27,7 +29,9 @@ POST https://api.xynaptic.io/v1/ai-chat (body: messages[])
 
 `POST https://api.xynaptic.io/v1/ai-agent` — `(task + siren?)`
 
-**What it does.** one payment, full task: orchestrates Xynaptic data services as tools (company registry, financi
+**What it does.**
+
+one payment, full task: orchestrates Xynaptic data services as tools (company registry, financi
 
 **How to use.**
 
@@ -44,7 +48,9 @@ POST https://api.xynaptic.io/v1/ai-agent (task + siren?)
 
 `POST https://api.xynaptic.io/v1/ai-company` — `(siren + focus?)`
 
-**What it does.** the vertical deep-dive: full French company dossier (identity, officers, multi-year accounts, e
+**What it does.**
+
+the vertical deep-dive: full French company dossier (identity, officers, multi-year accounts, e
 
 **How to use.**
 
@@ -61,7 +67,9 @@ POST https://api.xynaptic.io/v1/ai-company (siren + focus?)
 
 `POST https://api.xynaptic.io/v1/ai-finance` — `(asset + question?)`
 
-**What it does.** one payment, full market analysis: crypto price, orderflow, derivatives and risk data collected
+**What it does.**
+
+one payment, full market analysis: crypto price, orderflow, derivatives and risk data collected
 
 **How to use.**
 
@@ -78,7 +86,9 @@ POST https://api.xynaptic.io/v1/ai-finance (asset + question?)
 
 `POST https://api.xynaptic.io/v1/ai-translate` — `(raw value + target_schema?)`
 
-**What it does.** bring your own data: paste raw text (CSV, table, email, notice, listing, any messy content) and
+**What it does.**
+
+bring your own data: paste raw text (CSV, table, email, notice, listing, any messy content) and
 
 **How to use.**
 
@@ -95,7 +105,9 @@ POST https://api.xynaptic.io/v1/ai-translate (raw value + target_schema?)
 
 `POST https://api.xynaptic.io/v1/ai-brief-me` — `(sirens + assets + news_regions)`
 
-**What it does.** the shopping basket: ONE payment, a composite morning brief. Pick up to 3 companies (SIREN), 5 
+**What it does.**
+
+the shopping basket: ONE payment, a composite morning brief. Pick up to 3 companies (SIREN), 5 
 
 **How to use.**
 
@@ -112,7 +124,9 @@ POST https://api.xynaptic.io/v1/ai-brief-me (sirens + assets + news_regions)
 
 `POST https://api.xynaptic.io/v1/ai-validate` — `(thesis + subject?)`
 
-**What it does.** the devil's advocate: submit your thesis (an investment idea, a company assessment, a market ca
+**What it does.**
+
+the devil's advocate: submit your thesis (an investment idea, a company assessment, a market ca
 
 **How to use.**
 
@@ -129,7 +143,9 @@ POST https://api.xynaptic.io/v1/ai-validate (thesis + subject?)
 
 `POST https://api.xynaptic.io/v1/ai-search` — `(question)`
 
-**What it does.** the web access your agent is missing: ask any question, we run a REAL web search (DuckDuckGo), 
+**What it does.**
+
+the web access your agent is missing: ask any question, we run a REAL web search (DuckDuckGo), 
 
 **How to use.**
 
@@ -146,7 +162,9 @@ POST https://api.xynaptic.io/v1/ai-search (question)
 
 `POST https://api.xynaptic.io/v1/ai-property` — `(question + city?)`
 
-**What it does.** the vertical real-estate agent: bring a question, it orchestrates the property-* tools (officia
+**What it does.**
+
+the vertical real-estate agent: bring a question, it orchestrates the property-* tools (officia
 
 **How to use.**
 
@@ -163,7 +181,9 @@ POST https://api.xynaptic.io/v1/ai-property (question + city?)
 
 `GET https://api.xynaptic.io/v1/skill-supplier-due-diligence` — `(SKILL.md — méthode due diligence fournisseur FR)`
 
-**What it does.** Supplier Due Diligence (France): the complete step-by-step method to vet a French supplier befo
+**What it does.**
+
+Supplier Due Diligence (France): the complete step-by-step method to vet a French supplier befo
 
 **How to use.**
 
@@ -180,7 +200,9 @@ GET https://api.xynaptic.io/v1/skill-supplier-due-diligence (SKILL.md — métho
 
 `GET https://api.xynaptic.io/v1/skill-payment-fraud-screening` — `(SKILL.md — méthode screening paiement fiat+crypto)`
 
-**What it does.** Payment Fraud Screening: the method to screen any outgoing payment (fiat or crypto) before send
+**What it does.**
+
+Payment Fraud Screening: the method to screen any outgoing payment (fiat or crypto) before send
 
 **How to use.**
 
@@ -197,7 +219,9 @@ GET https://api.xynaptic.io/v1/skill-payment-fraud-screening (SKILL.md — méth
 
 `GET https://api.xynaptic.io/v1/skill-crypto-token-audit` — `(SKILL.md — méthode audit token avant achat)`
 
-**What it does.** Crypto Token Audit: the complete pre-purchase method to audit a token
+**What it does.**
+
+Crypto Token Audit: the complete pre-purchase method to audit a token
 
 **How to use.**
 
@@ -214,7 +238,9 @@ GET https://api.xynaptic.io/v1/skill-crypto-token-audit (SKILL.md — méthode a
 
 `POST https://api.xynaptic.io/v1/ai-bank` — `(question + iban?/bic?/bin?/name?)`
 
-**What it does.** the banking/card vertical agent: bring a question + IBAN/BIC/BIN/name, we run the official vali
+**What it does.**
+
+the banking/card vertical agent: bring a question + IBAN/BIC/BIN/name, we run the official vali
 
 **How to use.**
 
@@ -231,7 +257,9 @@ POST https://api.xynaptic.io/v1/ai-bank (question + iban?/bic?/bin?/name?)
 
 `POST https://api.xynaptic.io/v1/ai-insurance` — `(question + type?/broker?)`
 
-**What it does.** the insurance vertical agent: coverage families, ORIAS broker registry, premium decomposition +
+**What it does.**
+
+the insurance vertical agent: coverage families, ORIAS broker registry, premium decomposition +
 
 **How to use.**
 
@@ -248,7 +276,9 @@ POST https://api.xynaptic.io/v1/ai-insurance (question + type?/broker?)
 
 `POST https://api.xynaptic.io/v1/ai-energy` — `(question + region?)`
 
-**What it does.** the energy vertical agent: live spot prices, industrial energy costs + an LLM synthesis. POST {
+**What it does.**
+
+the energy vertical agent: live spot prices, industrial energy costs + an LLM synthesis. POST {
 
 **How to use.**
 
@@ -265,7 +295,9 @@ POST https://api.xynaptic.io/v1/ai-energy (question + region?)
 
 `POST https://api.xynaptic.io/v1/ai-health` — `(question + drug?)`
 
-**What it does.** the health vertical agent: official drug labels (openFDA), live health press + an LLM synthesis
+**What it does.**
+
+the health vertical agent: official drug labels (openFDA), live health press + an LLM synthesis
 
 **How to use.**
 
@@ -282,7 +314,9 @@ POST https://api.xynaptic.io/v1/ai-health (question + drug?)
 
 `POST https://api.xynaptic.io/v1/ai-industry` — `(question + sector?/siren?)`
 
-**What it does.** the industry vertical agent: live commodities, industrial market profile, supplier risk + an LL
+**What it does.**
+
+the industry vertical agent: live commodities, industrial market profile, supplier risk + an LL
 
 **How to use.**
 

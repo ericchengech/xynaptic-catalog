@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/security-search` — `(ticker)`
 
-**What it does.** ticker US (e.g. AAPL) -> company identity from SEC EDGAR: name, CIK, exchanges, SIC sector, plu
+**What it does.**
+
+ticker US (e.g. AAPL) -> company identity from SEC EDGAR: name, CIK, exchanges, SIC sector, plu
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/security-search (ticker)
 
 `GET https://api.xynaptic.io/v1/security-price` — `(ticker + history?)`
 
-**What it does.** spot market data for US stocks: price, previous close, day range, 52-week range, currency, exch
+**What it does.**
+
+spot market data for US stocks: price, previous close, day range, 52-week range, currency, exch
 
 **How to use.**
 
@@ -44,7 +48,9 @@ GET https://api.xynaptic.io/v1/security-price (ticker + history?)
 
 `GET https://api.xynaptic.io/v1/security-fundamentals` — `(ticker)`
 
-**What it does.** multi-year financial statements from SEC EDGAR XBRL (official regulator data): revenues, net in
+**What it does.**
+
+multi-year financial statements from SEC EDGAR XBRL (official regulator data): revenues, net in
 
 **How to use.**
 
@@ -61,7 +67,9 @@ GET https://api.xynaptic.io/v1/security-fundamentals (ticker)
 
 `GET https://api.xynaptic.io/v1/security-technical` — `(ticker + days?)`
 
-**What it does.** technical indicators computed on price history: SMA 20/50/200, EMA 12/26, RSI 14, momentum 10d,
+**What it does.**
+
+technical indicators computed on price history: SMA 20/50/200, EMA 12/26, RSI 14, momentum 10d,
 
 **How to use.**
 
@@ -78,7 +86,9 @@ GET https://api.xynaptic.io/v1/security-technical (ticker + days?)
 
 `GET https://api.xynaptic.io/v1/security-risk` — `(ticker + days?)`
 
-**What it does.** risk profile from price history: annualized volatility, max drawdown, worst day, VaR 95 (parame
+**What it does.**
+
+risk profile from price history: annualized volatility, max drawdown, worst day, VaR 95 (parame
 
 **How to use.**
 
@@ -95,7 +105,9 @@ GET https://api.xynaptic.io/v1/security-risk (ticker + days?)
 
 `GET https://api.xynaptic.io/v1/security-eu-price` — `(ticker)`
 
-**What it does.** live European stock price with local currency + EUR conversion: Paris (MC.PA), London (SHEL.L),
+**What it does.**
+
+live European stock price with local currency + EUR conversion: Paris (MC.PA), London (SHEL.L),
 
 **How to use.**
 
@@ -112,7 +124,9 @@ GET https://api.xynaptic.io/v1/security-eu-price (ticker)
 
 `GET https://api.xynaptic.io/v1/security-eu-search` — `(query)`
 
-**What it does.** European ticker identity: name, exchange, currency, market state. GET ?query=LVMH
+**What it does.**
+
+European ticker identity: name, exchange, currency, market state. GET ?query=LVMH
 
 **How to use.**
 
@@ -129,7 +143,9 @@ GET https://api.xynaptic.io/v1/security-eu-search (query)
 
 `GET https://api.xynaptic.io/v1/security-eu-technical` — `(ticker + days?)`
 
-**What it does.** RSI, momentum, moving averages on 60-day European price history. GET ?ticker=MC.PA&days=60
+**What it does.**
+
+RSI, momentum, moving averages on 60-day European price history. GET ?ticker=MC.PA&days=60
 
 **How to use.**
 
@@ -146,7 +162,9 @@ GET https://api.xynaptic.io/v1/security-eu-technical (ticker + days?)
 
 `GET https://api.xynaptic.io/v1/security-eu-analysis` — `(ticker)`
 
-**What it does.** full European stock profile: live price, trend, volatility, range + agent-ready synthesis. GET 
+**What it does.**
+
+full European stock profile: live price, trend, volatility, range + agent-ready synthesis. GET 
 
 **How to use.**
 
@@ -163,7 +181,9 @@ GET https://api.xynaptic.io/v1/security-eu-analysis (ticker)
 
 `GET https://api.xynaptic.io/v1/security-eu-compare` — `(a + b)`
 
-**What it does.** two European stocks side by side: prices, trends, risk. GET ?a=MC.PA&b=SAP.DE
+**What it does.**
+
+two European stocks side by side: prices, trends, risk. GET ?a=MC.PA&b=SAP.DE
 
 **How to use.**
 
@@ -180,7 +200,9 @@ GET https://api.xynaptic.io/v1/security-eu-compare (a + b)
 
 `GET https://api.xynaptic.io/v1/security-eu-risk` — `(ticker + days?)`
 
-**What it does.** volatility, drawdown, liquidity profile of a European stock. GET ?ticker=SHEL.L&days=90
+**What it does.**
+
+volatility, drawdown, liquidity profile of a European stock. GET ?ticker=SHEL.L&days=90
 
 **How to use.**
 
@@ -197,7 +219,9 @@ GET https://api.xynaptic.io/v1/security-eu-risk (ticker + days?)
 
 `GET https://api.xynaptic.io/v1/security-analysis` — `(ticker)`
 
-**What it does.** premium devil's-advocate-grade report: we collect fundamentals (EDGAR), technicals and risk int
+**What it does.**
+
+premium devil's-advocate-grade report: we collect fundamentals (EDGAR), technicals and risk int
 
 **How to use.**
 
@@ -214,7 +238,9 @@ GET https://api.xynaptic.io/v1/security-analysis (ticker)
 
 `POST https://api.xynaptic.io/v1/security-watch` — `(ticker + type + price|rsi)`
 
-**What it does.** the daycare for stocks: we watch price above/below a threshold or RSI-14 zones, checking hourly
+**What it does.**
+
+the daycare for stocks: we watch price above/below a threshold or RSI-14 zones, checking hourly
 
 **How to use.**
 
@@ -231,7 +257,9 @@ POST https://api.xynaptic.io/v1/security-watch (ticker + type + price|rsi)
 
 `POST https://api.xynaptic.io/v1/security-validate` — `(thesis + ticker)`
 
-**What it does.** the market devil's advocate: submit an investment thesis about a US stock, we stress-test it ag
+**What it does.**
+
+the market devil's advocate: submit an investment thesis about a US stock, we stress-test it ag
 
 **How to use.**
 
@@ -248,7 +276,9 @@ POST https://api.xynaptic.io/v1/security-validate (thesis + ticker)
 
 `GET https://api.xynaptic.io/v1/security-filings` — `(q + forms? + days?)`
 
-**What it does.** full-text search across SEC EDGAR filings: find which 10-K/10-Q/8-K mention your terms (supply 
+**What it does.**
+
+full-text search across SEC EDGAR filings: find which 10-K/10-Q/8-K mention your terms (supply 
 
 **How to use.**
 
@@ -265,7 +295,9 @@ GET https://api.xynaptic.io/v1/security-filings (q + forms? + days?)
 
 `GET https://api.xynaptic.io/v1/security-insider` — `(ticker)`
 
-**What it does.** insider transactions (Form 4) of a US listed company: the 15 most recent filings with officers 
+**What it does.**
+
+insider transactions (Form 4) of a US listed company: the 15 most recent filings with officers 
 
 **How to use.**
 
@@ -282,7 +314,9 @@ GET https://api.xynaptic.io/v1/security-insider (ticker)
 
 `GET https://api.xynaptic.io/v1/security-dividends` — `(ticker)`
 
-**What it does.** dividend history from SEC XBRL filings (official DPS declared) + current yield computed against
+**What it does.**
+
+dividend history from SEC XBRL filings (official DPS declared) + current yield computed against
 
 **How to use.**
 
@@ -299,7 +333,9 @@ GET https://api.xynaptic.io/v1/security-dividends (ticker)
 
 `GET https://api.xynaptic.io/v1/security-earnings` — `(ticker)`
 
-**What it does.** quarterly results from EDGAR: EPS and net income per quarter (XBRL, durations 60-100 days), the
+**What it does.**
+
+quarterly results from EDGAR: EPS and net income per quarter (XBRL, durations 60-100 days), the
 
 **How to use.**
 
@@ -316,7 +352,9 @@ GET https://api.xynaptic.io/v1/security-earnings (ticker)
 
 `GET https://api.xynaptic.io/v1/security-portfolio-analysis`
 
-**What it does.** bring your portfolio [{ticker, weight}]: we fetch prices and compute per-holding risk (volatili
+**What it does.**
+
+bring your portfolio [{ticker, weight}]: we fetch prices and compute per-holding risk (volatili
 
 **How to use.**
 
@@ -333,7 +371,9 @@ GET https://api.xynaptic.io/v1/security-portfolio-analysis
 
 `GET https://api.xynaptic.io/v1/fiat-usdc-rate` — `(?currency=EUR — meilleur taux fiat↔USDC par rail)`
 
-**What it does.** best fiat↔USDC conversion rate per payment rail (Base, Polygon, Solana): Coinbase spot, spread,
+**What it does.**
+
+best fiat↔USDC conversion rate per payment rail (Base, Polygon, Solana): Coinbase spot, spread,
 
 **How to use.**
 

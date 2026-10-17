@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/ao`
 
-**What it does.** filtered French public procurement calls (trade + department, France).
+**What it does.**
+
+filtered French public procurement calls (trade + department, France).
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/ao
 
 `GET https://api.xynaptic.io/v1/legal-brief` — `(?q= — veille juridique FR officielle)`
 
-**What it does.** French legal watch by keyword: official sources (Légifrance, service-public.gouv.fr, ministères
+**What it does.**
+
+French legal watch by keyword: official sources (Légifrance, service-public.gouv.fr, ministères
 
 **How to use.**
 
@@ -44,7 +48,9 @@ GET https://api.xynaptic.io/v1/legal-brief (?q= — veille juridique FR officiel
 
 `GET https://api.xynaptic.io/v1/tender-search` — `(q + buyer? + dept? + days?)`
 
-**What it does.** French public procurement notices (BOAMP): search tenders by keyword, buyer, department, last N
+**What it does.**
+
+French public procurement notices (BOAMP): search tenders by keyword, buyer, department, last N
 
 **How to use.**
 
@@ -61,7 +67,9 @@ GET https://api.xynaptic.io/v1/tender-search (q + buyer? + dept? + days?)
 
 `GET https://api.xynaptic.io/v1/job-market-brief` — `(dept + metier? — tensions recrutement BMO France Travail/Dares)`
 
-**What it does.** recruitment tensions for any French department, from the official BMO survey (France Travail / 
+**What it does.**
+
+recruitment tensions for any French department, from the official BMO survey (France Travail / 
 
 **How to use.**
 
@@ -78,7 +86,9 @@ GET https://api.xynaptic.io/v1/job-market-brief (dept + metier? — tensions rec
 
 `GET https://api.xynaptic.io/v1/job-search` — `(q + dept? + contrat? — offres d'emploi live France Travail)`
 
-**What it does.** live French job offers from the official France Travail API v2: keyword + department + contract
+**What it does.**
+
+live French job offers from the official France Travail API v2: keyword + department + contract
 
 **How to use.**
 
@@ -95,7 +105,9 @@ GET https://api.xynaptic.io/v1/job-search (q + dept? + contrat? — offres d'emp
 
 `GET https://api.xynaptic.io/v1/economy-news-fr`
 
-**What it does.** the live French economy press feed: latest macro and business news from a real web search (titl
+**What it does.**
+
+the live French economy press feed: latest macro and business news from a real web search (titl
 
 **How to use.**
 
@@ -112,7 +124,9 @@ GET https://api.xynaptic.io/v1/economy-news-fr
 
 `GET https://api.xynaptic.io/v1/artisan-plombier` — `(dept + city?)`
 
-**What it does.** find plombiers in any French department: official companies registry (active businesses only). 
+**What it does.**
+
+find plombiers in any French department: official companies registry (active businesses only). 
 
 **How to use.**
 
@@ -129,7 +143,9 @@ GET https://api.xynaptic.io/v1/artisan-plombier (dept + city?)
 
 `GET https://api.xynaptic.io/v1/artisan-electricien` — `(dept + city?)`
 
-**What it does.** find electriciens in any French department: official companies registry (active businesses only
+**What it does.**
+
+find electriciens in any French department: official companies registry (active businesses only
 
 **How to use.**
 
@@ -146,7 +162,9 @@ GET https://api.xynaptic.io/v1/artisan-electricien (dept + city?)
 
 `GET https://api.xynaptic.io/v1/artisan-menuisier` — `(dept + city?)`
 
-**What it does.** find menuisiers in any French department: official companies registry (active businesses only).
+**What it does.**
+
+find menuisiers in any French department: official companies registry (active businesses only).
 
 **How to use.**
 
@@ -163,7 +181,9 @@ GET https://api.xynaptic.io/v1/artisan-menuisier (dept + city?)
 
 `GET https://api.xynaptic.io/v1/artisan-chauffagiste` — `(dept + city?)`
 
-**What it does.** find chauffagistes in any French department: official companies registry (active businesses onl
+**What it does.**
+
+find chauffagistes in any French department: official companies registry (active businesses onl
 
 **How to use.**
 
@@ -180,7 +200,9 @@ GET https://api.xynaptic.io/v1/artisan-chauffagiste (dept + city?)
 
 `GET https://api.xynaptic.io/v1/artisan-carreleur` — `(dept + city?)`
 
-**What it does.** find carreleurs in any French department: official companies registry (active businesses only).
+**What it does.**
+
+find carreleurs in any French department: official companies registry (active businesses only).
 
 **How to use.**
 
@@ -197,7 +219,9 @@ GET https://api.xynaptic.io/v1/artisan-carreleur (dept + city?)
 
 `GET https://api.xynaptic.io/v1/artisan-peintre` — `(dept + city?)`
 
-**What it does.** find peintre en batiments in any French department: official companies registry (active busines
+**What it does.**
+
+find peintre en batiments in any French department: official companies registry (active busines
 
 **How to use.**
 
@@ -214,7 +238,9 @@ GET https://api.xynaptic.io/v1/artisan-peintre (dept + city?)
 
 `GET https://api.xynaptic.io/v1/artisan-jardinier` — `(dept + city?)`
 
-**What it does.** find paysagiste jardiniers in any French department: official companies registry (active busine
+**What it does.**
+
+find paysagiste jardiniers in any French department: official companies registry (active busine
 
 **How to use.**
 
@@ -231,7 +257,9 @@ GET https://api.xynaptic.io/v1/artisan-jardinier (dept + city?)
 
 `GET https://api.xynaptic.io/v1/artisan-couvreur` — `(dept + city?)`
 
-**What it does.** find couvreurs in any French department: official companies registry (active businesses only). 
+**What it does.**
+
+find couvreurs in any French department: official companies registry (active businesses only). 
 
 **How to use.**
 
@@ -248,7 +276,9 @@ GET https://api.xynaptic.io/v1/artisan-couvreur (dept + city?)
 
 `GET https://api.xynaptic.io/v1/artisan-macon` — `(dept + city?)`
 
-**What it does.** find macons in any French department: official companies registry (active businesses only). GET
+**What it does.**
+
+find macons in any French department: official companies registry (active businesses only). GET
 
 **How to use.**
 
@@ -265,7 +295,9 @@ GET https://api.xynaptic.io/v1/artisan-macon (dept + city?)
 
 `GET https://api.xynaptic.io/v1/artisan-serrurier` — `(dept + city?)`
 
-**What it does.** find serruriers in any French department: official companies registry (active businesses only).
+**What it does.**
+
+find serruriers in any French department: official companies registry (active businesses only).
 
 **How to use.**
 

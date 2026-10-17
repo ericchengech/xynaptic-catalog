@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/health-drug-info` — `(drug)`
 
-**What it does.** official drug fact sheet: active ingredient, brand/generic names, form, route, dosage label hig
+**What it does.**
+
+official drug fact sheet: active ingredient, brand/generic names, form, route, dosage label hig
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/health-drug-info (drug)
 
 `POST https://api.xynaptic.io/v1/health-drug-interaction` — `(drugs)`
 
-**What it does.** bring 2-6 drug names: we fetch their official labels (openFDA), extract documented contraindica
+**What it does.**
+
+bring 2-6 drug names: we fetch their official labels (openFDA), extract documented contraindica
 
 **How to use.**
 
@@ -44,7 +48,9 @@ POST https://api.xynaptic.io/v1/health-drug-interaction (drugs)
 
 `GET https://api.xynaptic.io/v1/health-clinical-trials` — `(condition)`
 
-**What it does.** search worldwide clinical trials (ClinicalTrials.gov): status, phase, eligibility, contacts. GE
+**What it does.**
+
+search worldwide clinical trials (ClinicalTrials.gov): status, phase, eligibility, contacts. GE
 
 **How to use.**
 
@@ -61,7 +67,9 @@ GET https://api.xynaptic.io/v1/health-clinical-trials (condition)
 
 `GET https://api.xynaptic.io/v1/health-medical-literature` — `(query)`
 
-**What it does.** PubMed search for medical research: articles, abstracts, journals, dates, PMIDs. GET ?query=asp
+**What it does.**
+
+PubMed search for medical research: articles, abstracts, journals, dates, PMIDs. GET ?query=asp
 
 **How to use.**
 
@@ -78,7 +86,9 @@ GET https://api.xynaptic.io/v1/health-medical-literature (query)
 
 `GET https://api.xynaptic.io/v1/health-hospital-info` — `(name ou city)`
 
-**What it does.** French healthcare establishments from official ScopeSanté (HAS): name, city, contact, certifica
+**What it does.**
+
+French healthcare establishments from official ScopeSanté (HAS): name, city, contact, certifica
 
 **How to use.**
 
@@ -95,7 +105,9 @@ GET https://api.xynaptic.io/v1/health-hospital-info (name ou city)
 
 `GET https://api.xynaptic.io/v1/health-medical-guidelines` — `(condition)`
 
-**What it does.** official recommendations for a condition: HAS (Haute Autorité de Santé) French guidelines via l
+**What it does.**
+
+official recommendations for a condition: HAS (Haute Autorité de Santé) French guidelines via l
 
 **How to use.**
 
@@ -112,7 +124,9 @@ GET https://api.xynaptic.io/v1/health-medical-guidelines (condition)
 
 `GET https://api.xynaptic.io/v1/health-healthcare-provider` — `(name ou specialty + city)`
 
-**What it does.** French health professionals from the official RPPS directory (Annuaire Santé): doctors by name 
+**What it does.**
+
+French health professionals from the official RPPS directory (Annuaire Santé): doctors by name 
 
 **How to use.**
 
@@ -129,7 +143,9 @@ GET https://api.xynaptic.io/v1/health-healthcare-provider (name ou specialty + c
 
 `GET https://api.xynaptic.io/v1/health-news` — `(summarize?)`
 
-**What it does.** live health/medicine press feed (Google News RSS): real titled articles from medical media + op
+**What it does.**
+
+live health/medicine press feed (Google News RSS): real titled articles from medical media + op
 
 **How to use.**
 

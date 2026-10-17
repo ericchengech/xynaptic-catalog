@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/flight-news`
 
-**What it does.** structured aviation events (airlines, airports, airspace, regulation, incidents, last 12h): imp
+**What it does.**
+
+structured aviation events (airlines, airports, airspace, regulation, incidents, last 12h): imp
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/flight-news
 
 `GET https://api.xynaptic.io/v1/flight-airport-situation`
 
-**What it does.** real-time weather and operating conditions of any airport by ICAO code (METAR + TAF): wind, vis
+**What it does.**
+
+real-time weather and operating conditions of any airport by ICAO code (METAR + TAF): wind, vis
 
 **How to use.**
 
@@ -44,7 +48,9 @@ GET https://api.xynaptic.io/v1/flight-airport-situation
 
 `GET https://api.xynaptic.io/v1/flight-status`
 
-**What it does.** real-time status of any flight by callsign (e.g. AFR7TE): airborne/ground phase, altitude, spee
+**What it does.**
+
+real-time status of any flight by callsign (e.g. AFR7TE): airborne/ground phase, altitude, spee
 
 **How to use.**
 
@@ -61,7 +67,9 @@ GET https://api.xynaptic.io/v1/flight-status
 
 `GET https://api.xynaptic.io/v1/flight-route-risk`
 
-**What it does.** real-time risk assessment of an air route (departure/arrival ICAO): weather at both airports, r
+**What it does.**
+
+real-time risk assessment of an air route (departure/arrival ICAO): weather at both airports, r
 
 **How to use.**
 
@@ -78,7 +86,9 @@ GET https://api.xynaptic.io/v1/flight-route-risk
 
 `GET https://api.xynaptic.io/v1/flight-alternatives`
 
-**What it does.** when a destination is disrupted, find the 3 nearest major alternative airports with their real-
+**What it does.**
+
+when a destination is disrupted, find the 3 nearest major alternative airports with their real-
 
 **How to use.**
 
@@ -95,7 +105,9 @@ GET https://api.xynaptic.io/v1/flight-alternatives
 
 `GET https://api.xynaptic.io/v1/flight-airport-brief` — `(q)`
 
-**What it does.** any airport worldwide by name or IATA code: country, IATA/ICAO codes, coordinates, elevation, r
+**What it does.**
+
+any airport worldwide by name or IATA code: country, IATA/ICAO codes, coordinates, elevation, r
 
 **How to use.**
 
@@ -112,7 +124,9 @@ GET https://api.xynaptic.io/v1/flight-airport-brief (q)
 
 `GET https://api.xynaptic.io/v1/flight-asia-brief` — `(country)`
 
-**What it does.** aviation panorama of any Asian (or world) country: major airports with IATA codes and coordinat
+**What it does.**
+
+aviation panorama of any Asian (or world) country: major airports with IATA codes and coordinat
 
 **How to use.**
 
@@ -129,7 +143,9 @@ GET https://api.xynaptic.io/v1/flight-asia-brief (country)
 
 `GET https://api.xynaptic.io/v1/notam-brief` — `(location — FAA NOTAMs officiels par aeroport)`
 
-**What it does.** official FAA NOTAMs for any US airport: active notices with effective dates, plain text and ICA
+**What it does.**
+
+official FAA NOTAMs for any US airport: active notices with effective dates, plain text and ICA
 
 **How to use.**
 
@@ -146,7 +162,9 @@ GET https://api.xynaptic.io/v1/notam-brief (location — FAA NOTAMs officiels pa
 
 `GET https://api.xynaptic.io/v1/notam-area` — `(latitude+longitude+radius — FAA NOTAMs geospatiaux)`
 
-**What it does.** official FAA NOTAMs within a radius around any point (latitude/decimal degrees, radius in nauti
+**What it does.**
+
+official FAA NOTAMs within a radius around any point (latitude/decimal degrees, radius in nauti
 
 **How to use.**
 

@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/destination-brief` — `(q + lang?)`
 
-**What it does.** travel context for any city: Wikipedia summary, coordinates, population, country, timezone and 
+**What it does.**
+
+travel context for any city: Wikipedia summary, coordinates, population, country, timezone and 
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/destination-brief (q + lang?)
 
 `GET https://api.xynaptic.io/v1/travel-weather` — `(lat+lon ou q)`
 
-**What it does.** 7-day daily forecast for any destination (open-meteo): min/max temperature, precipitation, wind
+**What it does.**
+
+7-day daily forecast for any destination (open-meteo): min/max temperature, precipitation, wind
 
 **How to use.**
 
@@ -44,7 +48,9 @@ GET https://api.xynaptic.io/v1/travel-weather (lat+lon ou q)
 
 `GET https://api.xynaptic.io/v1/route-brief` — `(from + to + mode?)`
 
-**What it does.** road itinerary between two points (OSRM): distance, duration, step-by-step directions and cross
+**What it does.**
+
+road itinerary between two points (OSRM): distance, duration, step-by-step directions and cross
 
 **How to use.**
 
@@ -61,7 +67,9 @@ GET https://api.xynaptic.io/v1/route-brief (from + to + mode?)
 
 `GET https://api.xynaptic.io/v1/trip-planner` — `(from + to + date? + time?)`
 
-**What it does.** full train itinerary between two French stations or cities (SNCF): times, duration, transfers, 
+**What it does.**
+
+full train itinerary between two French stations or cities (SNCF): times, duration, transfers, 
 
 **How to use.**
 

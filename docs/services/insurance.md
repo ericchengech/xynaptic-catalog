@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/insurance-search` — `(type?)`
 
-**What it does.** the insurance type panorama: standard coverage families for auto/home/health/pro, current regul
+**What it does.**
+
+the insurance type panorama: standard coverage families for auto/home/health/pro, current regul
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/insurance-search (type?)
 
 `GET https://api.xynaptic.io/v1/insurance-profile` — `(name ou orias)`
 
-**What it does.** the insurance KYB: is this broker/agent officially registered? We find the ORIAS record (French
+**What it does.**
+
+the insurance KYB: is this broker/agent officially registered? We find the ORIAS record (French
 
 **How to use.**
 
@@ -44,7 +48,9 @@ GET https://api.xynaptic.io/v1/insurance-profile (name ou orias)
 
 `POST https://api.xynaptic.io/v1/insurance-policy` — `(policy_text)`
 
-**What it does.** bring a policy text, get its structured reading: coverages, exclusions, deductibles, caps, obli
+**What it does.**
+
+bring a policy text, get its structured reading: coverages, exclusions, deductibles, caps, obli
 
 **How to use.**
 
@@ -61,7 +67,9 @@ POST https://api.xynaptic.io/v1/insurance-policy (policy_text)
 
 `POST https://api.xynaptic.io/v1/insurance-coverage` — `(policy_text + incident)`
 
-**What it does.** bring a policy and describe an incident: are you covered? Honest analysis of coverage vs exclus
+**What it does.**
+
+bring a policy and describe an incident: are you covered? Honest analysis of coverage vs exclus
 
 **How to use.**
 
@@ -78,7 +86,9 @@ POST https://api.xynaptic.io/v1/insurance-coverage (policy_text + incident)
 
 `POST https://api.xynaptic.io/v1/insurance-claim` — `(incident_narrative)`
 
-**What it does.** describe your incident in free language, get a structured claim form: date, place, goods, circu
+**What it does.**
+
+describe your incident in free language, get a structured claim form: date, place, goods, circu
 
 **How to use.**
 
@@ -95,7 +105,9 @@ POST https://api.xynaptic.io/v1/insurance-claim (incident_narrative)
 
 `POST https://api.xynaptic.io/v1/insurance-quote` — `(type + profil)`
 
-**What it does.** honest parametric auto insurance estimator: legal bonus/malus coefficient, public rating factor
+**What it does.**
+
+honest parametric auto insurance estimator: legal bonus/malus coefficient, public rating factor
 
 **How to use.**
 
@@ -112,7 +124,9 @@ POST https://api.xynaptic.io/v1/insurance-quote (type + profil)
 
 `GET https://api.xynaptic.io/v1/insurance-premium` — `(type + annual_premium)`
 
-**What it does.** the pedagogical price decomposition: taxes, legal contributions, pure premium vs commercial loa
+**What it does.**
+
+the pedagogical price decomposition: taxes, legal contributions, pure premium vs commercial loa
 
 **How to use.**
 
@@ -129,7 +143,9 @@ GET https://api.xynaptic.io/v1/insurance-premium (type + annual_premium)
 
 `POST https://api.xynaptic.io/v1/insurance-risk` — `(type + situation)`
 
-**What it does.** bring your profile/situation, get a readable risk scoring: aggravating/mitigating factors and c
+**What it does.**
+
+bring your profile/situation, get a readable risk scoring: aggravating/mitigating factors and c
 
 **How to use.**
 
@@ -146,7 +162,9 @@ POST https://api.xynaptic.io/v1/insurance-risk (type + situation)
 
 `POST https://api.xynaptic.io/v1/insurance-compare` — `(policy_a + policy_b)`
 
-**What it does.** bring two policy texts, get the side-by-side: coverage differences, caps, deductibles, coverage
+**What it does.**
+
+bring two policy texts, get the side-by-side: coverage differences, caps, deductibles, coverage
 
 **How to use.**
 
@@ -163,7 +181,9 @@ POST https://api.xynaptic.io/v1/insurance-compare (policy_a + policy_b)
 
 `POST https://api.xynaptic.io/v1/insurance-eligibility` — `(question + situation?)`
 
-**What it does.** general eligibility check + your legal rights: borrower insurance substitution, resiliation inf
+**What it does.**
+
+general eligibility check + your legal rights: borrower insurance substitution, resiliation inf
 
 **How to use.**
 

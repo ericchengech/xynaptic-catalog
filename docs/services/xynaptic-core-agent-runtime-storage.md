@@ -10,7 +10,9 @@
 
 `POST https://api.xynaptic.io/v1/store-put` — `(value + ttl)`
 
-**What it does.** encrypted scratchpad for agents: deposit a JSON payload (64KB max), we store it encrypted on ou
+**What it does.**
+
+encrypted scratchpad for agents: deposit a JSON payload (64KB max), we store it encrypted on ou
 
 **How to use.**
 
@@ -27,7 +29,9 @@ POST https://api.xynaptic.io/v1/store-put (value + ttl)
 
 `POST https://api.xynaptic.io/v1/store-get` — `(store_id + claim_secret)`
 
-**What it does.** retrieve a stored object: POST body: { store_id, claim_secret, delete_after_read?: true }. Wron
+**What it does.**
+
+retrieve a stored object: POST body: { store_id, claim_secret, delete_after_read?: true }. Wron
 
 **How to use.**
 
@@ -44,7 +48,9 @@ POST https://api.xynaptic.io/v1/store-get (store_id + claim_secret)
 
 `POST https://api.xynaptic.io/v1/store-append` — `(store_id + claim_secret + value + mode?)`
 
-**What it does.** merge new JSON into an existing stored object without re-uploading: POST body: { store_id, clai
+**What it does.**
+
+merge new JSON into an existing stored object without re-uploading: POST body: { store_id, clai
 
 **How to use.**
 
@@ -61,7 +67,9 @@ POST https://api.xynaptic.io/v1/store-append (store_id + claim_secret + value + 
 
 `POST https://api.xynaptic.io/v1/watch-put` — `(condition + ttl)`
 
-**What it does.** the agent daycare: we watch a condition for you, checked hourly up to 30 days; when triggered t
+**What it does.**
+
+the agent daycare: we watch a condition for you, checked hourly up to 30 days; when triggered t
 
 **How to use.**
 
@@ -78,7 +86,9 @@ POST https://api.xynaptic.io/v1/watch-put (condition + ttl)
 
 `POST https://api.xynaptic.io/v1/watch-status` — `(watch_id + watch_secret)`
 
-**What it does.** check if your watch triggered. POST body: { watch_id, watch_secret }. Returns { status: waiting
+**What it does.**
+
+check if your watch triggered. POST body: { watch_id, watch_secret }. Returns { status: waiting
 
 **How to use.**
 
@@ -95,7 +105,9 @@ POST https://api.xynaptic.io/v1/watch-status (watch_id + watch_secret)
 
 `POST https://api.xynaptic.io/v1/ticket-buy` — `(amount_usd 0.5-20)`
 
-**What it does.** prepaid credit: pay once (0.5-20 USDC), get a ticket_id|ticket_secret, consume any service with
+**What it does.**
+
+prepaid credit: pay once (0.5-20 USDC), get a ticket_id|ticket_secret, consume any service with
 
 **How to use.**
 
@@ -112,7 +124,9 @@ POST https://api.xynaptic.io/v1/ticket-buy (amount_usd 0.5-20)
 
 `POST https://api.xynaptic.io/v1/ticket-status` — `(ticket_id + ticket_secret, free)`
 
-**What it does.** free: check remaining prepaid credit and validity. POST body: {ticket_id, ticket_secret}. Retur
+**What it does.**
+
+free: check remaining prepaid credit and validity. POST body: {ticket_id, ticket_secret}. Retur
 
 **How to use.**
 

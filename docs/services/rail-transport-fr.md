@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/rail-news`
 
-**What it does.** structured French rail events (SNCF, TGV, TER, Transilien, last 12h): importance, lifecycle, di
+**What it does.**
+
+structured French rail events (SNCF, TGV, TER, Transilien, last 12h): importance, lifecycle, di
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/rail-news
 
 `GET https://api.xynaptic.io/v1/rail-disruptions`
 
-**What it does.** active French rail disruptions (grèves, travaux, suppressions, incidents, déraillements) with i
+**What it does.**
+
+active French rail disruptions (grèves, travaux, suppressions, incidents, déraillements) with i
 
 **How to use.**
 
@@ -44,7 +48,9 @@ GET https://api.xynaptic.io/v1/rail-disruptions
 
 `GET https://api.xynaptic.io/v1/rail-departures`
 
-**What it does.** next departures from any French rail station (search by name, e.g. ?station=Lyon Part-Dieu): li
+**What it does.**
+
+next departures from any French rail station (search by name, e.g. ?station=Lyon Part-Dieu): li
 
 **How to use.**
 
@@ -61,7 +67,9 @@ GET https://api.xynaptic.io/v1/rail-departures
 
 `GET https://api.xynaptic.io/v1/rail-train-status`
 
-**What it does.** real-time status of a French train by number (e.g. ?number=1234): line, direction, stops with t
+**What it does.**
+
+real-time status of a French train by number (e.g. ?number=1234): line, direction, stops with t
 
 **How to use.**
 
@@ -78,7 +86,9 @@ GET https://api.xynaptic.io/v1/rail-train-status
 
 `GET https://api.xynaptic.io/v1/rail-train-route-risk`
 
-**What it does.** composite risk assessment of a French rail journey (?from=Lyon Part-Dieu&to=Paris): next connec
+**What it does.**
+
+composite risk assessment of a French rail journey (?from=Lyon Part-Dieu&to=Paris): next connec
 
 **How to use.**
 
@@ -95,7 +105,9 @@ GET https://api.xynaptic.io/v1/rail-train-route-risk
 
 `GET https://api.xynaptic.io/v1/rail-connection-risk`
 
-**What it does.** will you make your connection? Given a transfer station and planned margin (?at=Lyon Part-Dieu&
+**What it does.**
+
+will you make your connection? Given a transfer station and planned margin (?at=Lyon Part-Dieu&
 
 **How to use.**
 
@@ -112,7 +124,9 @@ GET https://api.xynaptic.io/v1/rail-connection-risk
 
 `GET https://api.xynaptic.io/v1/rail-trip-brief`
 
-**What it does.** complete one-shot synthesis of a French rail journey (?from&to): next departures, journey plan 
+**What it does.**
+
+complete one-shot synthesis of a French rail journey (?from&to): next departures, journey plan 
 
 **How to use.**
 
@@ -129,7 +143,9 @@ GET https://api.xynaptic.io/v1/rail-trip-brief
 
 `GET https://api.xynaptic.io/v1/rail-intermodal-compare`
 
-**What it does.** train vs plane between two cities: REAL next train journeys (Navitia/SNCF: times, duration, tra
+**What it does.**
+
+train vs plane between two cities: REAL next train journeys (Navitia/SNCF: times, duration, tra
 
 **How to use.**
 

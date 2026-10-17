@@ -10,7 +10,9 @@
 
 `GET https://api.xynaptic.io/v1/news-eu`
 
-**What it does.** structured events from Europe (last 3h): importance, lifecycle, entities, geography, sectors, m
+**What it does.**
+
+structured events from Europe (last 3h): importance, lifecycle, entities, geography, sectors, m
 
 **How to use.**
 
@@ -27,7 +29,9 @@ GET https://api.xynaptic.io/v1/news-eu
 
 `GET https://api.xynaptic.io/v1/news-tech`
 
-**What it does.** structured events (AI/LLM, GPU, quantum computing, last 3h): importance, lifecycle, entities, s
+**What it does.**
+
+structured events (AI/LLM, GPU, quantum computing, last 3h): importance, lifecycle, entities, s
 
 **How to use.**
 
@@ -44,7 +48,9 @@ GET https://api.xynaptic.io/v1/news-tech
 
 `GET https://api.xynaptic.io/v1/news-us`
 
-**What it does.** structured events from the United States (last 3h): importance, lifecycle, entities, sectors, m
+**What it does.**
+
+structured events from the United States (last 3h): importance, lifecycle, entities, sectors, m
 
 **How to use.**
 
@@ -61,7 +67,9 @@ GET https://api.xynaptic.io/v1/news-us
 
 `GET https://api.xynaptic.io/v1/news-asia`
 
-**What it does.** structured events across Asia (China, Japan, India, Korea, ASEAN, last 3h): importance, lifecyc
+**What it does.**
+
+structured events across Asia (China, Japan, India, Korea, ASEAN, last 3h): importance, lifecyc
 
 **How to use.**
 
@@ -78,7 +86,9 @@ GET https://api.xynaptic.io/v1/news-asia
 
 `GET https://api.xynaptic.io/v1/news-mideast`
 
-**What it does.** structured events (geopolitics, energy, conflicts, last 3h): importance, lifecycle, entities, s
+**What it does.**
+
+structured events (geopolitics, energy, conflicts, last 3h): importance, lifecycle, entities, s
 
 **How to use.**
 
@@ -95,7 +105,9 @@ GET https://api.xynaptic.io/v1/news-mideast
 
 `GET https://api.xynaptic.io/v1/news-russia`
 
-**What it does.** structured events (politics, economy, Ukraine war, last 3h): importance, lifecycle, entities, s
+**What it does.**
+
+structured events (politics, economy, Ukraine war, last 3h): importance, lifecycle, entities, s
 
 **How to use.**
 
@@ -112,7 +124,9 @@ GET https://api.xynaptic.io/v1/news-russia
 
 `GET https://api.xynaptic.io/v1/news-world`
 
-**What it does.** curated global events (importance >= medium) aggregated from all 7 Xynaptic news feeds, cross-f
+**What it does.**
+
+curated global events (importance >= medium) aggregated from all 7 Xynaptic news feeds, cross-f
 
 **How to use.**
 
@@ -129,7 +143,9 @@ GET https://api.xynaptic.io/v1/news-world
 
 `GET https://api.xynaptic.io/v1/news-stars`
 
-**What it does.** structured events (celebrities, cinema, awards, Nobel Prize, last 3h): importance, lifecycle, e
+**What it does.**
+
+structured events (celebrities, cinema, awards, Nobel Prize, last 3h): importance, lifecycle, e
 
 **How to use.**
 
