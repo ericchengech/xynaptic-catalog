@@ -12,7 +12,7 @@
 
 **What it does.**
 
-travel context for any city: Wikipedia summary, coordinates, population, country, timezone and 
+Xynaptic Destination Brief — travel context for any city: Wikipedia summary, coordinates, population, country, timezone and what the place is known for. One call to ground an agent planning a trip. GET ?q=Jakarta (&lang=en|fr).
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/destination-brief (q + lang?)
 
 **What it does.**
 
-7-day daily forecast for any destination (open-meteo): min/max temperature, precipitation, wind
+Xynaptic Travel Weather — 7-day daily forecast for any destination (open-meteo): min/max temperature, precipitation, wind, weather code, best-day hint for agents planning a trip. GET ?lat=-6.21&lon=106.85 or ?q=Jakarta.
 
 **How to use.**
 
@@ -50,7 +50,7 @@ GET https://api.xynaptic.io/v1/travel-weather (lat+lon ou q)
 
 **What it does.**
 
-road itinerary between two points (OSRM): distance, duration, step-by-step directions and cross
+Xynaptic Route Brief — road itinerary between two points (OSRM): distance, duration, step-by-step directions and cross-border hint. Driving, walking or cycling. GET ?from=48.85,2.35&to=45.76,4.83 (&mode=driving|walking|cycling).
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/route-brief (from + to + mode?)
 
 **What it does.**
 
-full train itinerary between two French stations or cities (SNCF): times, duration, transfers, 
+Xynaptic Trip Planner FR — full train itinerary between two French stations or cities (SNCF): times, duration, transfers, best pick. GET ?from=Paris&to=Lyon (&date=&time=).
 
 **How to use.**
 

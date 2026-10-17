@@ -12,7 +12,7 @@
 
 **What it does.**
 
-official drug fact sheet: active ingredient, brand/generic names, form, route, dosage label hig
+Xynaptic Health Drug Info — official drug fact sheet: active ingredient, brand/generic names, form, route, dosage label highlights, warnings and boxed warnings from openFDA (US) — official public data, not advice. GET ?drug=aspirin (or ?code=NDC). Informational only — not medical advice.
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/health-drug-info (drug)
 
 **What it does.**
 
-bring 2-6 drug names: we fetch their official labels (openFDA), extract documented contraindica
+Xynaptic Health Drug Interaction — bring 2-6 drug names: we fetch their official labels (openFDA), extract documented contraindications and interaction factors, and synthesize a severity-graded interaction report with mechanisms. POST body: { drugs: [aspirin, warfarin] }. Informational only — not medical advice.
 
 **How to use.**
 
@@ -50,7 +50,7 @@ POST https://api.xynaptic.io/v1/health-drug-interaction (drugs)
 
 **What it does.**
 
-search worldwide clinical trials (ClinicalTrials.gov): status, phase, eligibility, contacts. GE
+Xynaptic Health Clinical Trials — search worldwide clinical trials (ClinicalTrials.gov): status, phase, eligibility, contacts. GET ?condition=diabetes (&drug=&status=&limit=).
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/health-clinical-trials (condition)
 
 **What it does.**
 
-PubMed search for medical research: articles, abstracts, journals, dates, PMIDs. GET ?query=asp
+Xynaptic Health Medical Literature — PubMed search for medical research: articles, abstracts, journals, dates, PMIDs. GET ?query=aspirin cardiovascular (&limit=5). Evidence-based medicine research.
 
 **How to use.**
 
@@ -88,7 +88,7 @@ GET https://api.xynaptic.io/v1/health-medical-literature (query)
 
 **What it does.**
 
-French healthcare establishments from official ScopeSanté (HAS): name, city, contact, certifica
+Xynaptic Health Hospital Info — French healthcare establishments from official ScopeSanté (HAS): name, city, contact, certifications and activity. GET ?name=CHU or ?city=Lyon. Official French data.
 
 **How to use.**
 
@@ -107,7 +107,7 @@ GET https://api.xynaptic.io/v1/health-hospital-info (name ou city)
 
 **What it does.**
 
-official recommendations for a condition: HAS (Haute Autorité de Santé) French guidelines via l
+Xynaptic Health Medical Guidelines — official recommendations for a condition: HAS (Haute Autorité de Santé) French guidelines via live search + PubMed Central systematic reviews. GET ?condition=diabetes. Informational only.
 
 **How to use.**
 
@@ -126,7 +126,7 @@ GET https://api.xynaptic.io/v1/health-medical-guidelines (condition)
 
 **What it does.**
 
-French health professionals from the official RPPS directory (Annuaire Santé): doctors by name 
+Xynaptic Health Healthcare Provider — French health professionals from the official RPPS directory (Annuaire Santé): doctors by name or specialty in a city, with registration. GET ?name=Martin&city=Paris or ?specialty=cardiologue. Official data.
 
 **How to use.**
 
@@ -145,7 +145,7 @@ GET https://api.xynaptic.io/v1/health-healthcare-provider (name ou specialty + c
 
 **What it does.**
 
-live health/medicine press feed (Google News RSS): real titled articles from medical media + op
+Xynaptic Health News — live health/medicine press feed (Google News RSS): real titled articles from medical media + optional LLM synthesis. GET (&summarize=true). Informational only.
 
 **How to use.**
 

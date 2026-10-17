@@ -12,7 +12,7 @@
 
 **What it does.**
 
-find French companies by name or SIREN: identity, activity, status. The entry point to the comp
+Xynaptic Company Search — find French companies by name or SIREN: identity, activity, status. The entry point to the company funnel. Parameter: ?q=name.
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/company-search
 
 **What it does.**
 
-consolidated identity from the French state registry: SIREN, legal form, NAF, headcount, HQ, VA
+Xynaptic Company Profile — consolidated identity from the French state registry: SIREN, legal form, NAF, headcount, HQ, VAT, creation, status. Parameter: ?siren=.
 
 **How to use.**
 
@@ -50,7 +50,7 @@ GET https://api.xynaptic.io/v1/company-profile
 
 **What it does.**
 
-officers and directors from the RNE: names, roles, birth year. Parameter: ?siren=.
+Xynaptic Company People — officers and directors from the RNE: names, roles, birth year. Parameter: ?siren=.
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/company-people
 
 **What it does.**
 
-HQ and establishment footprint: locations, activities, open/closed count. Parameter: ?siren=.
+Xynaptic Company Network — HQ and establishment footprint: locations, activities, open/closed count. Parameter: ?siren=.
 
 **How to use.**
 
@@ -88,7 +88,7 @@ GET https://api.xynaptic.io/v1/company-network
 
 **What it does.**
 
-annual accounts from the registry: revenue, net income, per year available. Parameter: ?siren=.
+Xynaptic Company Financial — annual accounts from the registry: revenue, net income, per year available. Parameter: ?siren=.
 
 **How to use.**
 
@@ -107,7 +107,7 @@ GET https://api.xynaptic.io/v1/company-financial
 
 **What it does.**
 
-the full due-diligence dossier in one call: identity, officers, financials, risk signals, VAT c
+Xynaptic Company KYB — the full due-diligence dossier in one call: identity, officers, financials, risk signals, VAT compliance, verification sources, agent verdict with confidence. The premium synthesis of the company funnel. Parameter: ?siren=.
 
 **How to use.**
 
@@ -126,7 +126,7 @@ GET https://api.xynaptic.io/v1/company-kyb
 
 **What it does.**
 
-the link between two French companies: shared officers, same activity, same city, size comparis
+Xynaptic Company Relationship — the link between two French companies: shared officers, same activity, same city, size comparison. Parameters: ?siren=A&siren=B.
 
 **How to use.**
 
@@ -145,7 +145,7 @@ GET https://api.xynaptic.io/v1/company-relationship
 
 **What it does.**
 
-watch a French company over time: first call sets the baseline, next calls detect what changed 
+Xynaptic Company Monitor — watch a French company over time: first call sets the baseline, next calls detect what changed (officers, status, HQ, activity, establishments, accounts). Parameters: ?siren=.
 
 **How to use.**
 
@@ -164,7 +164,7 @@ GET https://api.xynaptic.io/v1/company-monitor
 
 **What it does.**
 
-the real-time decisional brief: identity, officers, accounts, risk signals, growth signals, age
+Xynaptic Company Brief Live — the real-time decisional brief: identity, officers, accounts, risk signals, growth signals, agent priority with recommended actions. The daily read on any French company. Parameter: ?siren=.
 
 **How to use.**
 
@@ -183,7 +183,7 @@ GET https://api.xynaptic.io/v1/company-brief-live
 
 **What it does.**
 
-two French companies side by side: size, activity, financials, geography, officers, risk signal
+Xynaptic Company Compare — two French companies side by side: size, activity, financials, geography, officers, risk signals, differences. The due-diligence A/B. Parameters: ?siren=A&siren=B.
 
 **How to use.**
 
@@ -202,7 +202,7 @@ GET https://api.xynaptic.io/v1/company-compare
 
 **What it does.**
 
-what recently changed in a French company: officers, status, HQ, activity, accounts
+Xynaptic Company Changes — what recently changed in a French company: officers, status, HQ, activity, accounts — detected against the last snapshot (shared with company-monitor). Parameter: ?siren=.
 
 **How to use.**
 
@@ -221,7 +221,7 @@ GET https://api.xynaptic.io/v1/company-changes
 
 **What it does.**
 
-worldwide company search by name (GLEIF LEI registry, 200+ jurisdictions: EU, US, UK, Asia, Can
+Xynaptic International Company Search — worldwide company search by name (GLEIF LEI registry, 200+ jurisdictions: EU, US, UK, Asia, Canada, Australia...). Returns legal name, LEI, status, headquarters, jurisdiction for up to 10 matches. GET ?name=DANONE. The LEI registry covers entities active in financial transactions — the global identity layer.
 
 **How to use.**
 
@@ -240,7 +240,7 @@ GET https://api.xynaptic.io/v1/company-international-search (name)
 
 **What it does.**
 
-the press radar for due diligence: bring a company name or French SIREN, get its latest news fr
+Xynaptic Company News — the press radar for due diligence: bring a company name or French SIREN, get its latest news from a live web search (title, URL, snippet, source domain), optionally LLM-summarized. Closes the KYB loop: identity, accounts, network AND press. GET ?name=Danone or ?siren=552032534 (&summarize=true).
 
 **How to use.**
 
@@ -259,7 +259,7 @@ GET https://api.xynaptic.io/v1/company-news (name ou siren + summarize?)
 
 **What it does.**
 
-find French suppliers by activity: search the official companies registry (NAF activity codes) 
+Xynaptic Supplier Search — find French suppliers by activity: search the official companies registry (NAF activity codes) for businesses matching an industrial activity, with location and size. GET ?activity=fabrication+metallique (&city=). Official French data.
 
 **How to use.**
 
@@ -278,7 +278,7 @@ GET https://api.xynaptic.io/v1/supplier-search (activity + city?)
 
 **What it does.**
 
-bring a supplier (SIREN or name): we compile the official registry profile, financial accounts,
+Xynaptic Supplier Risk — bring a supplier (SIREN or name): we compile the official registry profile, financial accounts, recent changes and press into a supplier risk assessment. GET ?siren= or ?name=. The due-diligence one-call.
 
 **How to use.**
 
@@ -297,7 +297,7 @@ GET https://api.xynaptic.io/v1/supplier-risk (siren ou name)
 
 **What it does.**
 
-compliance screening of a French supplier before contracting: registry status (active/closed), 
+Xynaptic Supplier Compliance — compliance screening of a French supplier before contracting: registry status (active/closed), collective proceedings signals, high-risk keyword and jurisdiction screening on the legal name, VAT number presence. Each signal carries a severity; overall level clear/medium/high. Informational screening, not a compliance decision. GET ?siren=123456789 or ?name=ACME.
 
 **How to use.**
 
@@ -316,7 +316,7 @@ GET https://api.xynaptic.io/v1/supplier-compliance (siren ou name — screening 
 
 **What it does.**
 
-screen a used-car seller (French dealer or individual) before you buy: official registry identi
+Xynaptic Car Dealer Check — screen a used-car seller (French dealer or individual) before you buy: official registry identity (company, SIREN), compliance screening (status, VAT, risk keywords), plus press coverage. Buyer-side anti-fraud one-call. Informational, not a compliance decision. GET ?siren=123456789 or ?name=Garage+Auto.
 
 **How to use.**
 
@@ -335,7 +335,7 @@ GET https://api.xynaptic.io/v1/car-dealer-check (siren ou name — screening ven
 
 **What it does.**
 
-full global identity by LEI: legal name, legal address, country, legal jurisdiction, legal form
+Xynaptic International Company Profile — full global identity by LEI: legal name, legal address, country, legal jurisdiction, legal form, registration authority + LEI status (ISSUED/LAPSED/RETIRED) with dates. GET ?lei=969500KMUQ2B6CBAF162. GLEIF is the global gold standard for legal entity identification.
 
 **How to use.**
 

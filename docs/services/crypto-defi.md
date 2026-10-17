@@ -12,7 +12,7 @@
 
 **What it does.**
 
-daily crypto market digest (BTC, ETH, SOL, ADA prices, 24h moves, major headlines) as structure
+Xynaptic Crypto Brief — daily crypto market digest (BTC, ETH, SOL, ADA prices, 24h moves, major headlines) as structured JSON. Refreshed every morning.
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/crypto-brief
 
 **What it does.**
 
-real-time crypto prices (BTC, ETH, SOL, ADA + top coins) fetched at the exact moment of your re
+Xynaptic Crypto Live — real-time crypto prices (BTC, ETH, SOL, ADA + top coins) fetched at the exact moment of your request. Live data, not a cached digest.
 
 **How to use.**
 
@@ -50,7 +50,7 @@ GET https://api.xynaptic.io/v1/crypto-brief-live
 
 **What it does.**
 
-real-time snapshot of 6 major crypto assets (BTC, ETH, SOL, ADA, LINK, DOT) with 24h changes, b
+Xynaptic Crypto Price — real-time snapshot of 6 major crypto assets (BTC, ETH, SOL, ADA, LINK, DOT) with 24h changes, breadth and top movers. USD only, agent-ready.
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/crypto-price
 
 **What it does.**
 
-real-time market regime analysis: top 100 assets by market cap, gainers/losers, breadth, volati
+Xynaptic Crypto Market — real-time market regime analysis: top 100 assets by market cap, gainers/losers, breadth, volatility, sentiment and regime (risk-on/risk-off). USD only, agent-ready.
 
 **How to use.**
 
@@ -88,7 +88,7 @@ GET https://api.xynaptic.io/v1/crypto-market
 
 **What it does.**
 
-top crypto headlines (BTC, ETH, regulation, macro) with importance scoring, timestamp and sourc
+Xynaptic Crypto News — top crypto headlines (BTC, ETH, regulation, macro) with importance scoring, timestamp and source. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -107,7 +107,7 @@ GET https://api.xynaptic.io/v1/crypto-news
 
 **What it does.**
 
-technical analysis of any Kraken pair: RSI(14), MACD, EMA 20/50/200, recent support/resistance,
+Xynaptic Crypto Trading Analysis — technical analysis of any Kraken pair: RSI(14), MACD, EMA 20/50/200, recent support/resistance, trend and momentum verdict. Parameters: ?pair=BTCUSD&timeframe=4h|1h|1d. Real-time OHLC.
 
 **How to use.**
 
@@ -126,7 +126,7 @@ GET https://api.xynaptic.io/v1/crypto-trading-analysis
 
 **What it does.**
 
-the premium multi-dimensional read: multi-timeframes (1h/4h/1d aligned), volatility regime, onc
+Xynaptic Deep Trading Analysis — the premium multi-dimensional read: multi-timeframes (1h/4h/1d aligned), volatility regime, onchain signals, news sentiment, composite conviction score bull/bear/neutral with confidence. Parameter: ?pair=BTCUSD.
 
 **How to use.**
 
@@ -145,7 +145,7 @@ GET https://api.xynaptic.io/v1/crypto-deep-trading-analysis
 
 **What it does.**
 
-full pre-purchase security audit of any token: contract checks (open source, proxy), honeypot d
+Xynaptic Token Validate — full pre-purchase security audit of any token: contract checks (open source, proxy), honeypot detection, buy/sell taxes and slippage simulation, liquidity depth, exit liquidity (sell simulation), market conditions, news flags, recommended max trade size, composite risk verdict. Parameters: ?address=0x...&chain=1.
 
 **How to use.**
 
@@ -164,7 +164,7 @@ GET https://api.xynaptic.io/v1/crypto-validate
 
 **What it does.**
 
-real-time market microstructure: CVD (cumulative volume delta), buy/sell pressure ratio, aggres
+Xynaptic Crypto Orderflow — real-time market microstructure: CVD (cumulative volume delta), buy/sell pressure ratio, aggressive market orders, whale trades (>$100k), order book imbalance. Parameter: ?pair=BTCUSD. Kraken live tape + book.
 
 **How to use.**
 
@@ -183,7 +183,7 @@ GET https://api.xynaptic.io/v1/crypto-orderflow
 
 **What it does.**
 
-perp market vitals: funding rate (hourly + annualized), open interest in USD, futures basis (ma
+Xynaptic Crypto Derivatives — perp market vitals: funding rate (hourly + annualized), open interest in USD, futures basis (mark vs oracle), max leverage. Parameter: ?asset=BTC. Hyperliquid perp data.
 
 **How to use.**
 
@@ -202,7 +202,7 @@ GET https://api.xynaptic.io/v1/crypto-derivatives
 
 **What it does.**
 
-protocol health in one call: current TVL, 24h change, chain breakdown, category. Parameter: ?pr
+Xynaptic Crypto DeFi — protocol health in one call: current TVL, 24h change, chain breakdown, category. Parameter: ?protocol=aave. DefiLlama data.
 
 **How to use.**
 
@@ -221,7 +221,7 @@ GET https://api.xynaptic.io/v1/crypto-defi
 
 **What it does.**
 
-supply structure: circulating, total, max supply, FDV, market cap, ATH distance, price. Paramet
+Xynaptic Crypto Tokenomics — supply structure: circulating, total, max supply, FDV, market cap, ATH distance, price. Parameter: ?symbol=btc (CoinGecko id). Vesting/unlocks in v2.
 
 **How to use.**
 
@@ -240,7 +240,7 @@ GET https://api.xynaptic.io/v1/crypto-tokenomics
 
 **What it does.**
 
-bring your holdings [{coin, weight or amount}]: we fetch live prices and compute per-position v
+Xynaptic Crypto Portfolio — bring your holdings [{coin, weight or amount}]: we fetch live prices and compute per-position value, 90d volatility, concentration (HHI), BTC correlation per asset, and aggregate risk. POST body: { holdings: [{coin: bitcoin, amount?: 0.5, weight?: 30}], currency?: usd }. Informational only.
 
 **How to use.**
 
@@ -259,7 +259,7 @@ POST https://api.xynaptic.io/v1/crypto-portfolio (holdings)
 
 **What it does.**
 
-OHLCV history for backtests: 30, 90 or 365 days, daily candles from CoinGecko. GET ?coin=bitcoi
+Xynaptic Crypto Historical — OHLCV history for backtests: 30, 90 or 365 days, daily candles from CoinGecko. GET ?coin=bitcoin&days=365. Returns timestamped [open, high, low, close] arrays.
 
 **How to use.**
 
@@ -278,7 +278,7 @@ GET https://api.xynaptic.io/v1/crypto-historical (coin + days?)
 
 **What it does.**
 
-Pearson correlation matrix of daily returns for 2-5 coins over 90 days: the honest diversificat
+Xynaptic Crypto Correlation — Pearson correlation matrix of daily returns for 2-5 coins over 90 days: the honest diversification check. GET ?coins=bitcoin,ethereum,solana.
 
 **How to use.**
 
@@ -297,7 +297,7 @@ GET https://api.xynaptic.io/v1/crypto-correlation (coins)
 
 **What it does.**
 
-the market pulse: top gainers and losers 24h, highest volumes, most extreme moves from the top 
+Xynaptic Crypto Screener — the market pulse: top gainers and losers 24h, highest volumes, most extreme moves from the top 250. GET ?limit=5. Fresh attention feed for trading agents.
 
 **How to use.**
 
@@ -316,7 +316,7 @@ GET https://api.xynaptic.io/v1/crypto-screener (limit?)
 
 **What it does.**
 
-live gas prices across chains (Ethereum, Base) with slow/average/fast tiers in Gwei + estimated
+Xynaptic Gas Fees — live gas prices across chains (Ethereum, Base) with slow/average/fast tiers in Gwei + estimated transfer cost. GET no params. Plan your on-chain transaction timing.
 
 **How to use.**
 
@@ -335,7 +335,7 @@ GET https://api.xynaptic.io/v1/crypto-gas-fees
 
 **What it does.**
 
-the market sentiment thermometer (alternative.me index, 0-100): current value, yesterday, last 
+Xynaptic Crypto Fear & Greed — the market sentiment thermometer (alternative.me index, 0-100): current value, yesterday, last week, classification (extreme fear..extreme greed) + interpretation hint for agents. GET no params.
 
 **How to use.**
 
@@ -354,7 +354,7 @@ GET https://api.xynaptic.io/v1/crypto-fear-greed
 
 **What it does.**
 
-live large Bitcoin transfers straight from the network: biggest mempool transactions and recent
+Xynaptic Crypto Whales — live large Bitcoin transfers straight from the network: biggest mempool transactions and recent block flows, sorted by value (BTC + USD). Spot accumulation/distribution in real-time. GET ?min_btc=10 (&limit=10).
 
 **How to use.**
 
@@ -373,7 +373,7 @@ GET https://api.xynaptic.io/v1/crypto-whales (min_btc? + limit?)
 
 **What it does.**
 
-score any Bitcoin or EVM address: balance, tx count, first/last activity (age), activity patter
+Xynaptic Crypto Wallet Health — score any Bitcoin or EVM address: balance, tx count, first/last activity (age), activity pattern and a composite health verdict (dormant/active/empty/high-risk). GET ?address=...&chain=btc|eth.
 
 **How to use.**
 
@@ -392,7 +392,7 @@ GET https://api.xynaptic.io/v1/crypto-wallet-health (address + chain)
 
 **What it does.**
 
-global crypto market snapshot (CoinMarketCap Pro): total market cap, BTC/ETH dominance, 24h vol
+Xynaptic Crypto Global — global crypto market snapshot (CoinMarketCap Pro): total market cap, BTC/ETH dominance, 24h volume, market trend assessment. GET (no params).
 
 **How to use.**
 
@@ -411,7 +411,7 @@ GET https://api.xynaptic.io/v1/crypto-global (marche crypto global CMC)
 
 **What it does.**
 
-top gainers and losers 24h with volume filter (CoinMarketCap Pro): clean lists of real movers, 
+Xynaptic Crypto Movers — top gainers and losers 24h with volume filter (CoinMarketCap Pro): clean lists of real movers, not low-liquidity scams, with prices and % changes. GET (?limit=5).
 
 **How to use.**
 
@@ -430,7 +430,7 @@ GET https://api.xynaptic.io/v1/crypto-movers (?limit=5 — top gainers/losers 24
 
 **What it does.**
 
-drawdowns from ATH, 7d/30d momentum and risk grade for major crypto assets. Refreshed every 2 h
+Xynaptic Crypto Risk — drawdowns from ATH, 7d/30d momentum and risk grade for major crypto assets. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -449,7 +449,7 @@ GET https://api.xynaptic.io/v1/crypto-risk
 
 **What it does.**
 
-live Bitcoin network data: recommended fees, mempool congestion, difficulty adjustment and hash
+Xynaptic Crypto Onchain — live Bitcoin network data: recommended fees, mempool congestion, difficulty adjustment and hashrate context. Real-time from mempool.space.
 
 **How to use.**
 

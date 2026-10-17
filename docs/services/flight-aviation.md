@@ -12,7 +12,7 @@
 
 **What it does.**
 
-structured aviation events (airlines, airports, airspace, regulation, incidents, last 12h): imp
+Xynaptic Flight News v2 — structured aviation events (airlines, airports, airspace, regulation, incidents, last 12h): importance, lifecycle, entities, sectors, multi-source verification, agent-ready actions. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/flight-news
 
 **What it does.**
 
-real-time weather and operating conditions of any airport by ICAO code (METAR + TAF): wind, vis
+Xynaptic Airport Situation — real-time weather and operating conditions of any airport by ICAO code (METAR + TAF): wind, visibility, ceiling, temperature, forecast trends, and an agent-ready assessment. On-demand, parameter: ?code=LFPG.
 
 **How to use.**
 
@@ -50,7 +50,7 @@ GET https://api.xynaptic.io/v1/flight-airport-situation
 
 **What it does.**
 
-real-time status of any flight by callsign (e.g. AFR7TE): airborne/ground phase, altitude, spee
+Xynaptic Flight Status — real-time status of any flight by callsign (e.g. AFR7TE): airborne/ground phase, altitude, speed, position, vertical trend, and an agent-ready assessment. On-demand, parameter: ?callsign=AFR7TE.
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/flight-status
 
 **What it does.**
 
-real-time risk assessment of an air route (departure/arrival ICAO): weather at both airports, r
+Xynaptic Flight Route Risk — real-time risk assessment of an air route (departure/arrival ICAO): weather at both airports, recent aviation events, regional traffic density, composite risk score with agent-ready verdict. On-demand, parameters: ?from=LFPG&to=EGLL
 
 **How to use.**
 
@@ -88,7 +88,7 @@ GET https://api.xynaptic.io/v1/flight-route-risk
 
 **What it does.**
 
-when a destination is disrupted, find the 3 nearest major alternative airports with their real-
+Xynaptic Flight Alternatives — when a destination is disrupted, find the 3 nearest major alternative airports with their real-time weather and operating conditions, ranked with an agent-ready recommendation. On-demand, parameter: ?to=LFPG
 
 **How to use.**
 
@@ -107,7 +107,7 @@ GET https://api.xynaptic.io/v1/flight-alternatives
 
 **What it does.**
 
-any airport worldwide by name or IATA code: country, IATA/ICAO codes, coordinates, elevation, r
+Xynaptic Flight Airport Brief — any airport worldwide by name or IATA code: country, IATA/ICAO codes, coordinates, elevation, runway count, served airlines hint. Open data (Wikidata). GET ?q=Jakarta or ?q=CGK.
 
 **How to use.**
 
@@ -126,7 +126,7 @@ GET https://api.xynaptic.io/v1/flight-airport-brief (q)
 
 **What it does.**
 
-aviation panorama of any Asian (or world) country: major airports with IATA codes and coordinat
+Xynaptic Flight Asia Brief — aviation panorama of any Asian (or world) country: major airports with IATA codes and coordinates, local airlines with hubs. Open data (Wikidata). GET ?country=Indonesia.
 
 **How to use.**
 
@@ -145,7 +145,7 @@ GET https://api.xynaptic.io/v1/flight-asia-brief (country)
 
 **What it does.**
 
-official FAA NOTAMs for any US airport: active notices with effective dates, plain text and ICA
+Xynaptic NOTAM Brief — official FAA NOTAMs for any US airport: active notices with effective dates, plain text and ICAO format. GET ?location=KDFW.
 
 **How to use.**
 
@@ -164,7 +164,7 @@ GET https://api.xynaptic.io/v1/notam-brief (location — FAA NOTAMs officiels pa
 
 **What it does.**
 
-official FAA NOTAMs within a radius around any point (latitude/decimal degrees, radius in nauti
+Xynaptic NOTAM Area — official FAA NOTAMs within a radius around any point (latitude/decimal degrees, radius in nautical miles, max 100): airspace closures, obstacles, works. Official FAA NMS-API source. GET ?latitude=49.01&longitude=2.55&radius=50.
 
 **How to use.**
 

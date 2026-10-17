@@ -12,7 +12,7 @@
 
 **What it does.**
 
-filtered French public procurement calls (trade + department, France).
+Xynaptic AO Digest — filtered French public procurement calls (trade + department, France).
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/ao
 
 **What it does.**
 
-French legal watch by keyword: official sources (Légifrance, service-public.gouv.fr, ministères
+Xynaptic Legal Brief FR — French legal watch by keyword: official sources (Légifrance, service-public.gouv.fr, ministères) search results with titles, links and snippets — labor law, contracts, regulations. GET ?q=licenciement.
 
 **How to use.**
 
@@ -50,7 +50,7 @@ GET https://api.xynaptic.io/v1/legal-brief (?q= — veille juridique FR officiel
 
 **What it does.**
 
-French public procurement notices (BOAMP): search tenders by keyword, buyer, department, last N
+Xynaptic Tender Search — French public procurement notices (BOAMP): search tenders by keyword, buyer, department, last N days. GET ?q=informatique (&buyer=&dept=&days=&limit=).
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/tender-search (q + buyer? + dept? + days?)
 
 **What it does.**
 
-recruitment tensions for any French department, from the official BMO survey (France Travail / 
+Xynaptic Job Market Brief — recruitment tensions for any French department, from the official BMO survey (France Travail / Dares, 2026): top-10 hardest-to-fill jobs, or one job's hiring projects and difficulty share. GET ?dept=45 (&metier=infirmier).
 
 **How to use.**
 
@@ -88,7 +88,7 @@ GET https://api.xynaptic.io/v1/job-market-brief (dept + metier? — tensions rec
 
 **What it does.**
 
-live French job offers from the official France Travail API v2: keyword + department + contract
+Xynaptic Job Search — live French job offers from the official France Travail API v2: keyword + department + contract type filters, up to 10 offers with title, employer, location, contract, salary when published, and the France Travail application URL. GET ?q=infirmier&dept=45 (&contrat=CDI).
 
 **How to use.**
 
@@ -107,7 +107,7 @@ GET https://api.xynaptic.io/v1/job-search (q + dept? + contrat? — offres d'emp
 
 **What it does.**
 
-the live French economy press feed: latest macro and business news from a real web search (titl
+Xynaptic News Economy FR — the live French economy press feed: latest macro and business news from a real web search (title, URL, source domain), optionally LLM-summarized. Completes the energy and company domains with the economic context. GET ?topic=marches (&summarize=true) — topics: marches (default), emploi, immobilier, energie.
 
 **How to use.**
 
@@ -126,7 +126,7 @@ GET https://api.xynaptic.io/v1/economy-news-fr
 
 **What it does.**
 
-find plombiers in any French department: official companies registry (active businesses only). 
+Xynaptic Plombier Search — find plombiers in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 
@@ -145,7 +145,7 @@ GET https://api.xynaptic.io/v1/artisan-plombier (dept + city?)
 
 **What it does.**
 
-find electriciens in any French department: official companies registry (active businesses only
+Xynaptic Electricien Search — find electriciens in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 
@@ -164,7 +164,7 @@ GET https://api.xynaptic.io/v1/artisan-electricien (dept + city?)
 
 **What it does.**
 
-find menuisiers in any French department: official companies registry (active businesses only).
+Xynaptic Menuisier Search — find menuisiers in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 
@@ -183,7 +183,7 @@ GET https://api.xynaptic.io/v1/artisan-menuisier (dept + city?)
 
 **What it does.**
 
-find chauffagistes in any French department: official companies registry (active businesses onl
+Xynaptic Chauffagiste Search — find chauffagistes in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 
@@ -202,7 +202,7 @@ GET https://api.xynaptic.io/v1/artisan-chauffagiste (dept + city?)
 
 **What it does.**
 
-find carreleurs in any French department: official companies registry (active businesses only).
+Xynaptic Carreleur Search — find carreleurs in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 
@@ -221,7 +221,7 @@ GET https://api.xynaptic.io/v1/artisan-carreleur (dept + city?)
 
 **What it does.**
 
-find peintre en batiments in any French department: official companies registry (active busines
+Xynaptic Peintre en batiment Search — find peintre en batiments in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 
@@ -240,7 +240,7 @@ GET https://api.xynaptic.io/v1/artisan-peintre (dept + city?)
 
 **What it does.**
 
-find paysagiste jardiniers in any French department: official companies registry (active busine
+Xynaptic Paysagiste jardinier Search — find paysagiste jardiniers in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 
@@ -259,7 +259,7 @@ GET https://api.xynaptic.io/v1/artisan-jardinier (dept + city?)
 
 **What it does.**
 
-find couvreurs in any French department: official companies registry (active businesses only). 
+Xynaptic Couvreur Search — find couvreurs in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 
@@ -278,7 +278,7 @@ GET https://api.xynaptic.io/v1/artisan-couvreur (dept + city?)
 
 **What it does.**
 
-find macons in any French department: official companies registry (active businesses only). GET
+Xynaptic Macon Search — find macons in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 
@@ -297,7 +297,7 @@ GET https://api.xynaptic.io/v1/artisan-macon (dept + city?)
 
 **What it does.**
 
-find serruriers in any French department: official companies registry (active businesses only).
+Xynaptic Serrurier Search — find serruriers in any French department: official companies registry (active businesses only). GET ?dept=69 (&city= optional). Returns name, city, SIREN. Official French open data.
 
 **How to use.**
 

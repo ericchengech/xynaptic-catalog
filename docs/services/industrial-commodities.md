@@ -12,7 +12,7 @@
 
 **What it does.**
 
-live commodity prices: Brent, WTI, natural gas, copper, aluminum, gold, silver, platinum, palla
+Xynaptic Commodity Price — live commodity prices: Brent, WTI, natural gas, copper, aluminum, gold, silver, platinum, palladium, lithium, coal, wheat and 20+ more, with daily change. GET ?asset=copper (or ?assets=copper,gold). Live futures data.
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/commodity-price (asset ou assets)
 
 **What it does.**
 
-the EV-transition metals reading in one call: lithium, copper, platinum, palladium prices with 
+Xynaptic Battery Metals Brief — the EV-transition metals reading in one call: lithium, copper, platinum, palladium prices with daily moves, plus aluminum and silver — the battery and catalyst chain — and a composite tension verdict for EV supply chains. GET no params (optional ?assets=lithium,copper).
 
 **How to use.**
 
@@ -50,7 +50,7 @@ GET https://api.xynaptic.io/v1/battery-metals-brief (?assets=filtre — brief me
 
 **What it does.**
 
-the raw materials panorama by family: energy (oil, gas, coal), metals (copper, aluminum, gold, 
+Xynaptic Raw Materials — the raw materials panorama by family: energy (oil, gas, coal), metals (copper, aluminum, gold, zinc), agriculture (wheat, corn, soy, coffee, sugar) — current prices and daily moves in one call. GET (?family=metals).
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/industrial-raw-materials
 
 **What it does.**
 
-French industrial producer price indices (IPPI) from INSEE official statistics: monthly price e
+Xynaptic Industrial Price — French industrial producer price indices (IPPI) from INSEE official statistics: monthly price evolution by industrial sector. GET ?sector=all. Official French data.
 
 **How to use.**
 
@@ -88,7 +88,7 @@ GET https://api.xynaptic.io/v1/industrial-price (sector?)
 
 **What it does.**
 
-industrial sector profile: producer price indices (INSEE), commodity input costs, live sector p
+Xynaptic Industrial Market — industrial sector profile: producer price indices (INSEE), commodity input costs, live sector press — a one-call market synthesis. GET ?sector=manufacturing.
 
 **How to use.**
 
@@ -107,7 +107,7 @@ GET https://api.xynaptic.io/v1/industrial-market (sector?)
 
 **What it does.**
 
-live industrial/manufacturing press feed (Google News RSS): real titled articles + optional LLM
+Xynaptic Industrial News — live industrial/manufacturing press feed (Google News RSS): real titled articles + optional LLM synthesis. GET (&summarize=true).
 
 **How to use.**
 
@@ -126,7 +126,7 @@ GET https://api.xynaptic.io/v1/industrial-news (summarize?)
 
 **What it does.**
 
-energy costs for industrial users: spot electricity prices, gas prices, and the energy transiti
+Xynaptic Industrial Energy — energy costs for industrial users: spot electricity prices, gas prices, and the energy transition context — what energy costs mean for production. GET ?region=fr.
 
 **How to use.**
 
@@ -145,7 +145,7 @@ GET https://api.xynaptic.io/v1/industrial-energy (region?)
 
 **What it does.**
 
-describe your production chain (suppliers, materials, locations), we analyze fragility points: 
+Xynaptic Production Risk — describe your production chain (suppliers, materials, locations), we analyze fragility points: single-sourcing, volatile input prices, geographic concentration. POST { description, materials?, suppliers? }. LLM composite.
 
 **How to use.**
 
@@ -164,7 +164,7 @@ GET https://api.xynaptic.io/v1/industrial-production-risk
 
 **What it does.**
 
-supply/demand tension reading for a sector: input price evolution (commodities + IPPI), sector 
+Xynaptic Industrial Supply — supply/demand tension reading for a sector: input price evolution (commodities + IPPI), sector press signals — a transparent tension indicator. GET ?sector=metallurgy. Composite, honest method.
 
 **How to use.**
 
@@ -183,7 +183,7 @@ GET https://api.xynaptic.io/v1/industrial-supply (sector)
 
 **What it does.**
 
-current logistics disruptions affecting French/European flows: rail strikes (SNCF official data
+Xynaptic Logistics Risk — current logistics disruptions affecting French/European flows: rail strikes (SNCF official data), sector press, + your specific route analysis. GET ?mode=rail (or POST a route description).
 
 **How to use.**
 
@@ -202,7 +202,7 @@ GET https://api.xynaptic.io/v1/industrial-logistics-risk
 
 **What it does.**
 
-the publicly known state of an industrial site: press mentions, company registry (active?), rec
+Xynaptic Factory Status — the publicly known state of an industrial site: press mentions, company registry (active?), recent announcements. GET ?site=Nom+d+usine. Public information composite — not internal telemetry.
 
 **How to use.**
 

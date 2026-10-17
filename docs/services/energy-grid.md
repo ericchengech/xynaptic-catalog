@@ -12,7 +12,7 @@
 
 **What it does.**
 
-48h solar production forecast for a European region (radiation, cloud cover, peak hours, estima
+Xynaptic Solar Forecast — 48h solar production forecast for a European region (radiation, cloud cover, peak hours, estimated output index). Parameter: ?region=fr (or lat/lon). No API key needed, real-time data.
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/energy-solar-forecast
 
 **What it does.**
 
-48h wind power forecast for a European region (wind speed at 100m, capacity factor estimate, gu
+Xynaptic Wind Forecast — 48h wind power forecast for a European region (wind speed at 100m, capacity factor estimate, gusts). Parameter: ?region=fr (or lat/lon). No API key needed.
 
 **How to use.**
 
@@ -50,7 +50,7 @@ GET https://api.xynaptic.io/v1/energy-wind-forecast
 
 **What it does.**
 
-current electricity spot price (EUR/MWh) with 24h trend and hourly profile. Europe (awattar mar
+Xynaptic Energy Price — current electricity spot price (EUR/MWh) with 24h trend and hourly profile. Europe (awattar market data). Lightweight, real-time.
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/energy-price
 
 **What it does.**
 
-one-shot energy synthesis: spot price + trend, solar and wind forecast, renewable signals, agen
+Xynaptic Energy Brief Live — one-shot energy synthesis: spot price + trend, solar and wind forecast, renewable signals, agent-ready assessment. The carrefour of the energy vertical.
 
 **How to use.**
 
@@ -88,7 +88,7 @@ GET https://api.xynaptic.io/v1/energy-brief
 
 **What it does.**
 
-the premium signal: cheapest consumption windows in the next 24h, renewable surplus detection, 
+Xynaptic Energy Opportunity — the premium signal: cheapest consumption windows in the next 24h, renewable surplus detection, expected savings. Tells an agent WHEN to act: charge EV now or in 2h, run the dishwasher at 14:00. The decision product of the energy vertical.
 
 **How to use.**
 
@@ -107,7 +107,7 @@ GET https://api.xynaptic.io/v1/energy-opportunity
 
 **What it does.**
 
-current European grid health proxy: price volatility, renewable stress signals, load-shift reco
+Xynaptic Grid Status — current European grid health proxy: price volatility, renewable stress signals, load-shift recommendations. Will be enriched with ENTSO-E data (grid-status ENTSO-E access).
 
 **How to use.**
 
@@ -126,7 +126,7 @@ GET https://api.xynaptic.io/v1/energy-grid-status
 
 **What it does.**
 
-the optimal charging window for an electric vehicle: cheapest contiguous hours fitting the requ
+Xynaptic EV Charge Window — the optimal charging window for an electric vehicle: cheapest contiguous hours fitting the required charge (?kwh=50&region=fr), with renewable surplus preference, expected cost vs charging now. The EV driver decision product.
 
 **How to use.**
 
@@ -145,7 +145,7 @@ GET https://api.xynaptic.io/v1/energy-charge-window
 
 **What it does.**
 
-when to charge and when to discharge a battery/home storage in the next 24h: buy window (lowest
+Xynaptic Battery Arbitrage — when to charge and when to discharge a battery/home storage in the next 24h: buy window (lowest prices), sell window (highest), expected spread. The storage owner decision product.
 
 **How to use.**
 
@@ -164,7 +164,7 @@ GET https://api.xynaptic.io/v1/energy-battery-arbitrage
 
 **What it does.**
 
-live French electricity demand (RTE éCO2mix official): consumption MW, day-ahead forecast, CO2 
+Xynaptic Energy Demand FR — live French electricity demand (RTE éCO2mix official): consumption MW, day-ahead forecast, CO2 rate g/kWh, per-fuel generation mix. Quarter-hourly freshness. GET (?date=YYYY-MM-DD, default today).
 
 **How to use.**
 
@@ -183,7 +183,7 @@ GET https://api.xynaptic.io/v1/energy-demand (?date= — demande électrique Fra
 
 **What it does.**
 
-live French cross-border power flows (RTE official): England, Italy, Germany-Belgium, Switzerla
+Xynaptic Energy Interconnections FR — live French cross-border power flows (RTE official): England, Italy, Germany-Belgium, Switzerland, Spain. GET ?date=YYYY-MM-DD.
 
 **How to use.**
 
@@ -202,7 +202,7 @@ GET https://api.xynaptic.io/v1/energy-interconnections (?date= — échanges tra
 
 **What it does.**
 
-the official regulated gas price zone (1-6) for any French postcode, from CRE open data (9,700+
+Xynaptic Gas Tariff Zone — the official regulated gas price zone (1-6) for any French postcode, from CRE open data (9,700+ communes). Zone 1 = cheapest baseline, zone 6 = most expensive — know your gas cost level before comparing offers. GET ?cp=75001.
 
 **How to use.**
 

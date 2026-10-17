@@ -12,7 +12,7 @@
 
 **What it does.**
 
-structured events from Europe (last 3h): importance, lifecycle, entities, geography, sectors, m
+Xynaptic EU News v2 — structured events from Europe (last 3h): importance, lifecycle, entities, geography, sectors, multi-source verification, agent-ready actions. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/news-eu
 
 **What it does.**
 
-structured events (AI/LLM, GPU, quantum computing, last 3h): importance, lifecycle, entities, s
+Xynaptic Tech News v2 — structured events (AI/LLM, GPU, quantum computing, last 3h): importance, lifecycle, entities, sectors, multi-source verification, agent-ready actions. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -50,7 +50,7 @@ GET https://api.xynaptic.io/v1/news-tech
 
 **What it does.**
 
-structured events from the United States (last 3h): importance, lifecycle, entities, sectors, m
+Xynaptic US News v2 — structured events from the United States (last 3h): importance, lifecycle, entities, sectors, multi-source verification, agent-ready actions. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/news-us
 
 **What it does.**
 
-structured events across Asia (China, Japan, India, Korea, ASEAN, last 3h): importance, lifecyc
+Xynaptic Asia News v2 — structured events across Asia (China, Japan, India, Korea, ASEAN, last 3h): importance, lifecycle, entities, sectors, multi-source verification, agent-ready actions. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -88,7 +88,7 @@ GET https://api.xynaptic.io/v1/news-asia
 
 **What it does.**
 
-structured events (geopolitics, energy, conflicts, last 3h): importance, lifecycle, entities, s
+Xynaptic Middle East News v2 — structured events (geopolitics, energy, conflicts, last 3h): importance, lifecycle, entities, sectors, multi-source verification, agent-ready actions. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -107,7 +107,7 @@ GET https://api.xynaptic.io/v1/news-mideast
 
 **What it does.**
 
-structured events (politics, economy, Ukraine war, last 3h): importance, lifecycle, entities, s
+Xynaptic Russia News v2 — structured events (politics, economy, Ukraine war, last 3h): importance, lifecycle, entities, sectors, multi-source verification, agent-ready actions. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -126,7 +126,7 @@ GET https://api.xynaptic.io/v1/news-russia
 
 **What it does.**
 
-curated global events (importance >= medium) aggregated from all 7 Xynaptic news feeds, cross-f
+Xynaptic World News Briefing v2 — curated global events (importance >= medium) aggregated from all 7 Xynaptic news feeds, cross-feed deduplicated with reinforced verification. The executive briefing for busy agents. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -145,7 +145,7 @@ GET https://api.xynaptic.io/v1/news-world
 
 **What it does.**
 
-structured events (celebrities, cinema, awards, Nobel Prize, last 3h): importance, lifecycle, e
+Xynaptic Stars & Awards v2 — structured events (celebrities, cinema, awards, Nobel Prize, last 3h): importance, lifecycle, entities, multi-source verification, agent-ready actions. Refreshed every 2 hours.
 
 **How to use.**
 

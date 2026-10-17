@@ -12,7 +12,7 @@
 
 **What it does.**
 
-structured French rail events (SNCF, TGV, TER, Transilien, last 12h): importance, lifecycle, di
+Xynaptic Train News FR — structured French rail events (SNCF, TGV, TER, Transilien, last 12h): importance, lifecycle, disruption detection, agent-ready assessment. France only. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -31,7 +31,7 @@ GET https://api.xynaptic.io/v1/rail-news
 
 **What it does.**
 
-active French rail disruptions (grèves, travaux, suppressions, incidents, déraillements) with i
+Xynaptic Rail Disruptions FR — active French rail disruptions (grèves, travaux, suppressions, incidents, déraillements) with importance scoring and agent-ready actions. France only. Refreshed every 2 hours.
 
 **How to use.**
 
@@ -50,7 +50,7 @@ GET https://api.xynaptic.io/v1/rail-disruptions
 
 **What it does.**
 
-next departures from any French rail station (search by name, e.g. ?station=Lyon Part-Dieu): li
+Xynaptic Station Departures FR — next departures from any French rail station (search by name, e.g. ?station=Lyon Part-Dieu): line, direction, platform, scheduled time, real-time info. France only, real-time via SNCF/Navitia.
 
 **How to use.**
 
@@ -69,7 +69,7 @@ GET https://api.xynaptic.io/v1/rail-departures
 
 **What it does.**
 
-real-time status of a French train by number (e.g. ?number=1234): line, direction, stops with t
+Xynaptic Train Status FR — real-time status of a French train by number (e.g. ?number=1234): line, direction, stops with times and delays, current position in journey. France only, real-time via SNCF/Navitia.
 
 **How to use.**
 
@@ -88,7 +88,7 @@ GET https://api.xynaptic.io/v1/rail-train-status
 
 **What it does.**
 
-composite risk assessment of a French rail journey (?from=Lyon Part-Dieu&to=Paris): next connec
+Xynaptic Train Route Risk FR — composite risk assessment of a French rail journey (?from=Lyon Part-Dieu&to=Paris): next connections, active disruptions on the route (grèves, travaux, incidents), transfer count, agent-ready verdict with score. France only.
 
 **How to use.**
 
@@ -107,7 +107,7 @@ GET https://api.xynaptic.io/v1/rail-train-route-risk
 
 **What it does.**
 
-will you make your connection? Given a transfer station and planned margin (?at=Lyon Part-Dieu&
+Xynaptic Connection Risk FR — will you make your connection? Given a transfer station and planned margin (?at=Lyon Part-Dieu&minutes=15), scores the risk of missing it: active disruptions, historical reliability, recommended minimum margin. France only.
 
 **How to use.**
 
@@ -126,7 +126,7 @@ GET https://api.xynaptic.io/v1/rail-connection-risk
 
 **What it does.**
 
-complete one-shot synthesis of a French rail journey (?from&to): next departures, journey plan 
+Xynaptic Rail Trip Brief FR — complete one-shot synthesis of a French rail journey (?from&to): next departures, journey plan with connections, active disruptions, risk assessment, agent-ready recommendation. The premium all-in-one. France only.
 
 **How to use.**
 
@@ -145,7 +145,7 @@ GET https://api.xynaptic.io/v1/rail-trip-brief
 
 **What it does.**
 
-train vs plane between two cities: REAL next train journeys (Navitia/SNCF: times, duration, tra
+Xynaptic Intermodal Compare — train vs plane between two cities: REAL next train journeys (Navitia/SNCF: times, duration, transfers) vs flight estimate (great-circle distance, typical duration+price range, CO2 per passenger). Composite verdict: when the train wins on total door-to-door time or cost. GET ?from=Paris&to=Nice. France focus. Informational.
 
 **How to use.**
 
