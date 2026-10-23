@@ -45,6 +45,28 @@ Every service, detailed per domain — **What it does** (description, sources) a
 | 🛡️ Insurance | 10 | `insurance-policy` · `insurance-profile` · `insurance-eligibility` |
 | 🏥 Health | 8 | `health-drug-info` · `health-clinical-trials` · `health-news` |
 
+## Dev Kit — LLM-powered developer tools
+
+Six developer tools that run on Xynaptic's LLM layer (glm-5.3-flash / deepseek routing, JSON-strict output). Paste code or a stacktrace, get expert-grade analysis back. Pay per call in USDC, like every catalog service.
+
+| Tool | What it does | Input | Price |
+|---|---|---|---|
+| `code-review` | Severity-ranked code review with quality score; optional `include_fix` for suggested fixes | `code` (10–12000 chars, any language) | $0.05 |
+| `code-fix` | Buggy code in, corrected version out — with the bug explained line by line | `code` | $0.05 |
+| `code-refactor` | Behavior-preserving refactor: cleaner structure, readability wins, recommended tests | `code` | $0.05 |
+| `test-generate` | Functional test cases, code skeletons and security checks for any snippet | `code` | $0.05 |
+| `error-explain` | Paste a stacktrace, get the root cause explained with a concrete fix | `error` (stacktrace or error text) | $0.03 |
+| `security-review` | Security audit of code or config: vulnerabilities, secrets exposure, injection risks, hardening advice | `content` (code or config, multi-format) | $0.05 |
+
+```
+POST https://api.xynaptic.io/v1/code-review
+-> 402 Payment Required (price: $0.05)
+-> pay via x402, retry with PAYMENT-SIGNATURE
+-> 200 JSON: { findings: [...], quality_score, ... }
+```
+
+All six are live and QA-settled on Base, Solana and Polygon. Also exposed through the MCP server (mcp.xynaptic.io/mcp).
+
 ## Agent Skills — the first x402-paid skills
 
 A skill is a complete method (SKILL.md, Claude/OpenClaw-compatible) that chains several catalog services with decision grids, thresholds and abort rules. Buy the method once ($0.25), then execute it: each data call is paid per-use via x402 as usual.
