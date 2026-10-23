@@ -2,7 +2,7 @@
 
 > Every service detailed: **What it does** and **How to use** (route, parameters, price, payment flow). No API key. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.
 
-**201 services across 16 domains** — same taxonomy as the live docs at https://xynaptic.io/docs. Machine-readable catalog: https://api.xynaptic.io — MCP: mcp.xynaptic.io/mcp
+**200+ services across 16+ domains** — same taxonomy as the live docs at https://xynaptic.io/docs. Machine-readable catalog: https://api.xynaptic.io — MCP: mcp.xynaptic.io/mcp
 
 | Domain | Services | File |
 |---|---|---|
@@ -22,5 +22,6 @@
 | Property | 11 | [`real-estate-fr.md`](real-estate-fr.md) |
 | Insurance | 10 | [`insurance.md`](insurance.md) |
 | Health | 8 | [`health-medical.md`](health-medical.md) |
+| Dev Kit | 6 | [`dev-kit.md`](dev-kit.md) — code review, fix, refactor, test generation, error explanation, security audit |
 
 Prefer no per-call blockchain payments? `POST /v1/ticket-buy` (0.5–20 USDC, 90 days), then consume any service with the `X-TICKET` header at 20% off. Status check free.
