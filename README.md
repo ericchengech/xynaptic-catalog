@@ -44,6 +44,7 @@ Every service, detailed per domain — **What it does** (description, sources) a
 | 🏠 Property | 11 | `property-valuation` · `property-price` · `property-risk` |
 | 🛡️ Insurance | 10 | `insurance-policy` · `insurance-profile` · `insurance-eligibility` |
 | 🏥 Health | 8 | `health-drug-info` · `health-clinical-trials` · `health-news` |
+| 🛠️ Dev Kit | 6 | `code-review` · `code-fix` · `code-refactor` · `test-generate` · `error-explain` · `security-review` |
 
 ## Dev Kit — LLM-powered developer tools
 
