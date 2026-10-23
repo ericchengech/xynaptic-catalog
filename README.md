@@ -1,6 +1,6 @@
 # Xynaptic — Real-world data for AI agents
 
-[![mcp.xynaptic MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic/badges/score.svg)](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic)
+[![mcp.xynaptic MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic/badges/score.svg)](https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic) [![Xynaptic MCP MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/ericchengech/xynaptic-catalog/badges/score.svg)](https://glama.ai/mcp/servers/ericchengech/xynaptic-catalog)
 
 **This repository also contains the Xynaptic MCP server implementation** — a zero-dependency Node.js MCP server (`index.js`, JSON-RPC 2.0 over stdio) that exposes this catalog to MCP clients, plus its `Dockerfile`. Run locally: `node index.js` (Node 18+). Hosted endpoint: mcp.xynaptic.io/mcp.
 
