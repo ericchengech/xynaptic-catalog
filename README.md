@@ -6,7 +6,7 @@
 
 
 
-**201 pay-per-request data & AI APIs — full agent ecosystem: 14 data domains + 3 agent skills, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, pre-transaction wallet screening, crypto global metrics & movers (CMC), French legal watch, live French jobs (France Travail API) & recruitment tensions (BMO Dares), supplier compliance screening, used-car dealer check (anti-fraud before buying), the first x402-paid agent SKILLS (supplier due-diligence, payment fraud screening, crypto token audit — method + bundled data calls), battery-metals EV brief (lithium, copper, platinum, palladium), live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
+**200+ pay-per-request data & AI APIs — full agent ecosystem: 14 data domains + 3 agent skills, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, pre-transaction wallet screening, crypto global metrics & movers (CMC), French legal watch, live French jobs (France Travail API) & recruitment tensions (BMO Dares), supplier compliance screening, used-car dealer check (anti-fraud before buying), the first x402-paid agent SKILLS (supplier due-diligence, payment fraud screening, crypto token audit — method + bundled data calls), battery-metals EV brief (lithium, copper, platinum, palladium), live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -22,7 +22,7 @@ GET https://api.xynaptic.io/v1/energy-price
 
 ## Full service reference (new)
 
-Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — 201 services, 16 domains, same taxonomy as the live docs at https://xynaptic.io/docs.
+Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — 200+ services, 16+ domains, same taxonomy as the live docs at https://xynaptic.io/docs.
 
 ## Verticals
 
