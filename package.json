@@ -12,6 +12,9 @@
     "start": "node index.js",
     "test": "node index.js < /dev/null"
   },
+  "dependencies": {
+    "tsx": "^4.23.0"
+  },
   "type": "commonjs",
   "keywords": [
     "mcp",
