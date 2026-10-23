@@ -24,7 +24,7 @@ GET https://api.xynaptic.io/v1/energy-price
 
 Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — 200+ services, 16+ domains, same taxonomy as the live docs at https://xynaptic.io/docs.
 
-## Verticals
+## Domains
 
 | Domain | Services | Highlights |
 |---|---|---|
@@ -150,17 +150,17 @@ where it stores anything, and expires honestly (TTL destroys, no dark patterns).
 
 ## The resident domains (new)
 
-Full verticals so an agent never has to leave Xynaptic:
+Full domains so an agent never has to leave Xynaptic:
 
 - **BANKING/MONETICS (16 services)** — from raw statement parsing to fraud detection,
   chargeback classification, counterparty KYB and payment routing: the complete
   journey of a banking agent. Bring-your-own-data, nothing stored, disclaimers on
   every decision-adjacent route.
-- **SECURITIES (19 services)** — the full funnel on official US regulator data (EDGAR filings, XBRL fundamentals, insider, earnings, dividends) + 6 EU routes (Yahoo Finance EU markets): live prices Paris/XETRA/LSE/Amsterdam, technicals RSI/momentum, analysis, compare, risk — local currency + EUR
+- **SECURITIES (19 services)** — the full services on official US regulator data (EDGAR filings, XBRL fundamentals, insider, earnings, dividends) + 6 EU routes (Yahoo Finance EU markets): live prices Paris/XETRA/LSE/Amsterdam, technicals RSI/momentum, analysis, compare, risk — local currency + EUR
   (SEC EDGAR) + live prices: identity, fundamentals, technicals, risk, filings
   full-text, insider transactions, dividends, earnings, daycare watches,
   devil's-advocate validation and portfolio analysis.
-- **HEALTH + REAL ESTATE + INDUSTRY + INSURANCE (42 services)** — four new verticals, all QA-settled: official health sources (openFDA, ClinicalTrials.gov, PubMed, ScopeSanté, RPPS 2.3M pros), official French real-estate transactions (DGFiP DVF, 915k+ sales, median €/m²), live commodities + INSEE producer prices + supplier intelligence, and the AI insurance suite (policy parsing, claim structuring, coverage verdicts, legal-basis quotes).
+- **HEALTH + REAL ESTATE + INDUSTRY + INSURANCE (42 services)** — four new domains, all QA-settled: official health sources (openFDA, ClinicalTrials.gov, PubMed, ScopeSanté, RPPS 2.3M pros), official French real-estate transactions (DGFiP DVF, 915k+ sales, median €/m²), live commodities + INSEE producer prices + supplier intelligence, and the AI insurance suite (policy parsing, claim structuring, coverage verdicts, legal-basis quotes).
 - **WEB + QUANT + FRENCH PUBLIC DATA (11 services)** — `ai-search` gives agents real web access
   with sourced answers; the crypto quant pack (portfolio, historical, correlation, screener, gas fees)
   completes the trading stack; `company-news` closes the KYB loop with press; `intermodal-compare`
@@ -170,7 +170,7 @@ Full verticals so an agent never has to leave Xynaptic:
   worldwide: search by name, full identity by LEI. French registry (11 services)
   remains the deep end; LEI is the global layer.
 
-## The company funnel
+## The company services
 
 ```
 SEARCH → PROFILE → PEOPLE / NETWORK / FINANCIAL
@@ -188,7 +188,7 @@ SEARCH → PROFILE → PEOPLE / NETWORK / FINANCIAL
 
 Built on the French state registry (RNE) — open data, no key required. Danone example: "minimal risk (0) — active, 13 officers, 2025 accounts, VAT present. Action: proceed."
 
-## The crypto funnel
+## The crypto services
 
 ```
 MARKET / NEWS / ONCHAIN
