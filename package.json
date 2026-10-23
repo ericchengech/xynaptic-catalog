@@ -1,13 +1,33 @@
 {
   "name": "xynaptic-mcp-server",
   "version": "1.0.0",
-  "description": "Xynaptic MCP server — 207 pay-per-call data & AI tools for agents (x402/USDC, no API key). stdio proxy to mcp.xynaptic.io.",
+  "description": "Xynaptic MCP server - 207 pay-per-call data & AI tools for agents (x402/USDC, no API key). stdio proxy to mcp.xynaptic.io.",
   "author": "Xynaptic <contact@xynaptic.io>",
   "main": "index.js",
-  "bin": { "xynaptic-mcp-server": "index.js" },
+  "bin": {
+    "xynaptic-mcp-server": "index.js"
+  },
+  "scripts": {
+    "build": "node --check index.js",
+    "start": "node index.js",
+    "test": "node index.js < /dev/null"
+  },
   "type": "commonjs",
-  "keywords": ["mcp", "x402", "usdc", "ai-agents", "data-api", "model-context-protocol", "pay-per-call"],
+  "keywords": [
+    "mcp",
+    "x402",
+    "usdc",
+    "ai-agents",
+    "data-api",
+    "model-context-protocol",
+    "pay-per-call"
+  ],
   "license": "MIT",
-  "repository": { "type": "git", "url": "git+https://github.com/ericchengech/xynaptic-catalog.git" },
-  "engines": { "node": ">=18" }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericchengech/xynaptic-catalog.git"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
