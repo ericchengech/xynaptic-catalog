@@ -48,7 +48,7 @@ Every service, detailed per domain — **What it does** (description, sources) a
 
 ## Dev Kit — LLM-powered developer tools
 
-Six developer tools that run on Xynaptic's LLM layer (glm-5.3-flash / deepseek routing, JSON-strict output). Paste code or a stacktrace, get expert-grade analysis back. Pay per call in USDC, like every catalog service.
+Six developer tools that run on flash-class frontier models (GLM-5.3-Flash / DeepSeek-V4.1-Flash auto-routing, JSON-strict output) — fast, cheap, expert-grade on bounded tasks. Paste code or a stacktrace, get expert-grade analysis back. Pay per call in USDC, like every catalog service.
 
 | Tool | What it does | Input | Price |
 |---|---|---|---|
