@@ -59,6 +59,13 @@ Six developer tools that run on Xynaptic's LLM layer (glm-5.3-flash / deepseek r
 | `error-explain` | Paste a stacktrace, get the root cause explained with a concrete fix | `error` (stacktrace or error text) | $0.03 |
 | `security-review` | Security audit of code or config: vulnerabilities, secrets exposure, injection risks, hardening advice | `content` (code or config, multi-format) | $0.05 |
 
+**Dev Kit subscription — $15/mo for coding agents.** 1,000 units/month (100/hour cap) covering all 6 dev endpoints. Everything else stays pay-per-call.
+```
+POST https://api.xynaptic.io/v1/sub-buy
+{ "plan": "devkit" }
+-> 402 x402 $15 USDC -> sign -> sub_key
+Authorization: Bearer *** on the 6 dev endpoints
+```
 ```
 POST https://api.xynaptic.io/v1/code-review
 -> 402 Payment Required (price: $0.05)
