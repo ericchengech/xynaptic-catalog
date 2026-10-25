@@ -1,6 +1,6 @@
 # Xynaptic
 
-> Real-world data for AI agents — pay per request via x402 (USDC). 201 live services. No API key, no account. Every response is cryptographically signed and verifiable at https://xynaptic.io/trust
+> Real-world data for AI agents — pay per request via x402 (USDC). 200+ live services. No API key, no account. Every response is cryptographically signed and verifiable at https://xynaptic.io/trust
 
 Xynaptic provides real-time, verifiable data for AI agents: French company registry, crypto & DeFi, SEC & EU stocks, banking & payments, energy & grid, aviation, rail, health, real estate, insurance, news. Built for agents: HTTP 402 flow, MCP server, signed responses.
 
@@ -27,7 +27,7 @@ Xynaptic provides real-time, verifiable data for AI agents: French company regis
 - Client: https://www.npmjs.com/package/xynaptic-mcp
 - Open catalog: https://github.com/ericchengech/xynaptic-catalog
 
-## Services by domain — overview (201 total)
+## Services by domain — overview (200+ total)
 Full detailed list with prices and full descriptions: https://xynaptic.io/llms-full.txt
 
 ### Company Registry FR — 31 services

@@ -1,5 +1,5 @@
 # Xynaptic — Full Catalog
-> Complete reference for AI agents. 201 live services. Prices $0.001-$0.50, USDC via x402 (HTTP 402). No API key. Every response Ed25519-signed. Verify at https://xynaptic.io/trust
+> Complete reference for AI agents. 200+ live services. Prices $0.001-$0.50, USDC via x402 (HTTP 402). No API key. Every response Ed25519-signed. Verify at https://xynaptic.io/trust
 
 This is the full detail file referenced by https://xynaptic.io/llms.txt
 - Map (short): https://xynaptic.io/llms.txt

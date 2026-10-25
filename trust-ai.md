@@ -34,4 +34,4 @@ These files are designed to be pasted directly into the chat, as recommended by 
 - MCP server: https://mcp.xynaptic.io/mcp
 
 ## Company
-Xynaptic provides real-world data for AI agents — 201 live services covering company registry (FR + international), crypto, SEC/EU stocks, banking, energy, aviation, rail, health, real estate, insurance, news.
+Xynaptic provides real-world data for AI agents — 200+ live services covering company registry (FR + international), crypto, SEC/EU stocks, banking, energy, aviation, rail, health, real estate, insurance, news.
