@@ -1,7 +1,7 @@
 {
   "name": "xynaptic-mcp-server",
-  "version": "1.1.5",
-  "description": "Xynaptic MCP server - 207 pay-per-call data & AI tools for agents (x402/USDC, no API key). stdio proxy to mcp.xynaptic.io.",
+  "version": "1.1.6",
+  "description": "Xynaptic MCP server - 200+ pay-per-call data & AI tools for agents (x402/USDC, no API key). stdio proxy to mcp.xynaptic.io.",
   "author": "Xynaptic <contact@xynaptic.io>",
   "main": "index.js",
   "bin": {
