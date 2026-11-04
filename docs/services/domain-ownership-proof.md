@@ -39,6 +39,8 @@ POST https://api.xynaptic.io/v1/domain-ownership-proof
 
 Unlimited monthly verification for agencies: **$2/month** subscription (`Authorization: Bearer ***`).
 
+**Known limitation.** Domains hosted on the same Cloudflare account as this API (edge-to-edge) can time out during the crawl — Cloudflare blocks the loop. Verify from a different host in that edge case, or self-certify via DNS TXT out-of-band.
+
 **Error cases.**
 
 - `400` — `domain` missing / invalid domain / malformed token
