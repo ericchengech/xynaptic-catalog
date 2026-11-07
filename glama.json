@@ -7,7 +7,7 @@
       "url": "https://mcp.xynaptic.io/mcp",
       "transport": "http",
       "name": "Xynaptic MCP Server",
-      "description": "200+ pay-per-call data & AI APIs for agents — official French registries (INPI RNE, DVF), US SEC EDGAR, live energy (RTE, ENTSO-E), health (openFDA, PubMed), travel & flights (SNCF, FAA NOTAMs), plus 6 LLM-powered Dev Kit tools (code review, fix, refactor, test generation, error explanation, security audit) and 3 x402-paid agent skills. Payments in USDC via x402 on Base, Solana or Polygon — no API key, no subscription.",
+      "description": "215 pay-per-call data & AI APIs for agents — official French registries (INPI RNE, DVF), US SEC EDGAR, live energy (RTE, ENTSO-E), health (openFDA, PubMed), travel & flights (SNCF, FAA NOTAMs), plus 6 LLM-powered Dev Kit tools (code review, fix, refactor, test generation, error explanation, security audit) and 3 x402-paid agent skills. Payments in USDC via x402 on Base, Solana or Polygon — no API key, no subscription. Monthly plans (no account): full catalog from $15/mo, Dev Kit $15/mo (6 dev endpoints), Audit & Security pack $19/mo (9 audit endpoints: audits, domain proofs, authorized scans, wallet & route watch), and wallet-watch $12/mo per watched wallet.",
       "tags": [
         "data-api",
         "x402",
@@ -21,7 +21,9 @@
         "health",
         "travel",
         "developer-tools",
-        "code-review"
+        "code-review",
+        "audit-security",
+        "subscriptions"
       ],
       "package": {
         "registry": "npm",

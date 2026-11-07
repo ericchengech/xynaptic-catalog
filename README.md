@@ -6,7 +6,7 @@
 
 
 
-**200+ pay-per-request data & AI APIs — full agent ecosystem: 14 data domains + 3 agent skills, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, pre-transaction wallet screening, crypto global metrics & movers (CMC), French legal watch, live French jobs (France Travail API) & recruitment tensions (BMO Dares), supplier compliance screening, used-car dealer check (anti-fraud before buying), the first x402-paid agent SKILLS (supplier due-diligence, payment fraud screening, crypto token audit — method + bundled data calls), battery-metals EV brief (lithium, copper, platinum, palladium), live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
+**215 pay-per-request data & AI APIs — full agent ecosystem: 14 data domains + 3 agent skills, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, pre-transaction wallet screening, crypto global metrics & movers (CMC), French legal watch, live French jobs (France Travail API) & recruitment tensions (BMO Dares), supplier compliance screening, used-car dealer check (anti-fraud before buying), the first x402-paid agent SKILLS (supplier due-diligence, payment fraud screening, crypto token audit — method + bundled data calls), battery-metals EV brief (lithium, copper, platinum, palladium), live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No mandatory subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -19,6 +19,32 @@ GET https://api.xynaptic.io/v1/energy-price
 
 **Machine-readable catalog (free):** https://api.xynaptic.io
 **Live activity counter (free):** https://api.xynaptic.io/v1/popularity
+
+## Monthly plans (no account, pay in USDC via x402)
+
+Per-call is the default. A monthly plan replaces the per-call wallet dance with a
+quota of **units** (`units = price_usd × 100`, so a $0.02 call costs 2 units).
+Overage always falls back to pay-per-call x402 — a call is never blocked.
+
+| Plan | Price | Scope | Quota |
+|---|---|---|---|
+| `starter` | $15/mo | full catalog | 1,000 units · 200/h |
+| `median` | $29/mo | full catalog | 3,000 units · 400/h |
+| `pro` | $49/mo | full catalog | 8,000 units · 800/h |
+| `devkit` | $15/mo | 6 dev endpoints | 1,000 units · 100/h |
+| `security` | $19/mo | **9 audit endpoints** | 1,000 units · 100/h |
+
+`POST https://api.xynaptic.io/v1/sub-buy` with `{"plan":"security"}` returns the x402
+challenge (19 USDC / 30 days), then the `sub_key` works as a Bearer token on every
+in-scope endpoint (or `XYNAPTIC_SUB_KEY` for the MCP server).
+
+**Audit & Security pack ($19/mo)** — the 9 audit endpoints only:
+`mcp-audit` · `repo-security-audit` · `repo-security-audit-large` (large codebases, $2/call) ·
+`domain-ownership-proof` · `security-sim` · `wallet-watch` · `route-watch` ·
+`route-watch-register` · `route-watch-history`. Equity/SEC `security-*` services stay pay-per-call.
+
+**Standalone**: `wallet-watch` (address-poisoning watch, one payout wallet, hourly checks,
+webhook alerts) is **$12/mo** — `POST /v1/wallet-watch/register`.
 
 ## Full service reference (new)
 
