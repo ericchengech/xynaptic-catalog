@@ -39,7 +39,7 @@ challenge (19 USDC / 30 days), then the `sub_key` works as a Bearer token on eve
 in-scope endpoint (or `XYNAPTIC_SUB_KEY` for the MCP server).
 
 **Audit & Security pack ($19/mo)** — the 9 audit endpoints only:
-`mcp-audit` · `repo-security-audit` · `repo-security-audit-large` (large codebases, $2/call) ·
+`mcp-audit` · `repo-security-audit` · `repo-security-audit-large` (même route, palier $2/call au-delà de 20 fichiers) ·
 `domain-ownership-proof` · `security-sim` · `wallet-watch` · `route-watch` ·
 `route-watch-register` · `route-watch-history`. Equity/SEC `security-*` services stay pay-per-call.
 
