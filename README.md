@@ -266,6 +266,48 @@ DEEP TRADING ANALYSIS
 
 Every response chains to the next API you might need (`agent.related_xynaptic_apis`): buy one, discover the rest.
 
+## Try it free — sandbox and Xyna
+
+Two free entry points let a visitor or an agent test the catalog before paying anything.
+
+**Sandbox — `GET /v1/demo/{service}`**
+
+Three services are open: `crypto-price`, `energy-price`, `company-search`.
+
+```
+curl https://api.xynaptic.io/v1/demo/crypto-price
+curl "https://api.xynaptic.io/v1/demo/company-search?q=michelin"
+```
+
+- 10 calls per IP per day (`X-Demo-Remaining` header, `demo_meta` block in the JSON)
+- identical payload to the paid endpoint, real upstream data
+- HTTP 429 once the quota is spent, HTTP 404 for any other service
+
+**Guide — `POST /v1/ask` (Xyna)**
+
+Xyna reads the catalog and answers in natural language with one to three matching
+services and their prices. Stateless, no account, English by default (answers in the
+language of the question).
+
+```
+curl -X POST https://api.xynaptic.io/v1/ask \
+  -H 'content-type: application/json' \
+  -d '{"question":"I need to check a French company before signing"}'
+```
+
+```json
+{"xyna":"Xyna, the Xynaptic guide","free":true,"calls_today":1,"calls_limit":20,
+ "answer":"Start with company-search ($0.02) to resolve the company by name or SIREN, then ...",
+ "suggestions":[{"service":"company-search","price_usd":0.02,"demo":true}, ...]}
+```
+
+- 20 questions per IP per day (`X-Ask-Remaining` header)
+- the model runs on local inference: no third-party API is exposed, no key is needed
+- scope is the Xynaptic catalog only; off-topic questions are refused
+
+Both are also wired into the site: a **Try it — free** button on the matching endpoint
+cards in the docs, and a **Xyna** chat bubble on every page.
+
 ## Quick start
 
 ```bash
