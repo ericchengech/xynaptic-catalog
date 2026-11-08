@@ -42,3 +42,5 @@ Some services have a dedicated page in this folder:
 - [domain-ownership-proof](domain-ownership-proof.md)
 - [security-sim](security-sim.md)
 - [route-watch](route-watch.md)
+- [route-watch-register](route-watch-register.md)
+- [route-watch-history](route-watch-history.md)
