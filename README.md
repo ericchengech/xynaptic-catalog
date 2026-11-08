@@ -32,7 +32,8 @@ Overage always falls back to pay-per-call x402 — a call is never blocked.
 | `median` | $29/mo | full catalog | 3,000 units · 400/h |
 | `pro` | $49/mo | full catalog | 8,000 units · 800/h |
 | `devkit` | $15/mo | 6 dev endpoints | 1,000 units · 100/h |
-| `security` | $19/mo | **9 audit endpoints** | 1,000 units · 100/h |
+| `security` — **Audit & Security** | $19/mo | **9 audit endpoints** (8 routes) | 1,000 units · 100/h |
+| *standalone* | $12/mo | `wallet-watch` only (one payout wallet) | hourly checks · webhook alerts |
 
 `POST https://api.xynaptic.io/v1/sub-buy` with `{"plan":"security"}` returns the x402
 challenge (19 USDC / 30 days), then the `sub_key` works as a Bearer token on every
@@ -71,6 +72,7 @@ Every service, detailed per domain — **What it does** (description, sources) a
 | 🛡️ Insurance | 10 | `insurance-policy` · `insurance-profile` · `insurance-eligibility` |
 | 🏥 Health | 8 | `health-drug-info` · `health-clinical-trials` · `health-news` |
 | 🛠️ Dev Kit | 6 | `code-review` · `code-fix` · `code-refactor` · `test-generate` · `error-explain` · `security-review` |
+| 🛡️ Audit & Security | 9 | `mcp-audit` · `repo-security-audit` · `domain-ownership-proof` · `security-sim` · `wallet-watch` · `route-watch` |
 
 ## Dev Kit — LLM-powered developer tools
 
