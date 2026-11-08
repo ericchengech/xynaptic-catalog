@@ -14,6 +14,18 @@ deeper file coverage, a larger analysis budget, and a full CVSS-ranked report.
   `repo` or `url` are also accepted as aliases.
 - **Returns**: findings `[{ id, severity, cvss, file, line, why, fix }]`, a ranked summary,
   an overall grade, and the list of files that were effectively reviewed.
+
+### What the extra $1.50 actually buys (since 2026-11-08)
+
+| | small tier ($0.50) | large tier ($2.00) |
+|---|---|---|
+| reviewable files analyzed | up to **30** | up to **80** |
+| findings kept per file | 12 | 25 |
+| `coverage` block (repo size vs analyzed) | yes | yes |
+| `evidence[]` (per-file bytes + finding count) | — | **yes, one entry per analyzed file** |
+
+The `coverage` object always reports `reviewable_files`, `selected`, `analyzed` and
+`not_analyzed`, so a caller can see exactly what was skipped by the analysis budget.
 - **Included in**: the Audit & Security pack ($19/mo, 9 audit endpoints).
 
 Use `repo-security-audit` ($0.50) for repositories under ~20 reviewable files;
