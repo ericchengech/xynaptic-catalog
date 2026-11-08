@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // Xynaptic MCP Server (stdio) — proxy vers le serveur hébergé mcp.xynaptic.io
 // Pour l'évaluation Glama : démarre et répond à l'introspection (initialize, tools/list, tools/call).
 // Paiements : chaque appel d'outil payant renvoie le challenge x402 (accepts[]) —
