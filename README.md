@@ -28,16 +28,39 @@ Overage always falls back to pay-per-call x402 — a call is never blocked.
 
 | Plan | Price | Scope | Quota |
 |---|---|---|---|
+| `llm` | $9/mo | 14 `ai-*` endpoints | 2,500 units · 100/h |
 | `starter` | $15/mo | full catalog | 1,000 units · 200/h |
 | `median` | $29/mo | full catalog | 3,000 units · 400/h |
 | `pro` | $49/mo | full catalog | 8,000 units · 800/h |
 | `devkit` | $15/mo | 6 dev endpoints | 1,000 units · 100/h |
 | `security` — **Audit & Security** | $19/mo | **9 audit endpoints** (8 routes) | 1,000 units · 100/h |
-| *standalone* | $12/mo | `wallet-watch` only (one payout wallet) | hourly checks · webhook alerts |
+| `svc-<service>` | $4/mo | **one service only** (16 AI Skills endpoints) | 570 units · 20–57/h |
 
 `POST https://api.xynaptic.io/v1/sub-buy` with `{"plan":"security"}` returns the x402
 challenge (19 USDC / 30 days), then the `sub_key` works as a Bearer token on every
 in-scope endpoint (or `XYNAPTIC_SUB_KEY` for the MCP server).
+
+### Per-service plans ($4/mo)
+
+Every AI Skills endpoint except the composite `ai-brief-me` bundle can be subscribed to
+**on its own** for $4/month, with the same `sub_key` mechanics:
+
+`ai-chat` · `ai-search` · `ai-agent` · `ai-company` · `ai-finance` · `ai-energy` ·
+`ai-health` · `ai-property` · `ai-insurance` · `ai-industry` · `ai-bank` ·
+`ai-translate` · `ai-validate` · `skill-crypto-token-audit` ·
+`skill-payment-fraud-screening` · `skill-supplier-due-diligence`
+
+```bash
+curl -X POST https://api.xynaptic.io/v1/sub-buy -d '{"plan":"svc-ai-chat"}'
+# 402 challenge: 4 USDC / 30 days, then the response carries the sub_key
+```
+
+570 units per month, i.e. about **$5.70 of calls for $4** (−30 % vs pay-per-call):
+285 `ai-chat` calls, 57 `ai-company` calls, 22 `skill-*` calls. Hourly caps follow the
+same arithmetic (28/h for `ai-chat` and `ai-search`, 20/h for the other `ai-*`, 50/h for
+the `skill-*`). The relay enforces the scope: any other endpoint returns
+`403 endpoint_not_in_plan` and falls back to pay-per-call — never blocked. `ai-brief-me`
+is a store bundle, it has no per-service plan.
 
 **Audit & Security pack ($19/mo)** — the 9 audit endpoints only:
 `mcp-audit` · `repo-security-audit` · `repo-security-audit-large` (même route, palier $2/call au-delà de 20 fichiers) ·
