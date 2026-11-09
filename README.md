@@ -11,7 +11,7 @@
 ```
 GET https://api.xynaptic.io/v1/energy-price
 - **Trust Layer**: machine-readable trust card at https://api.xynaptic.io/trust (free) — identity, x402 compliance, external probes (Market402 A 100/100, vet402 paid PASS), delivery evidence, and a live BTC cross-check CEX (Coinbase) vs DEX (DexScreener on-chain), refreshed on every call.
-→ 402 Payment Required (price: $0.005)
+→ 402 Payment Required (price: $0.02)
 → sign EIP-3009 (or your x402 client)
 → retry with PAYMENT-SIGNATURE
 → 200 JSON: facts, assessment, summary, agent-ready actions
@@ -128,7 +128,7 @@ The returned `skill_md` is a standard SKILL.md (YAML frontmatter + step-by-step 
 
 ```
 INFERENCE
-  POST /v1/ai/chat — $0.005
+  POST /v1/ai/chat — $0.02
   OpenAI-compatible {model, messages[]}
   → x402 → glm-5.3-flash (fallback: deepseek)
   → JSON answer + token usage
@@ -158,7 +158,7 @@ VERTICAL AGENTS
 The client agent pays once; Xynaptic monetizes data + orchestration + inference. The LLM uses ONLY tool data — empty context = honest "no data" instead of invention (verified in QA twice).
 
 ```
-POST /v1/ai/chat — $0.005 per call
+POST /v1/ai/chat — $0.02 per call
   OpenAI-compatible {model, messages[]}
   → x402 payment → glm-5.3-flash
     (fallback: deepseek-4.1-flash)

@@ -30,8 +30,8 @@ This is the full detail file referenced by https://xynaptic.io/llms.txt
 
 
 ### Company Registry (FR) (31)
-- [company-search](https://api.xynaptic.io/v1/company-search) $0.005 — Xynaptic Company Search — find French companies by name or SIREN: identity, activity, status. The entry point 
-- [card-bin-check](https://api.xynaptic.io/v1/card-bin-check) $0.005 — Xynaptic Card BIN Check — the first 6-8 digits of a card number identify the issuer: we return scheme (Visa/Ma
+- [company-search](https://api.xynaptic.io/v1/company-search) $0.02 — Xynaptic Company Search — find French companies by name or SIREN: identity, activity, status. The entry point 
+- [card-bin-check](https://api.xynaptic.io/v1/card-bin-check) $0.02 — Xynaptic Card BIN Check — the first 6-8 digits of a card number identify the issuer: we return scheme (Visa/Ma
 - [company-international-search](https://api.xynaptic.io/v1/company-international-search) $0.01 — Xynaptic International Company Search — worldwide company search by name (GLEIF LEI registry, 200+ jurisdictio
 - [company-profile](https://api.xynaptic.io/v1/company-profile) $0.02 — Xynaptic Company Profile — consolidated identity from the French state registry: SIREN, legal form, NAF, headc
 - [company-people](https://api.xynaptic.io/v1/company-people) $0.02 — Xynaptic Company People — officers and directors from the RNE: names, roles, birth year. Parameter: ?siren=.
@@ -63,8 +63,8 @@ This is the full detail file referenced by https://xynaptic.io/llms.txt
 - [company-kyb](https://api.xynaptic.io/v1/company-kyb) $0.1 — Xynaptic Company KYB — the full due-diligence dossier in one call: identity, officers, financials, risk signal
 
 ### Crypto & DeFi (26)
-- [crypto-gas-fees](https://api.xynaptic.io/v1/crypto-gas-fees) $0.005 — Xynaptic Gas Fees — live gas prices across chains (Ethereum, Base) with slow/average/fast tiers in Gwei + esti
-- [crypto-fear-greed](https://api.xynaptic.io/v1/crypto-fear-greed) $0.005 — Xynaptic Crypto Fear & Greed — the market sentiment thermometer (alternative.me index, 0-100): current value, 
+- [crypto-gas-fees](https://api.xynaptic.io/v1/crypto-gas-fees) $0.02 — Xynaptic Gas Fees — live gas prices across chains (Ethereum, Base) with slow/average/fast tiers in Gwei + esti
+- [crypto-fear-greed](https://api.xynaptic.io/v1/crypto-fear-greed) $0.02 — Xynaptic Crypto Fear & Greed — the market sentiment thermometer (alternative.me index, 0-100): current value, 
 - [crypto-brief-live](https://api.xynaptic.io/v1/crypto-brief-live) $0.01 — Xynaptic Crypto Live — real-time crypto prices (BTC, ETH, SOL, ADA + top coins) fetched at the exact moment of
 - [crypto-price](https://api.xynaptic.io/v1/crypto-price) $0.01 — Xynaptic Crypto Price — real-time snapshot of 6 major crypto assets (BTC, ETH, SOL, ADA, LINK, DOT) with 24h c
 - [crypto-global](https://api.xynaptic.io/v1/crypto-global) $0.01 — Xynaptic Crypto Global — global crypto market snapshot (CoinMarketCap Pro): total market cap, BTC/ETH dominanc
@@ -91,8 +91,8 @@ This is the full detail file referenced by https://xynaptic.io/llms.txt
 - [crypto-onchain](https://api.xynaptic.io/v1/crypto-onchain) $0.1 — Xynaptic Crypto Onchain — live Bitcoin network data: recommended fees, mempool congestion, difficulty adjustme
 
 ### Finance & SEC (19)
-- [security-search](https://api.xynaptic.io/v1/security-search) $0.005 — Xynaptic Security Search — ticker US (e.g. AAPL) -> company identity from SEC EDGAR: name, CIK, exchanges, SIC
-- [security-eu-price](https://api.xynaptic.io/v1/security-eu-price) $0.005 — Xynaptic Security EU Price — live European stock price with local currency + EUR conversion: Paris (MC.PA), Lo
+- [security-search](https://api.xynaptic.io/v1/security-search) $0.02 — Xynaptic Security Search — ticker US (e.g. AAPL) -> company identity from SEC EDGAR: name, CIK, exchanges, SIC
+- [security-eu-price](https://api.xynaptic.io/v1/security-eu-price) $0.02 — Xynaptic Security EU Price — live European stock price with local currency + EUR conversion: Paris (MC.PA), Lo
 - [security-price](https://api.xynaptic.io/v1/security-price) $0.01 — Xynaptic Security Price — spot market data for US stocks: price, previous close, day range, 52-week range, cur
 - [security-eu-search](https://api.xynaptic.io/v1/security-eu-search) $0.01 — Xynaptic Security EU Search — European ticker identity: name, exchange, currency, market state. GET ?query=LVM
 - [security-watch](https://api.xynaptic.io/v1/security-watch) $0.01 — Xynaptic Security Watch — the daycare for stocks: we watch price above/below a threshold or RSI-14 zones, chec
@@ -112,8 +112,8 @@ This is the full detail file referenced by https://xynaptic.io/llms.txt
 - [security-validate](https://api.xynaptic.io/v1/security-validate) $0.1 — Xynaptic Security Validate — the market devil's advocate: submit an investment thesis about a US stock, we str
 
 ### Banking & Payments (15)
-- [bank-iban-validate](https://api.xynaptic.io/v1/bank-iban-validate) $0.005 — Xynaptic IBAN Validate — full structural validation: mod-97 checksum, country-specific length and format, embe
-- [bank-bic-check](https://api.xynaptic.io/v1/bank-bic-check) $0.005 — Xynaptic BIC/SWIFT Check — structural validation of the business identifier code: 8/11 chars, institution code
+- [bank-iban-validate](https://api.xynaptic.io/v1/bank-iban-validate) $0.02 — Xynaptic IBAN Validate — full structural validation: mod-97 checksum, country-specific length and format, embe
+- [bank-bic-check](https://api.xynaptic.io/v1/bank-bic-check) $0.02 — Xynaptic BIC/SWIFT Check — structural validation of the business identifier code: 8/11 chars, institution code
 - [bank-statement-parse](https://api.xynaptic.io/v1/bank-statement-parse) $0.01 — Xynaptic Bank Statement Parse — paste a raw bank statement (text, any bank layout) and get clean structured tr
 - [bank-beneficiary-watch](https://api.xynaptic.io/v1/bank-beneficiary-watch) $0.01 — Xynaptic Bank Beneficiary Watch — the daycare for banking: we watch a French counterparty in the registry and 
 - [bank-transaction-categorize](https://api.xynaptic.io/v1/bank-transaction-categorize) $0.02 — Xynaptic Bank Transaction Categorize — categorize raw bank transactions (CSV or objects) into standard categor
@@ -129,7 +129,7 @@ This is the full detail file referenced by https://xynaptic.io/llms.txt
 - [factoring-portfolio-risk](https://api.xynaptic.io/v1/factoring-portfolio-risk) $0.1 — Xynaptic Factoring Portfolio Risk — upload a set of invoices, get the portfolio risk profile: sector concentra
 
 ### AI & LLM (14)
-- [ai-chat](https://api.xynaptic.io/v1/ai-chat) $0.005 — Xynaptic AI Chat — LLM inference pay-per-call: OpenAI-compatible messages, model auto-routing (glm-5.3-flash /
+- [ai-chat](https://api.xynaptic.io/v1/ai-chat) $0.02 — Xynaptic AI Chat — LLM inference pay-per-call: OpenAI-compatible messages, model auto-routing (glm-5.3-flash /
 - [ai-translate](https://api.xynaptic.io/v1/ai-translate) $0.01 — Xynaptic AI Translate — bring your own data: paste raw text (CSV, table, email, notice, listing, any messy con
 - [ai-search](https://api.xynaptic.io/v1/ai-search) $0.02 — Xynaptic AI Search — the web access your agent is missing: ask any question, we run a REAL web search (DuckDuc
 - [ai-agent](https://api.xynaptic.io/v1/ai-agent) $0.05 — Xynaptic AI Agent — one payment, full task: orchestrates Xynaptic data services as tools (company registry, fi
@@ -145,8 +145,8 @@ This is the full detail file referenced by https://xynaptic.io/llms.txt
 - [ai-property](https://api.xynaptic.io/v1/ai-property) $0.1 — Xynaptic AI Property — the vertical real-estate agent: bring a question, it orchestrates the property-* tools 
 
 ### Energy & Grid (12)
-- [energy-price](https://api.xynaptic.io/v1/energy-price) $0.005 — Xynaptic Energy Price — current electricity spot price (EUR/MWh) with 24h trend and hourly profile. Europe (aw
-- [gas-tariff-zone](https://api.xynaptic.io/v1/gas-tariff-zone) $0.005 — Xynaptic Gas Tariff Zone — the official regulated gas price zone (1-6) for any French postcode, from CRE open 
+- [energy-price](https://api.xynaptic.io/v1/energy-price) $0.02 — Xynaptic Energy Price — current electricity spot price (EUR/MWh) with 24h trend and hourly profile. Europe (aw
+- [gas-tariff-zone](https://api.xynaptic.io/v1/gas-tariff-zone) $0.02 — Xynaptic Gas Tariff Zone — the official regulated gas price zone (1-6) for any French postcode, from CRE open 
 - [energy-solar-forecast](https://api.xynaptic.io/v1/energy-solar-forecast) $0.02 — Xynaptic Solar Forecast — 48h solar production forecast for a European region (radiation, cloud cover, peak ho
 - [energy-wind-forecast](https://api.xynaptic.io/v1/energy-wind-forecast) $0.02 — Xynaptic Wind Forecast — 48h wind power forecast for a European region (wind speed at 100m, capacity factor es
 - [energy-brief](https://api.xynaptic.io/v1/energy-brief) $0.02 — Xynaptic Energy Brief Live — one-shot energy synthesis: spot price + trend, solar and wind forecast, renewable
@@ -160,9 +160,9 @@ This is the full detail file referenced by https://xynaptic.io/llms.txt
 
 ### Agent Runtime & Storage (11)
 - [ticket-status](https://api.xynaptic.io/v1/ticket-status) FREE — Xynaptic Ticket Status — free: check remaining prepaid credit and validity. POST body: {ticket_id, ticket_secr
-- [store-put](https://api.xynaptic.io/v1/store-put) $0.001 — Xynaptic Ephemeral Store — encrypted scratchpad for agents: deposit a JSON payload (64KB max), we store it enc
-- [store-get](https://api.xynaptic.io/v1/store-get) $0.001 — Xynaptic Ephemeral Store — retrieve a stored object: POST body: { store_id, claim_secret, delete_after_read?: 
-- [store-append](https://api.xynaptic.io/v1/store-append) $0.001 — Xynaptic Ephemeral Store append — merge new JSON into an existing stored object without re-uploading: POST bod
+- [store-put](https://api.xynaptic.io/v1/store-put) $0.01 — Xynaptic Ephemeral Store — encrypted scratchpad for agents: deposit a JSON payload (64KB max), we store it enc
+- [store-get](https://api.xynaptic.io/v1/store-get) $0.01 — Xynaptic Ephemeral Store — retrieve a stored object: POST body: { store_id, claim_secret, delete_after_read?: 
+- [store-append](https://api.xynaptic.io/v1/store-append) $0.01 — Xynaptic Ephemeral Store append — merge new JSON into an existing stored object without re-uploading: POST bod
 - [watch-status](https://api.xynaptic.io/v1/watch-status) $0.001 — Xynaptic Watch status — check if your watch triggered. POST body: { watch_id, watch_secret }. Returns { status
 - [watch-put](https://api.xynaptic.io/v1/watch-put) $0.01 — Xynaptic Watch — the agent daycare: we watch a condition for you, checked hourly up to 30 days; when triggered
 - [ao](https://api.xynaptic.io/v1/ao) $0.05 — Xynaptic AO Digest — filtered French public procurement calls (trade + department, France).

@@ -32,22 +32,22 @@ Full detailed list with prices and full descriptions: https://xynaptic.io/llms-f
 
 ### Company Registry FR — 31 services
 Official French company registry (Sirene/RNE). Identity, officers, financials, KYB.
-Examples: company-search ($0.005), company-profile ($0.02), company-people ($0.02), company-financial ($0.05), company-kyb ($0.10)
+Examples: company-search ($0.02), company-profile ($0.02), company-people ($0.02), company-financial ($0.05), company-kyb ($0.10)
 Details: https://xynaptic.io/llms-full.txt#company-registry
 
 ### Crypto & DeFi — 26 services
 Live prices, on-chain, derivatives, risk, wallet screening.
-Examples: crypto-price ($0.01), crypto-brief-live ($0.01), crypto-fear-greed ($0.005), crypto-onchain ($0.10)
+Examples: crypto-price ($0.01), crypto-brief-live ($0.01), crypto-fear-greed ($0.02), crypto-onchain ($0.10)
 Details: https://xynaptic.io/llms-full.txt#crypto-defi
 
 ### Finance & SEC — 19 services
 US SEC EDGAR + EU stocks. Price, fundamentals, filings, insider, technical.
-Examples: security-search ($0.005), security-price ($0.01), security-analysis ($0.10)
+Examples: security-search ($0.02), security-price ($0.01), security-analysis ($0.10)
 Details: https://xynaptic.io/llms-full.txt#finance-sec
 
 ### Banking & Payments — 15 services
 IBAN/BIC/BIN validation, bank statement parse, sanctions screening, payment risk.
-Examples: bank-iban-validate ($0.005), bank-transaction-categorize ($0.02), bank-sanctions-screen ($0.03)
+Examples: bank-iban-validate ($0.02), bank-transaction-categorize ($0.02), bank-sanctions-screen ($0.03)
 Details: https://xynaptic.io/llms-full.txt#banking-payments
 
 ### AI & LLM — 14 services
@@ -57,12 +57,12 @@ Details: https://xynaptic.io/llms-full.txt#ai-llm
 
 ### Energy & Grid — 12 services
 EU electricity spot, solar/wind forecast, French RTE demand, battery arbitrage.
-Examples: energy-price ($0.005), energy-solar-forecast ($0.02), energy-battery-arbitrage ($0.05)
+Examples: energy-price ($0.02), energy-solar-forecast ($0.02), energy-battery-arbitrage ($0.05)
 Details: https://xynaptic.io/llms-full.txt#energy-grid
 
 ### Agent Runtime & Storage — 11 services
 Ephemeral encrypted store, watch triggers, ticket system.
-Examples: ticket-status (FREE), store-put ($0.001), watch-put ($0.01), skill-supplier-due-diligence ($0.25)
+Examples: ticket-status (FREE), store-put ($0.01), watch-put ($0.01), skill-supplier-due-diligence ($0.25)
 Details: https://xynaptic.io/llms-full.txt#agent-runtime
 
 ### Real Estate FR — 11 services
@@ -92,7 +92,7 @@ Details: https://xynaptic.io/llms-full.txt#aviation
 
 ### Rail & Transport — 8 services
 SNCF departures, train status, disruptions, connection risk, intermodal compare.
-Examples: rail-departures ($0.005), rail-trip-brief ($0.03), rail-intermodal-compare ($0.03)
+Examples: rail-departures ($0.02), rail-trip-brief ($0.03), rail-intermodal-compare ($0.03)
 Details: https://xynaptic.io/llms-full.txt#rail-transport
 
 ### Health & Medical — 8 services
