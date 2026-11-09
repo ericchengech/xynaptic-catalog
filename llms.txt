@@ -21,6 +21,21 @@ Xynaptic provides real-time, verifiable data for AI agents: French company regis
 - Networks: Base (eip155:8453), Polygon (eip155:137), Solana (solana:mainnet)
 - Prepaid tickets: POST /v1/ticket-buy ($0.50-$20) -> 20% discount via X-TICKET header, 90-day validity. Check balance: /v1/ticket-status
 
+### Monthly plans (optional, no account)
+- `llm` $9/mo — the 14 `ai-*` endpoints, 2,500 units, 100 units/hour
+- `starter` $15/mo · `median` $29/mo · `pro` $49/mo — full catalog (1,000 / 3,000 / 8,000 units)
+- `devkit` $15/mo — 6 dev endpoints · `security` $19/mo — 9 audit endpoints
+- `svc-<service>` $4/mo — ONE service only: 16 AI Skills endpoints (`ai-chat`, `ai-search`,
+  `ai-agent`, `ai-company`, `ai-finance`, `ai-energy`, `ai-health`, `ai-property`,
+  `ai-insurance`, `ai-industry`, `ai-bank`, `ai-translate`, `ai-validate`,
+  `skill-crypto-token-audit`, `skill-payment-fraud-screening`, `skill-supplier-due-diligence`)
+- Units: `units = price_usd x 100` (a $0.02 call = 2 units). A $4 per-service plan carries
+  570 units, about $5.70 of calls (30% off). Overage always falls back to pay-per-call.
+- Flow: `POST /v1/sub-buy {"plan":"svc-ai-chat"}` -> 402 challenge (4 USDC / 30 days) ->
+  pay with an x402 client (EIP-3009) -> response carries `sub_key` -> send it as
+  `Authorization: Bearer sub_...`. Scope is enforced per plan; other endpoints return
+  403 `endpoint_not_in_plan` and fall back to pay-per-call.
+
 ## Trust & verification
 - Live trust: https://xynaptic.io/trust and https://api.xynaptic.io/trust
 - Independently verified: Glama MCP Grade A, x402-trust, Market402 100/100, vet402 PASS, SCVD census READY — https://scvd.store/passport/api.xynaptic.io
