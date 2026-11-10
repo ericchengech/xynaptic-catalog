@@ -1,6 +1,6 @@
 # Xynaptic
 
-> Real-world data for AI agents — pay per request via x402 (USDC). 200+ live services. No API key, no account. Every response is cryptographically signed and verifiable at https://xynaptic.io/trust
+> Real-world data for AI agents — pay per request via x402 (USDC). 215 live services. No API key, no account. Every response is cryptographically signed and verifiable at https://xynaptic.io/trust
 
 Xynaptic provides real-time, verifiable data for AI agents: French company registry, crypto & DeFi, SEC & EU stocks, banking & payments, energy & grid, aviation, rail, health, real estate, insurance, news. Built for agents: HTTP 402 flow, MCP server, signed responses.
 
@@ -22,19 +22,19 @@ Xynaptic provides real-time, verifiable data for AI agents: French company regis
 - Prepaid tickets: POST /v1/ticket-buy ($0.50-$20) -> 20% discount via X-TICKET header, 90-day validity. Check balance: /v1/ticket-status
 
 ### Monthly plans (optional, no account)
-- `llm` $9/mo — the 14 `ai-*` endpoints, 2,500 units, 100 units/hour
-- `starter` $15/mo · `median` $29/mo · `pro` $49/mo — full catalog (1,000 / 3,000 / 8,000 units)
-- `devkit` $15/mo — 6 dev endpoints · `security` $19/mo — 9 audit endpoints
-- `svc-<service>` $4/mo — ONE service only: 16 AI Skills endpoints (`ai-chat`, `ai-search`,
-  `ai-agent`, `ai-company`, `ai-finance`, `ai-energy`, `ai-health`, `ai-property`,
-  `ai-insurance`, `ai-industry`, `ai-bank`, `ai-translate`, `ai-validate`,
-  `skill-crypto-token-audit`, `skill-payment-fraud-screening`, `skill-supplier-due-diligence`)
-- Units: `units = price_usd x 100` (a $0.02 call = 2 units). A $4 per-service plan carries
+- `llm` $9/mo - the 14 `ai-*` endpoints, 2,500 units, 100 units/hour
+- `starter` $15/mo, `median` $29/mo, `pro` $49/mo - full catalog (1,000 / 3,000 / 8,000 units)
+- `devkit` $15/mo - 6 dev endpoints. `security` $19/mo - 9 audit endpoints
+- `svc-<service>` $4/mo - ONE service only, on the 16 AI Skills endpoints (ai-chat, ai-search,
+  ai-agent, ai-company, ai-finance, ai-energy, ai-health, ai-property, ai-insurance,
+  ai-industry, ai-bank, ai-translate, ai-validate, skill-crypto-token-audit,
+  skill-payment-fraud-screening, skill-supplier-due-diligence)
+- Units: units = price_usd x 100 (a $0.02 call = 2 units). A $4 per-service plan carries
   570 units, about $5.70 of calls (30% off). Overage always falls back to pay-per-call.
-- Flow: `POST /v1/sub-buy {"plan":"svc-ai-chat"}` -> 402 challenge (4 USDC / 30 days) ->
-  pay with an x402 client (EIP-3009) -> response carries `sub_key` -> send it as
-  `Authorization: Bearer sub_...`. Scope is enforced per plan; other endpoints return
-  403 `endpoint_not_in_plan` and fall back to pay-per-call.
+- Flow: POST /v1/sub-buy {"plan":"svc-ai-chat"} -> 402 challenge (4 USDC / 30 days) -> pay
+  with an x402 client (EIP-3009) -> the response carries sub_key -> send it as
+  Authorization: Bearer sub_... Scope is enforced per plan; other endpoints return
+  403 endpoint_not_in_plan and fall back to pay-per-call.
 
 ## Trust & verification
 - Live trust: https://xynaptic.io/trust and https://api.xynaptic.io/trust
@@ -47,22 +47,22 @@ Full detailed list with prices and full descriptions: https://xynaptic.io/llms-f
 
 ### Company Registry FR — 31 services
 Official French company registry (Sirene/RNE). Identity, officers, financials, KYB.
-Examples: company-search ($0.02), company-profile ($0.02), company-people ($0.02), company-financial ($0.05), company-kyb ($0.10)
+Examples: company-search ($0.005), company-profile ($0.02), company-people ($0.02), company-financial ($0.05), company-kyb ($0.10)
 Details: https://xynaptic.io/llms-full.txt#company-registry
 
 ### Crypto & DeFi — 26 services
 Live prices, on-chain, derivatives, risk, wallet screening.
-Examples: crypto-price ($0.01), crypto-brief-live ($0.01), crypto-fear-greed ($0.02), crypto-onchain ($0.10)
+Examples: crypto-price ($0.01), crypto-brief-live ($0.01), crypto-fear-greed ($0.005), crypto-onchain ($0.10)
 Details: https://xynaptic.io/llms-full.txt#crypto-defi
 
 ### Finance & SEC — 19 services
 US SEC EDGAR + EU stocks. Price, fundamentals, filings, insider, technical.
-Examples: security-search ($0.02), security-price ($0.01), security-analysis ($0.10)
+Examples: security-search ($0.005), security-price ($0.01), security-analysis ($0.10)
 Details: https://xynaptic.io/llms-full.txt#finance-sec
 
 ### Banking & Payments — 15 services
 IBAN/BIC/BIN validation, bank statement parse, sanctions screening, payment risk.
-Examples: bank-iban-validate ($0.02), bank-transaction-categorize ($0.02), bank-sanctions-screen ($0.03)
+Examples: bank-iban-validate ($0.005), bank-transaction-categorize ($0.02), bank-sanctions-screen ($0.03)
 Details: https://xynaptic.io/llms-full.txt#banking-payments
 
 ### AI & LLM — 14 services
@@ -72,12 +72,12 @@ Details: https://xynaptic.io/llms-full.txt#ai-llm
 
 ### Energy & Grid — 12 services
 EU electricity spot, solar/wind forecast, French RTE demand, battery arbitrage.
-Examples: energy-price ($0.02), energy-solar-forecast ($0.02), energy-battery-arbitrage ($0.05)
+Examples: energy-price ($0.005), energy-solar-forecast ($0.02), energy-battery-arbitrage ($0.05)
 Details: https://xynaptic.io/llms-full.txt#energy-grid
 
 ### Agent Runtime & Storage — 11 services
 Ephemeral encrypted store, watch triggers, ticket system.
-Examples: ticket-status (FREE), store-put ($0.01), watch-put ($0.01), skill-supplier-due-diligence ($0.25)
+Examples: ticket-status (FREE), store-put ($0.001), watch-put ($0.01), skill-supplier-due-diligence ($0.25)
 Details: https://xynaptic.io/llms-full.txt#agent-runtime
 
 ### Real Estate FR — 11 services
@@ -100,14 +100,14 @@ Structured events last 3h: EU, US, Asia, Mideast, Russia, tech, economy FR.
 Examples: news-eu ($0.01), news-tech ($0.01), news-world ($0.02)
 Details: https://xynaptic.io/llms-full.txt#news-media
 
-### Aviation — 9 services
+### Flight — 9 services
 Flight status, airport brief, NOTAM, route risk, alternatives.
 Examples: flight-airport-brief ($0.02), flight-status ($0.05), flight-route-risk ($0.10)
 Details: https://xynaptic.io/llms-full.txt#aviation
 
 ### Rail & Transport — 8 services
 SNCF departures, train status, disruptions, connection risk, intermodal compare.
-Examples: rail-departures ($0.02), rail-trip-brief ($0.03), rail-intermodal-compare ($0.03)
+Examples: rail-departures ($0.005), rail-trip-brief ($0.03), rail-intermodal-compare ($0.03)
 Details: https://xynaptic.io/llms-full.txt#rail-transport
 
 ### Health & Medical — 8 services
