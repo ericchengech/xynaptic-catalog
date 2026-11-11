@@ -101,6 +101,7 @@ Paste a stacktrace or error text, get the root cause explained with a concrete f
 POST https://api.xynaptic.io/v1/error-explain
    body: { "error": "<stacktrace or error text, min 10 chars>" }
 -> 402 Payment Required (price: $0.03)
+   (the unpaid 402 carries CORS headers — Access-Control-Allow-Origin: * and Access-Control-Expose-Headers: PAYMENT-REQUIRED, X-PAYMENT-CHALLENGE, X-PAYMENT-RESPONSE — so browser-based agents can read the challenge)
 -> 200 JSON: { root_cause, explanation, fix: [...] }
 ```
 
