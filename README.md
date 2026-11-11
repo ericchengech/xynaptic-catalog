@@ -17,6 +17,8 @@ GET https://api.xynaptic.io/v1/energy-price
 → 200 JSON: facts, assessment, summary, agent-ready actions
 ```
 
+[![Lumière PayCheck grade A](https://lumierepaycheck.org/badge?url=https://api.xynaptic.io/v1/ai-energy)](https://lumierepaycheck.org/e?url=https://api.xynaptic.io/v1/ai-energy)
+
 **Machine-readable catalog (free):** https://api.xynaptic.io
 **Live activity counter (free):** https://api.xynaptic.io/v1/popularity
 
