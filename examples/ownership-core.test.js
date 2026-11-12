@@ -3,7 +3,7 @@
 // NB : https://xynaptic.io/.well-known/agent-hub-verify.txt n'existe PAS (404 HTML) — utilisé comme cas négatif réel.
 // Exécuté et PASSING le 2026-11-04.
 
-const { normaliseDomain, isPrivateOrLocal, verifierOwnership, tokenMatch } = require("/home/koch/xynaptic/CURRENT/xynaptic-catalog/examples/ownership-core.js");
+const { normaliseDomain, isPrivateOrLocal, verifierOwnership, tokenMatch } = require("./ownership-core.js");
 const assert = require("assert");
 assert.strictEqual(normaliseDomain("HTTPS://Api.Ipify.org/?x=1").domain, "api.ipify.org");
 assert(normaliseDomain("café.fr").error);
