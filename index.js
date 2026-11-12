@@ -23,7 +23,7 @@ const OUTILS_SECOURS = [
   },
   {
     name: "xynaptic-catalog",
-    description: "Xynaptic Catalog - access any of the 200+ Xynaptic services by name (crypto, French company registry, US/EU securities, banking, energy, rail, flights, health, insurance, property, jobs). Pass {service, params} for GET services or {service, body} for POST ones; the x402 challenge is surfaced for payment. [price: $0.010 per call, x402/USDC]",
+    description: "Xynaptic Catalog - access any of the 219 Xynaptic services by name (crypto, French company registry, US/EU securities, banking, energy, rail, flights, health, insurance, property, jobs). Pass {service, params} for GET services or {service, body} for POST ones; the x402 challenge is surfaced for payment. [price: $0.010 per call, x402/USDC]",
     inputSchema: {
       type: "object", required: ["service"],
       properties: {
@@ -78,7 +78,7 @@ async function traiter(msg) {
       protocolVersion: (msg.params && msg.params.protocolVersion) || "2025-06-18",
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: "xynaptic", version: VERSION,
-        title: "Xynaptic - curated flagship tools from a 215-service x402/USDC catalog (api.xynaptic.io)" },
+        title: "Xynaptic - curated flagship tools from a 219-service x402/USDC catalog (api.xynaptic.io)" },
       instructions: "Xynaptic: real-world official data for AI agents (crypto, French companies, US/EU securities, energy, FAA NOTAMs, legal, travel). Start with xynaptic-status (FREE). Paid tools return an x402 402 challenge; pay it and retry with PAYMENT-SIGNATURE.",
     });
   }
