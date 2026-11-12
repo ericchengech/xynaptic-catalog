@@ -74,7 +74,7 @@ webhook alerts) is **$12/mo** — `POST /v1/wallet-watch/register`.
 
 ## Full service reference (new)
 
-Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — **219 services, 18 domains**, same taxonomy as the live docs at https://xynaptic.io/docs.
+Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — **219 services, 19 domains**, same taxonomy as the live docs at https://xynaptic.io/docs.
 
 > *If GitHub file pages return an error ("Error loading page" / 504), it is the GitHub viewer that is down, not the repo: the same tree is readable on https://xynaptic.io/docs and each card in raw form on https://raw.githubusercontent.com/ericchengech/xynaptic-catalog/main/docs/services/README.md*
 

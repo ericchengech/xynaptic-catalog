@@ -2,7 +2,7 @@
 
 > Every service detailed: **What it does** and **How to use** (route, parameters, price, payment flow). No API key. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.
 
-**219 services across 18 domains** — same taxonomy as the live docs at https://xynaptic.io/docs. Machine-readable catalog: https://api.xynaptic.io — MCP: mcp.xynaptic.io/mcp
+**219 services across 19 domains** — same taxonomy as the live docs at https://xynaptic.io/docs. Machine-readable catalog: https://api.xynaptic.io — MCP: mcp.xynaptic.io/mcp
 
 | Domain | Services | File |
 |---|---|---|
