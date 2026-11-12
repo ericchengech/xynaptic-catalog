@@ -1,7 +1,7 @@
 {
   "name": "xynaptic-mcp",
   "version": "1.2.1",
-  "description": "Xynaptic MCP — 215 pay-per-request data & AI tools for agents (x402/USDC, no API key), plus a free xynaptic-status tool. stdio bridge to mcp.xynaptic.io.",
+  "description": "Xynaptic MCP — 219 pay-per-request data & AI tools for agents (x402/USDC, no API key), plus a free xynaptic-status tool. stdio bridge to mcp.xynaptic.io.",
   "author": "Xynaptic <contact@xynaptic.io>",
   "main": "index.js",
   "bin": {

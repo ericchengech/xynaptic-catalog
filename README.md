@@ -74,7 +74,7 @@ webhook alerts) is **$12/mo** — `POST /v1/wallet-watch/register`.
 
 ## Full service reference (new)
 
-Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — **215 services, 18 domains**, same taxonomy as the live docs at https://xynaptic.io/docs.
+Every service, detailed per domain — **What it does** (description, sources) and **How to use** (route, parameters, price, payment flow): **[docs/services/](docs/services/README.md)** — **219 services, 18 domains**, same taxonomy as the live docs at https://xynaptic.io/docs.
 
 > *If GitHub file pages return an error ("Error loading page" / 504), it is the GitHub viewer that is down, not the repo: the same tree is readable on https://xynaptic.io/docs and each card in raw form on https://raw.githubusercontent.com/ericchengech/xynaptic-catalog/main/docs/services/README.md*
 
@@ -251,6 +251,7 @@ Full domains so an agent never has to leave Xynaptic:
   completes the trading stack; `company-news` closes the KYB loop with press; `intermodal-compare`
   crosses real SNCF data with flight estimates; `tender-search` opens official public procurement;
   `gas-tariff-zone` and `news-economy-fr` add CRE-regulated data and live economy press.
+- **LEISURE & GOING OUT (3 services)** — `restaurant-top`, `restaurant-detail`, `restaurant-search`: 139 restaurants across 88 cities, Michelin distinctions from Wikipedia/Wikidata, official hygiene checks (Alim Confiance, FSA, NYC DOHMH), contacts and booking links, opening hours from OpenStreetMap when they exist and `null` otherwise. Sources cited in every record.
 - **INTERNATIONAL COMPANIES (2 services)** — GLEIF LEI registry, 200+ jurisdictions
   worldwide: search by name, full identity by LEI. French registry (11 services)
   remains the deep end; LEI is the global layer.
