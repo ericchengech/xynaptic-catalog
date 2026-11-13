@@ -7,8 +7,9 @@ deeper file coverage, a larger analysis budget, and a full CVSS-ranked report.
 
 - **Route**: `POST /v1/repo-security-audit` (there is no separate `/v1/repo-security-audit-large` endpoint)
 - **Price**: $0.50 per call for repos with **20 reviewable files or fewer**;
-  the tier is re-served as a **second 402 at $2.00** when the repo is larger
-  (the challenge carries a `size_tier` note explaining why the price changed).
+  **$2.00** above that. A **free pre-flight** counts the reviewable files
+  before payment and quotes the exact tier up front, so there is one payment
+  and no second 402 (the challenge carries a note with the file count).
   200 units on a monthly plan.
 - **Body**: `{ "github_url": "https://github.com/<owner>/<name>" }` — public GitHub repository.
   `repo` or `url` are also accepted as aliases.

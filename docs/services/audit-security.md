@@ -10,7 +10,7 @@
 |---|---|---|---|
 | `mcp-audit` | $0.5 | `/v1/mcp-audit` | static security review of an MCP client config before you approve it: paste any mcpServers config (mcp.json, Cursor, VS Code…), we classify every pack |
 | `repo-security-audit` | $0.5 | `/v1/repo-security-audit` | static security review of a public GitHub repository: scans the most actionable files for committed secrets (AWS/GitHub/Slack/OpenAI keys, private key |
-| `repo-security-audit-large` | $2 | `/v1/repo-security-audit` | same route as repo-security-audit (POST /v1/repo-security-audit): when the repository has more than 20 reviewable files, a second 402 is served at 2.0 |
+| `repo-security-audit-large` | $2 | `/v1/repo-security-audit` | same route as repo-security-audit (POST /v1/repo-security-audit): a free pre-flight counts the reviewable files before payment and quotes 2.00 USD up front above 20 files (0.50 USD below) |
 | `domain-ownership-proof` | $0.25 | `/v1/domain-ownership-proof` | prove you control a domain (or a GitHub repo) without exposing an email address: we generate a challenge token to publish as a DNS TXT record or at /. |
 | `security-sim` | $1 | `/v1/security-sim` | an authorised, non-destructive attack simulation against a target YOU own: probes TLS configuration, security headers, exposed admin paths, cookie fla |
 | `wallet-watch` | $12 | `/v1/wallet-watch` | continuous monitoring of an EVM or Solana wallet: balance and value, inbound/outbound transfers, token approvals granted, and alerts on suspicious pat |
