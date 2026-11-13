@@ -108,7 +108,9 @@ Alim Confiance Licence Ouverte · FSA OGL v3 · NYC DOHMH public domain · OpenS
 
 ## restaurant-nearby — $0.05
 
-The volume layer. Every food place OpenStreetMap knows in a city zone — `restaurant`, `fast_food`, `bar`, `pub`, `cafe` — for people who need the neighbourhood, not the ranking.
+The volume layer. Every food place our sources know in a city zone — `restaurant`, `fast_food`, `bar`, `pub`, `cafe` — for people who need the neighbourhood, not the ranking.
+
+**Two sources, merged.** OpenStreetMap (volume + opening hours) and Overture Maps Places (volume, phone, website, and an `operating_status` that tells a place is permanently closed). Each record carries `sources` (`["osm"]`, `["overture"]` or `["osm","overture"]`): a place seen in both bases comes back confirmed, a place seen once says so. Places declared permanently closed by Overture are removed from the snapshot, never served. Currently **38 French zones**.
 
 ```
 GET https://api.xynaptic.io/v1/restaurant-nearby?city=lille
@@ -116,12 +118,18 @@ GET https://api.xynaptic.io/v1/restaurant-nearby?city=lille&lat=50.6330&lon=3.07
 GET https://api.xynaptic.io/v1/restaurant-nearby?city=lille&open_now=1&amenity=restaurant
 ```
 
-Parameters: `city` (published zone, currently `lille`), `lat`+`lon` (your point, optional — defaults to the city centre), `radius_km` (0.2-25, default 3), `limit` (max 100), `offset`, `amenity`, `cuisine`, `brand`, `q`, `open_now=1`, `has_hours=1`.
+Parameters: `city` (published zone — see the free list below), `lat`+`lon` (your point, optional — defaults to the city centre), `radius_km` (0.2-25, default 3, clamped to the zone's real coverage), `limit` (max 100), `offset`, `amenity`, `cuisine`, `brand`, `q`, `open_now=1`, `has_hours=1`.
 
-Response: `{ version, data_as_of, city, center, radius_km, total, results[] }`. Each record: `id` (`osm-node-…`), `name`, `brand` (null when independent), `cuisine[]`, `amenity`, `lat`, `lon`, `address`, `postcode`, `phone`, `website`, `hours` (raw OSM), `open_now`, `distance_km`.
+```
+GET https://api.xynaptic.io/v1/restaurant-nearby/zones   # free, no payment
+```
 
-**The honesty rule.** `open_now` is `null` whenever the OSM hours are missing or use a syntax we do not parse (months, holidays, sunrise/sunset). It is never inferred, never guessed from the category or the hour of the day. A `null` means "ask them", not "closed". This is deliberate: on our 139 editorial records only 0.7% carry hours, while a dense zone like Lille carries them on 52% of POIs — the absence is the reality of the data, not a pipeline bug.
+`/zones` returns the published zones with their version, radius, record count, `data_as_of` and `hours_coverage`. Check it **before** paying: a zone that is not published answers 404 after payment.
+
+Response: `{ version, data_as_of, overture_release, city, center, radius_km, radius_requested_km, zone_coverage_km, radius_clamped, hours_coverage, sources_breakdown, total, results[] }`. Each record: `id` (an `overture-` id when only Overture knows the place), `name`, `sources[]`, `brand` (null when independent), `cuisine[]`, `amenity`, `lat`, `lon`, `address`, `postcode`, `phone`, `website`, `hours` (raw OSM), `open_now`, `distance_km`, `overture_confidence` where applicable.
+
+**The honesty rule.** `open_now` is `null` whenever the OSM hours are missing or use a syntax we do not parse (months, holidays, sunrise/sunset). It is never inferred, never guessed from the category or the hour of the day. A `null` means "ask them", not "closed". This is deliberate, and it has a price: merging Overture roughly doubles the volume while adding no hours at all, so the zone-level `hours_coverage` drops (Paris 30%, Marseille 13%, Nantes 49% on the 38 published zones). We publish that ratio per zone instead of hiding it behind a total.
 
 **No editorial score on this layer.** There is no star rating, no 0-100 quality score: a fast-food chain must never inherit a fine-dining ranking. Ranking lives in `restaurant-top`.
 
-Attribution: OpenStreetMap contributors, ODbL 1.0. Hygiene grades from official sources (Alim Confiance, FSA, NYC DOHMH) are only joined where available — the field is omitted rather than guessed.
+Attribution: OpenStreetMap contributors (ODbL 1.0) and Overture Maps Foundation — Places (CDLA-Permissive-2.0). Hygiene grades from official sources (Alim Confiance, FSA, NYC DOHMH) are only joined where available — the field is omitted rather than guessed.
