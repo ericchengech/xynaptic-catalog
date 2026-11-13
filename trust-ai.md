@@ -18,6 +18,8 @@ Each line was read from the registry's own page on 2026-11-13. The grade is thei
 - **vet402** — real paid settlement on Base, seller-level pass: 7 routes delivered on its 2026-11-09 sweep: https://vet402.com/sellers/api.xynaptic.io
 - **x402 Register** — grade B, 76.4/100, 86.9% availability: https://x402register.com/s/api.xynaptic.io
 - **Agent Economy Report** — listed in its operational trust index (Tier B): https://agenteconomy.report/s/api.xynaptic.io
+- **CanopyMarket** — public x402 directory: 142 Xynaptic endpoints indexed, every one healthy (HTTP 402 reachability, 100% over 30 days), first seen 2026-10-16, last seen 2026-11-13: https://canopymarket.ai/?query=api.xynaptic.io
+- **Datoka** — 6 Xynaptic services in its multi-protocol tool catalogue: https://datoka.dev/market?q=api.xynaptic.io
 - **payforapi** — listed catalog entries (RU/EN x402 marketplace): https://payforapi.com
 - **SCVD passport** — currently EXPIRED (last observation 2026-10-20, re-attestation pending): https://scvd.store/passport/api.xynaptic.io
 - **UseTested** — verdict `AVOID` recorded 2026-11-11 by a probe that logged zero completed paid calls (`calls_tested: 0`): https://usetested.com/v1/review?service=api.xynaptic.io
