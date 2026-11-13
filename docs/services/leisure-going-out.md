@@ -124,7 +124,7 @@ Parameters: `city` (published zone — see the free list below), `lat`+`lon` (yo
 GET https://api.xynaptic.io/v1/restaurant-nearby/zones   # free, no payment
 ```
 
-`/zones` returns the published zones with their version, radius, record count, `data_as_of` and `hours_coverage`. Check it **before** paying: a zone that is not published answers 404 after payment.
+`/zones` returns the published zones with their version, radius, record count and `data_as_of`. Check it **before** paying: a zone that is not published answers 404 after payment. The per-zone `hours_coverage` ratio is in the paid response, not in `/zones`.
 
 Response: `{ version, data_as_of, overture_release, city, center, radius_km, radius_requested_km, zone_coverage_km, radius_clamped, hours_coverage, sources_breakdown, total, results[] }`. Each record: `id` (an `overture-` id when only Overture knows the place), `name`, `sources[]`, `brand` (null when independent), `cuisine[]`, `amenity`, `lat`, `lon`, `address`, `postcode`, `phone`, `website`, `hours` (raw OSM), `open_now`, `distance_km`, `overture_confidence` where applicable.
 
