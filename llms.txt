@@ -1,6 +1,6 @@
 # Xynaptic
 
-> Real-world data for AI agents — pay per request via x402 (USDC). 215 live services. No API key, no account. Every response is cryptographically signed and verifiable at https://xynaptic.io/trust
+> Real-world data for AI agents — pay per request via x402 (USDC). 220 live services. No API key, no account. Every response is cryptographically signed and verifiable at https://api.xynaptic.io/trust
 
 Xynaptic provides real-time, verifiable data for AI agents: French company registry, crypto & DeFi, SEC & EU stocks, banking & payments, energy & grid, aviation, rail, health, real estate, insurance, news. Built for agents: HTTP 402 flow, MCP server, signed responses.
 
@@ -37,96 +37,90 @@ Xynaptic provides real-time, verifiable data for AI agents: French company regis
   403 endpoint_not_in_plan and fall back to pay-per-call.
 
 ## Trust & verification
-- Live trust: https://xynaptic.io/trust and https://api.xynaptic.io/trust
-- Independently verified: Glama MCP Grade A, x402-trust, Market402 100/100, vet402 PASS, SCVD census READY — https://scvd.store/passport/api.xynaptic.io
+- Live trust: https://api.xynaptic.io/trust (machine) and https://xynaptic.io/#listings (human)
+- Independently verified (own grades, measured 2026-11-13): Market402 95.0/100 grade A, Glama MCP Grade A, x402-trust verified (avg 78.6), x402-list #100 of 496, Lumière PayCheck paid-tested (222 endpoints, 94 proceed / 128 caution), vet402 paid settlement delivered; x402 Register grade B 76.4; SCVD passport EXPIRED. Full list: https://xynaptic.io/#listings
 - Client: https://www.npmjs.com/package/xynaptic-mcp
 - Open catalog: https://github.com/ericchengech/xynaptic-catalog
 
-## Services by domain — overview (200+ total)
-Full detailed list with prices and full descriptions: https://xynaptic.io/llms-full.txt
+## Services by domain — overview (220 total)
 
-### Company Registry FR — 31 services
-Official French company registry (Sirene/RNE). Identity, officers, financials, KYB.
-Examples: company-search ($0.005), company-profile ($0.02), company-people ($0.02), company-financial ($0.05), company-kyb ($0.10)
-Details: https://xynaptic.io/llms-full.txt#company-registry
+### Crypto — 24 services
+Examples: crypto-brief ($0.015), crypto-brief-live ($0.01), crypto-price ($0.01), crypto-market ($0.02)
+Details: https://xynaptic.io/llms-full.txt#crypto
 
-### Crypto & DeFi — 26 services
-Live prices, on-chain, derivatives, risk, wallet screening.
-Examples: crypto-price ($0.01), crypto-brief-live ($0.01), crypto-fear-greed ($0.005), crypto-onchain ($0.10)
-Details: https://xynaptic.io/llms-full.txt#crypto-defi
+### AI Skills — 16 services
+Examples: ai-chat ($0.02), ai-agent ($0.05), ai-company ($0.1), ai-finance ($0.05)
+Details: https://xynaptic.io/llms-full.txt#ai-skills
 
-### Finance & SEC — 19 services
-US SEC EDGAR + EU stocks. Price, fundamentals, filings, insider, technical.
-Examples: security-search ($0.005), security-price ($0.01), security-analysis ($0.10)
-Details: https://xynaptic.io/llms-full.txt#finance-sec
+### Finance — 20 services
+Examples: security-search ($0.02), security-price ($0.01), security-fundamentals ($0.03), security-technical ($0.02)
+Details: https://xynaptic.io/llms-full.txt#finance
 
-### Banking & Payments — 15 services
-IBAN/BIC/BIN validation, bank statement parse, sanctions screening, payment risk.
-Examples: bank-iban-validate ($0.005), bank-transaction-categorize ($0.02), bank-sanctions-screen ($0.03)
+### Banking & Payments — 19 services
+Examples: bank-transaction-categorize ($0.02), bank-cashflow ($0.03), bank-payment-risk ($0.03), bank-financial-health ($0.05)
 Details: https://xynaptic.io/llms-full.txt#banking-payments
 
-### AI & LLM — 14 services
-Pay-per-call LLM tools: AI search (real web search), vertical agents (finance, energy, health, company), translation.
-Examples: ai-search ($0.02), ai-agent ($0.05), ai-company ($0.10)
-Details: https://xynaptic.io/llms-full.txt#ai-llm
-
-### Energy & Grid — 12 services
-EU electricity spot, solar/wind forecast, French RTE demand, battery arbitrage.
-Examples: energy-price ($0.005), energy-solar-forecast ($0.02), energy-battery-arbitrage ($0.05)
-Details: https://xynaptic.io/llms-full.txt#energy-grid
-
-### Agent Runtime & Storage — 11 services
-Ephemeral encrypted store, watch triggers, ticket system.
-Examples: ticket-status (FREE), store-put ($0.001), watch-put ($0.01), skill-supplier-due-diligence ($0.25)
-Details: https://xynaptic.io/llms-full.txt#agent-runtime
-
-### Real Estate FR — 11 services
-DVF official transactions, price per m2, yield, valuation.
-Examples: property-search ($0.01), property-price ($0.02), property-valuation ($0.05)
-Details: https://xynaptic.io/llms-full.txt#real-estate
-
-### Industrial & Commodities — 10 services
-Commodity prices, industrial prices (INSEE), logistics risk, factory status.
-Examples: commodity-price ($0.02), industrial-supply ($0.02), industrial-logistics-risk ($0.03)
-Details: https://xynaptic.io/llms-full.txt#industrial-commodities
-
-### Insurance — 10 services
-ORIAS registry, premium decomposition, coverage analysis, claim structuring.
-Examples: insurance-search ($0.01), insurance-profile ($0.03), insurance-claim ($0.05)
-Details: https://xynaptic.io/llms-full.txt#insurance
-
-### News & Media — 9 services
-Structured events last 3h: EU, US, Asia, Mideast, Russia, tech, economy FR.
-Examples: news-eu ($0.01), news-tech ($0.01), news-world ($0.02)
-Details: https://xynaptic.io/llms-full.txt#news-media
+### Rail — 8 services
+Examples: rail-news ($0.01), rail-disruptions ($0.01), rail-departures ($0.02), rail-train-status ($0.02)
+Details: https://xynaptic.io/llms-full.txt#rail
 
 ### Flight — 9 services
-Flight status, airport brief, NOTAM, route risk, alternatives.
-Examples: flight-airport-brief ($0.02), flight-status ($0.05), flight-route-risk ($0.10)
-Details: https://xynaptic.io/llms-full.txt#aviation
+Examples: flight-news ($0.02), flight-airport-situation ($0.05), flight-status ($0.05), flight-route-risk ($0.1)
+Details: https://xynaptic.io/llms-full.txt#flight
 
-### Rail & Transport — 8 services
-SNCF departures, train status, disruptions, connection risk, intermodal compare.
-Examples: rail-departures ($0.005), rail-trip-brief ($0.03), rail-intermodal-compare ($0.03)
-Details: https://xynaptic.io/llms-full.txt#rail-transport
+### Leisure & going out — 4 services
+Examples: restaurant-top ($0.10), restaurant-detail ($0.05), restaurant-search ($0.03), restaurant-nearby ($0.05)
+Details: https://xynaptic.io/llms-full.txt#leisure-going-out
 
-### Health & Medical — 8 services
-Drug info (openFDA), clinical trials, PubMed, hospital info (ScopeSante), RPPS.
-Examples: health-drug-info ($0.02), health-clinical-trials ($0.02), health-drug-interaction ($0.05)
-Details: https://xynaptic.io/llms-full.txt#health-medical
+### Business — 18 services
+Examples: company-search ($0.02), company-profile ($0.02), company-people ($0.02), company-network ($0.03)
+Details: https://xynaptic.io/llms-full.txt#business
 
-### Travel & Navigation — 4 services
-Weather 7-day, destination brief, route (OSRM), trip planner SNCF.
-Examples: travel-weather ($0.01), trip-planner ($0.03)
-Details: https://xynaptic.io/llms-full.txt#travel-navigation
+### Xynaptic Core — 8 services
+Examples: store-put ($0.01), store-get ($0.01), store-append ($0.01), watch-put ($0.01)
+Details: https://xynaptic.io/llms-full.txt#xynaptic-core
 
-### Jobs & Public Data — 4 services
-Legal brief (Legifrance), BOAMP tenders, BMO job market, France Travail jobs.
-Examples: legal-brief ($0.02), job-search ($0.02)
+### Industry & Commodities — 11 services
+Examples: commodity-price ($0.02), battery-metals-brief ($0.03), industrial-raw-materials ($0.02), industrial-price ($0.02)
+Details: https://xynaptic.io/llms-full.txt#industry-commodities
+
+### Property — 11 services
+Examples: property-search ($0.01), property-transactions ($0.02), property-price ($0.02), property-valuation ($0.05)
+Details: https://xynaptic.io/llms-full.txt#property
+
+### Insurance — 10 services
+Examples: insurance-search ($0.01), insurance-profile ($0.03), insurance-policy ($0.03), insurance-coverage ($0.03)
+Details: https://xynaptic.io/llms-full.txt#insurance
+
+### Energy — 11 services
+Examples: energy-solar-forecast ($0.02), energy-wind-forecast ($0.02), energy-price ($0.02), energy-brief ($0.02)
+Details: https://xynaptic.io/llms-full.txt#energy
+
+### News — 8 services
+Examples: news-eu ($0.01), news-tech ($0.01), news-us ($0.01), news-asia ($0.01)
+Details: https://xynaptic.io/llms-full.txt#news
+
+### Health — 8 services
+Examples: health-drug-info ($0.02), health-drug-interaction ($0.05), health-clinical-trials ($0.02), health-medical-literature ($0.02)
+Details: https://xynaptic.io/llms-full.txt#health
+
+### Jobs & Public — 16 services
+Examples: ao ($0.05), legal-brief ($0.02), tender-search ($0.02), job-market-brief ($0.02)
 Details: https://xynaptic.io/llms-full.txt#jobs-public
 
+### Travel & Tourism — 4 services
+Examples: destination-brief ($0.02), travel-weather ($0.01), route-brief ($0.02), trip-planner ($0.03)
+Details: https://xynaptic.io/llms-full.txt#travel-tourism
+
+### Developer Tools — 6 services
+Examples: code-review ($0.05), code-fix ($0.05), code-refactor ($0.05), test-generate ($0.05)
+Details: https://xynaptic.io/llms-full.txt#developer-tools
+
+### Audit & Security — 9 services
+Examples: mcp-audit ($0.5), repo-security-audit ($0.5), repo-security-audit-large ($2), domain-ownership-proof ($0.25)
+Details: https://xynaptic.io/llms-full.txt#audit-security
 ## Notes for AI assistants
 - This llms.txt is the map (short). For full details use llms-full.txt
 - Prefer ticket-status (free) to test connectivity
 - For compliance/KYB, use company-kyb or skill-supplier-due-diligence
-- All responses include Ed25519 signature — verify at /trust
+- All responses include Ed25519 signature — verify at https://api.xynaptic.io/trust
