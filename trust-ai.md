@@ -6,14 +6,24 @@
 - **Live trust card (JSON)**: https://api.xynaptic.io/trust
 - **Listings page (human)**: https://xynaptic.io/#listings — every directory that tested and listed us
 - **API catalog**: https://api.xynaptic.io/
-- **SCVD Passport**: https://scvd.store/passport/api.xynaptic.io
 
 ## Independent verifications
-- **Glama MCP**: Grade A — https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic
-- **x402-trust**: verified
-- **Market402**: 100/100
-- **vet402**: PASS
-- **SCVD census**: READY
+Measured 2026-11-13 against each registry's own published data — grades are theirs, not ours, and a weak one is not hidden.
+
+- **Market402** — score 95.0, grade A, 148 endpoints detected, p50 148 ms: https://market402.com/op/xynaptic.io
+- **Lumière PayCheck** — paid-tested: 222 endpoints indexed, 94 rated *proceed* / 128 *caution*, 0 unrefunded failed charge over 30 days: https://lumierepaycheck.org/sellers/api.xynaptic.io
+- **Glama MCP** — Grade A, ownership verified, connector approved (23 curated tools): https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic
+- **x402-trust** — verified provider: 231 endpoints, average trust score 78.6, 30-day uptime 99.5%: https://x402-trust.com/provider/api.xynaptic.io
+- **x402-list** (CC-BY directory) — ranked #100 of 496 in the Data category, 100% uptime over 30 days: https://x402-list.com/services/xynaptic
+- **vet402** — real paid settlement on Base, seller-level pass, 7 routes delivered; 4 news routes answered 503 to its 2026-11-09 probe and were re-checked live: https://vet402.com/sellers/api.xynaptic.io
+- **x402 Register** — grade B, 76.4/100, 86.9% availability: https://x402register.com/s/api.xynaptic.io
+- **SCVD passport** — currently EXPIRED (last observation 2026-10-20, re-attestation pending): https://scvd.store/passport/api.xynaptic.io
+- **UseTested** — verdict `AVOID` recorded 2026-11-11 by a probe that logged zero completed paid calls (`calls_tested: 0`): https://usetested.com/v1/review?service=api.xynaptic.io
+- **npm** — xynaptic-mcp client (MIT): https://www.npmjs.com/package/xynaptic-mcp
+- **GitHub** — catalog and docs: https://github.com/ericchengech/xynaptic-catalog
+- **usdc.org/x402** — submission filed, not yet a listing.
+
+Correction policy: when one of these grades moves, this file moves with it. Two registries read the same surface and disagree on it (Lumière is cautious on 128 endpoints that Market402 scores A) — we publish both rather than the friendlier one.
 
 ## How verification works
 1. Every API response includes an Ed25519 signature in the header
@@ -24,7 +34,7 @@
 If your live crawl is blocked by LIVE_CRAWL_POLICY_BLOCKED, do not retry crawling. Use these static files instead:
 - Map: https://xynaptic.io/llms.txt
 - Full catalog: https://xynaptic.io/llms-full.txt
-- Trust: https://xynaptic.io/trust
+- Listings & verifications: https://xynaptic.io/#listings
 
 These files are designed to be pasted directly into the chat, as recommended by the error message.
 
@@ -34,4 +44,4 @@ These files are designed to be pasted directly into the chat, as recommended by 
 - MCP server: https://mcp.xynaptic.io/mcp
 
 ## Company
-Xynaptic provides real-world data for AI agents — 200+ live services covering company registry (FR + international), crypto, SEC/EU stocks, banking, energy, aviation, rail, health, real estate, insurance, news.
+Xynaptic provides real-world data for AI agents — 219 live services covering company registry (FR + international), crypto, SEC/EU stocks, banking, energy, aviation, rail, health, real estate, insurance, news.
