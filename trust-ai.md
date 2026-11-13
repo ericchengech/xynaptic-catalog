@@ -4,7 +4,7 @@
 
 ## Live verification
 - **Live trust card (JSON)**: https://api.xynaptic.io/trust
-- **Human trust page**: https://xynaptic.io/trust (human page)
+- **Listings page (human)**: https://xynaptic.io/#listings — every directory that tested and listed us
 - **API catalog**: https://api.xynaptic.io/
 - **SCVD Passport**: https://scvd.store/passport/api.xynaptic.io
 
@@ -34,4 +34,4 @@ These files are designed to be pasted directly into the chat, as recommended by 
 - MCP server: https://mcp.xynaptic.io/mcp
 
 ## Company
-Xynaptic provides real-world data for AI agents — 219 live services covering company registry (FR + international), crypto, SEC/EU stocks, banking, energy, aviation, rail, health, real estate, insurance, news.
+Xynaptic provides real-world data for AI agents — 200+ live services covering company registry (FR + international), crypto, SEC/EU stocks, banking, energy, aviation, rail, health, real estate, insurance, news.
