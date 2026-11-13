@@ -839,7 +839,7 @@ GET https://api.xynaptic.io/v1/restaurant-search
 
 ### restaurant-nearby — $0.05
 
-Xynaptic Restaurant Nearby — every food place OpenStreetMap knows in a city zone (restaurant, fast_food, bar, pub, cafe): name, brand, cuisine, address, phone, website, coordinates, distance from the point you give, and open_now ONLY when the published OSM hours allow a certain answer (null otherwise). No editorial score, no star rating — this is the volume layer, not the ranking layer. GET ?city=lille (&lat=&lon=&radius_km=&limit=&open_now=true).
+Xynaptic Restaurant Nearby — every food place OpenStreetMap knows in a city zone (restaurant, fast_food, bar, pub, cafe): name, brand, cuisine, address, phone, website, coordinates, distance from the point you give, and open_now ONLY when the published OSM hours allow a certain answer (null otherwise). No editorial score, no star rating — this is the volume layer, not the ranking layer. GET ?city=lille (&lat=&lon=&radius_km=&limit=&open_now=true). Zones published city by city; the free list (no payment) is GET /v1/restaurant-nearby/zones — check your city there before paying. The response states zone_coverage_km (the radius guaranteed in every direction) and radius_clamped when you asked for more.
 
 ```
 GET https://api.xynaptic.io/v1/restaurant-nearby
