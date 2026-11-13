@@ -32,7 +32,27 @@ au lieu de le cacher.
 """
 import json, os, re, sys, time, urllib.request, html
 
-DEPOT = os.path.expanduser("~/xynaptic/CURRENT/xynaptic-catalog")
+def _depot():
+    """Le depot catalogue : variable d'env, sinon on remonte depuis le script jusqu'au
+    package.json du paquet xynaptic-mcp, sinon le chemin de travail habituel.
+    Ainsi le meme fichier marche depuis le workspace ET depuis npm run catalog:check."""
+    env = os.environ.get("XYNAPTIC_CATALOG_DIR")
+    if env and os.path.isdir(env):
+        return env
+    d = os.path.dirname(os.path.abspath(__file__))
+    for _ in range(6):
+        pj = os.path.join(d, "package.json")
+        if os.path.exists(pj):
+            try:
+                if "xynaptic" in json.load(open(pj, encoding="utf8")).get("name", ""):
+                    return d
+            except Exception:
+                pass
+        d = os.path.dirname(d)
+    return os.path.expanduser("~/xynaptic/CURRENT/xynaptic-catalog")
+
+
+DEPOT = _depot()
 CATALOGUE = "https://api.xynaptic.io/"
 DOCS = "https://xynaptic.io/docs"
 TRUST = "https://xynaptic.io/trust"
