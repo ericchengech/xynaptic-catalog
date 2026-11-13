@@ -6,7 +6,7 @@
 
 
 
-**219 pay-per-request data & AI APIs — full agent ecosystem: 19 domains + 3 agent skills, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, pre-transaction wallet screening, crypto global metrics & movers (CMC), French legal watch, live French jobs (France Travail API) & recruitment tensions (BMO Dares), supplier compliance screening, used-car dealer check (anti-fraud before buying), the first x402-paid agent SKILLS (supplier due-diligence, payment fraud screening, crypto token audit — method + bundled data calls), battery-metals EV brief (lithium, copper, platinum, palladium), live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No mandatory subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
+**220 pay-per-request data & AI APIs — full agent ecosystem: 19 domains + 3 agent skills, 10 AI vertical agents (OpenAI-compatible /v1/chat/completions with streaming), MCP server at mcp.xynaptic.io/mcp, travel & tourism (destination briefs, weather, routes, train trip planner), worldwide airport briefs, official FAA NOTAMs (airport & geospatial), invoice factoring risk (debtor & portfolio scoring), fiat↔USDC best-rail rates, pre-transaction wallet screening, crypto global metrics & movers (CMC), French legal watch, live French jobs (France Travail API) & recruitment tensions (BMO Dares), supplier compliance screening, used-car dealer check (anti-fraud before buying), the first x402-paid agent SKILLS (supplier due-diligence, payment fraud screening, crypto token audit — method + bundled data calls), battery-metals EV brief (lithium, copper, platinum, palladium), live French electricity demand & cross-border flows (RTE éCO2mix), ephemeral storage, watches, prepaid tickets. No API key. No mandatory subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon.**
 
 ```
 GET https://api.xynaptic.io/v1/energy-price
@@ -100,7 +100,7 @@ Every service, detailed per domain — **What it does** (description, sources) a
 | 🏥 Health | 8 | `health-drug-info` · `health-clinical-trials` · `health-news` |
 | 🛠️ Dev Kit | 6 | `code-review` · `code-fix` · `code-refactor` · `test-generate` · `error-explain` · `security-review` |
 | 🛡️ Audit & Security | 9 | `mcp-audit` · `repo-security-audit` · `domain-ownership-proof` · `security-sim` · `wallet-watch` · `route-watch` |
-| 🍽️ Leisure & going out | 3 | `restaurant-top` · `restaurant-detail` · `restaurant-search` |
+| 🍽️ Leisure & going out | 4 | `restaurant-top` · `restaurant-detail` · `restaurant-search` · `restaurant-nearby` |
 
 ## Dev Kit — LLM-powered developer tools
 
@@ -252,7 +252,7 @@ Full domains so an agent never has to leave Xynaptic:
   completes the trading stack; `company-news` closes the KYB loop with press; `intermodal-compare`
   crosses real SNCF data with flight estimates; `tender-search` opens official public procurement;
   `gas-tariff-zone` and `news-economy-fr` add CRE-regulated data and live economy press.
-- **LEISURE & GOING OUT (3 services)** — `restaurant-top`, `restaurant-detail`, `restaurant-search`: 139 restaurants across 88 cities, Michelin distinctions from Wikipedia/Wikidata, official hygiene checks (Alim Confiance, FSA, NYC DOHMH), contacts and booking links, opening hours from OpenStreetMap when they exist and `null` otherwise. Sources cited in every record.
+- **LEISURE & GOING OUT (4 services)** — `restaurant-top`, `restaurant-detail`, `restaurant-search`, `restaurant-nearby`: 139 restaurants across 88 cities, Michelin distinctions from Wikipedia/Wikidata, official hygiene checks (Alim Confiance, FSA, NYC DOHMH), contacts and booking links, opening hours from OpenStreetMap when they exist and `null` otherwise, plus the volume layer `restaurant-nearby`: every food place OSM knows in a city zone (restaurant, fast food, bar, pub, cafe) with distance from your point and `open_now` only when the published hours allow a certain answer. No editorial score on that layer. Sources cited in every record.
 - **INTERNATIONAL COMPANIES (2 services)** — GLEIF LEI registry, 200+ jurisdictions
   worldwide: search by name, full identity by LEI. French registry (11 services)
   remains the deep end; LEI is the global layer.
