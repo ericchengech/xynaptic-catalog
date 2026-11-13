@@ -8,22 +8,24 @@
 - **API catalog**: https://api.xynaptic.io/
 
 ## Independent verifications
-Measured 2026-11-13 against each registry's own published data — grades are theirs, not ours, and a weak one is not hidden.
+Each line was read from the registry's own page on 2026-11-13. The grade is theirs, not ours; weak ones stay in the list.
 
 - **Market402** — score 95.0, grade A, 148 endpoints detected, p50 148 ms: https://market402.com/op/xynaptic.io
 - **Lumière PayCheck** — paid-tested: 222 endpoints indexed, 94 rated *proceed* / 128 *caution*, 0 unrefunded failed charge over 30 days: https://lumierepaycheck.org/sellers/api.xynaptic.io
-- **Glama MCP** — Grade A, ownership verified, connector approved (23 curated tools): https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic
-- **x402-trust** — verified provider: 231 endpoints, average trust score 78.6, 30-day uptime 99.5%: https://x402-trust.com/provider/api.xynaptic.io
+- **Glama MCP** — Grade A, ownership verified, connector approved (MCP connector + server listing): https://glama.ai/mcp/connectors/io.xynaptic.mcp/mcpxynaptic
+- **x402-trust** — verified provider: 231 endpoints, average trust score 78.6, average 30-day uptime 99.5%: https://x402-trust.com/provider/api.xynaptic.io
 - **x402-list** (CC-BY directory) — ranked #100 of 496 in the Data category, 100% uptime over 30 days: https://x402-list.com/services/xynaptic
-- **vet402** — real paid settlement on Base, seller-level pass, 7 routes delivered; 4 news routes answered 503 to its 2026-11-09 probe and were re-checked live: https://vet402.com/sellers/api.xynaptic.io
+- **vet402** — real paid settlement on Base, seller-level pass: 7 routes delivered on its 2026-11-09 sweep: https://vet402.com/sellers/api.xynaptic.io
 - **x402 Register** — grade B, 76.4/100, 86.9% availability: https://x402register.com/s/api.xynaptic.io
+- **Agent Economy Report** — listed in its operational trust index (Tier B): https://agenteconomy.report/s/api.xynaptic.io
+- **payforapi** — listed catalog entries (RU/EN x402 marketplace): https://payforapi.com
 - **SCVD passport** — currently EXPIRED (last observation 2026-10-20, re-attestation pending): https://scvd.store/passport/api.xynaptic.io
 - **UseTested** — verdict `AVOID` recorded 2026-11-11 by a probe that logged zero completed paid calls (`calls_tested: 0`): https://usetested.com/v1/review?service=api.xynaptic.io
 - **npm** — xynaptic-mcp client (MIT): https://www.npmjs.com/package/xynaptic-mcp
 - **GitHub** — catalog and docs: https://github.com/ericchengech/xynaptic-catalog
 - **usdc.org/x402** — submission filed, not yet a listing.
 
-Correction policy: when one of these grades moves, this file moves with it. Two registries read the same surface and disagree on it (Lumière is cautious on 128 endpoints that Market402 scores A) — we publish both rather than the friendlier one.
+Correction policy: when a grade moves, this file moves with it. Two registries read the same surface and disagree — Lumière is cautious on 128 endpoints that Market402 scores A — so we publish both rather than the friendlier one.
 
 ## How verification works
 1. Every API response includes an Ed25519 signature in the header
