@@ -20,6 +20,9 @@ Each line was read from the registry's own page on 2026-11-13. The grade is thei
 - **Agent Economy Report** — listed in its operational trust index (Tier B): https://agenteconomy.report/s/api.xynaptic.io
 - **CanopyMarket** — public x402 directory: 142 Xynaptic endpoints indexed, every one healthy (HTTP 402 reachability, 100% over 30 days), first seen 2026-10-16, last seen 2026-11-13: https://canopymarket.ai/?query=api.xynaptic.io
 - **Datoka** — 6 Xynaptic services in its multi-protocol tool catalogue: https://datoka.dev/market?q=api.xynaptic.io
+- **ToolAssay** — 82 Xynaptic tools indexed, 395/395 checks answered in the last 7 days, median latency 13–81 ms; their badge stays `unverified` (ownership not proven to them): https://lucaintini.ai/toolassay/search?q=xynaptic.io
+- **Agent Bazaar** (Saylor Innovations, open source) — 148 x402 resources listed under our provider page: https://bazaar.saylorinnovations.com/providers/api.xynaptic.io
+- **Agentropolis** — provider entry `x402.xynaptic`, status *claimed*, trust score 60, **461 settlements and 17 verified buyers over 30 days**, no wash flags: https://agentropolis.io
 - **payforapi** — listed catalog entries (RU/EN x402 marketplace): https://payforapi.com
 - **SCVD passport** — currently EXPIRED (last observation 2026-10-20, re-attestation pending): https://scvd.store/passport/api.xynaptic.io
 - **UseTested** — verdict `AVOID` recorded 2026-11-11 by a probe that logged zero completed paid calls (`calls_tested: 0`): https://usetested.com/v1/review?service=api.xynaptic.io
