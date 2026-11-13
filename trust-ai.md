@@ -22,6 +22,7 @@ Each line was read from the registry's own page on 2026-11-13. The grade is thei
 - **Datoka** — 6 Xynaptic services in its multi-protocol tool catalogue: https://datoka.dev/market?q=api.xynaptic.io
 - **ToolAssay** — 82 Xynaptic tools indexed, 395/395 checks answered in the last 7 days, median latency 13–81 ms; their badge stays `unverified` (ownership not proven to them): https://lucaintini.ai/toolassay/search?q=xynaptic.io
 - **Agent Bazaar** (Saylor Innovations, open source) — 148 x402 resources listed under our provider page: https://bazaar.saylorinnovations.com/providers/api.xynaptic.io
+- **Agentic.Market** — provider page listing 96 of our endpoints, $0.01-$0.25 per request, network EIP155:137: https://agentic.market/services/api-xynaptic-io
 - **Agentropolis** — provider entry `x402.xynaptic`, status *claimed*, trust score 60, **461 settlements and 17 verified buyers over 30 days**, no wash flags: https://agentropolis.io
 - **payforapi** — listed catalog entries (RU/EN x402 marketplace): https://payforapi.com
 - **SCVD passport** — currently EXPIRED (last observation 2026-10-20, re-attestation pending): https://scvd.store/passport/api.xynaptic.io
