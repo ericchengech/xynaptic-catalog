@@ -841,7 +841,7 @@ GET https://api.xynaptic.io/v1/restaurant-search
 
 ### restaurant-nearby — $0.05
 
-Xynaptic Restaurant Nearby — 90,977 places in 38 French city zones, merged from two independent bases: OpenStreetMap (ODbL) and Overture Maps Places (CDLA). Each record states which bases know it, and places Overture declares closed are removed. open_now is null when the hours are missing or unreadable, never guessed. Weekly dated snapshots, version and data_as_of in every response. Free zone list: /v1/restaurant-nearby/zones.
+Xynaptic Restaurant Nearby — places to eat and drink around a point or across a city zone, merged from two independent bases: OpenStreetMap (ODbL) and Overture Maps Places (CDLA). Each record states which bases know it, and places Overture declares closed are removed. open_now is null when the hours are missing or unreadable, never guessed. Weekly dated snapshots, version and data_as_of in every response. Coverage grows wave by wave — France first, then other regions — and the live list of zones with their counts is free at /v1/restaurant-nearby/zones.
 
 ```
 GET https://api.xynaptic.io/v1/restaurant-nearby
