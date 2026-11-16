@@ -839,7 +839,7 @@ GET https://api.xynaptic.io/v1/restaurant-search
 
 ### restaurant-nearby — $0.05
 
-Xynaptic Restaurant Nearby — places to eat and drink around a point or across a city zone, merged from two independent bases: OpenStreetMap (ODbL) and Overture Maps Places (CDLA). Each record states which bases know it, and places Overture declares closed are removed. Street addresses are completed from the French national address base (BAN) and SIRENE (INSEE), both under Licence Ouverte 2.0, and address_source on each record says where its address came from. open_now is null when the hours are missing or unreadable, never guessed. Weekly dated snapshots, version and data_as_of in every response. Coverage grows wave by wave — France first, then other regions — and the live list of zones with their counts is free at /v1/restaurant-nearby/zones.
+Xynaptic Restaurant Nearby — places to eat and drink around a point or across a city zone, merged from OSM and Overture: name, brand, cuisine, address, distance, opening_hours (OSM only, never inferred), rating signals and attribution. GET ?city=<slug>, ou ?lat=&lon=&radius_m=. Free-text search: restaurant-search. France et grandes villes EU.
 
 ```
 GET https://api.xynaptic.io/v1/restaurant-nearby
@@ -1029,7 +1029,7 @@ GET https://api.xynaptic.io/v1/watch-put
 
 ### watch-status — $0
 
-Xynaptic Watch status — check if your watch triggered. POST body: { watch_id, watch_secret }. Returns { status: waiting|triggered|expired, checks, result } — the result is decrypted with your watch_secret server-side and delivered. delete_after_read?: true destroys it after this read.
+Xynaptic Watch status (Free endpoint) — check if your watch triggered. POST body: { watch_id, watch_secret }. Returns { status: waiting|triggered|expired, checks, result } — the result is decrypted with your watch_secret server-side and delivered. delete_after_read?: true destroys it after this read.
 
 ```
 GET https://api.xynaptic.io/v1/watch-status
@@ -1771,7 +1771,7 @@ GET https://api.xynaptic.io/v1/security-review
 
 ### mcp-audit — $0.5
 
-Xynaptic MCP Audit — static security review of an MCP client config before you approve it: paste any mcpServers config (mcp.json, Cursor, VS Code…), we classify every package reference (exact pin = SAFE, @latest/tag = HIGH, range = MEDIUM, local/VCS = REVIEW), detect mutable dependencies that can silently resolve to different code after approval, and return a per-server verdict with fixes. Pure static analysis: never executes discovered servers, never resolves packages. POST body: { config: <object or JSON string> }. Boundaries: reproducibility signal, not a breach claim.
+Xynaptic MCP Audit — static review of an MCP server configuration before you run it: parses the servers block, flags dangerous launches (shell wrappers, npx of unverified packages, absolute secrets in args or env, filesystem roots too wide), checks transport, and returns findings with severity and the safer alternative. POST { config }. Nothing is executed.
 
 ```
 GET https://api.xynaptic.io/v1/mcp-audit
@@ -1779,7 +1779,7 @@ GET https://api.xynaptic.io/v1/mcp-audit
 
 ### repo-security-audit — $0.5
 
-Xynaptic Repo Security Audit — static security review of a public GitHub repository: scans the most actionable files for committed secrets (AWS/GitHub/Slack/OpenAI keys, private keys, connection strings), command execution, unsafe deserialization, SQL built by concatenation and raw HTML sinks, and returns findings with file, line, severity, CVSS, why and the fix. POST body: { github_url }. Up to 30 reviewable files at 0.50 USD; when the repo has more than 20 reviewable files a free pre-flight quotes the large tier up front at 2.00 USD (up to 80 files + per-file evidence, one payment only). Static pattern scan only - no code executed, no dependency installed.
+Xynaptic Repo Security Audit — static security review of a public GitHub repo: scans the most actionable files for committed secrets (AWS, GitHub, Slack, OpenAI keys, private keys, connection strings), command execution, unsafe deserialization, SQL by concatenation and raw HTML sinks. Returns findings with file, line, severity, CVSS, why and the fix. POST { github_url }. Free pre-flight quotes the tier before payment.
 
 ```
 GET https://api.xynaptic.io/v1/repo-security-audit
@@ -1787,10 +1787,10 @@ GET https://api.xynaptic.io/v1/repo-security-audit
 
 ### repo-security-audit-large — $2
 
-Xynaptic Repo Security Audit (large tier) — same route as repo-security-audit (POST /v1/repo-security-audit): the FREE pre-flight counts the reviewable files before payment and quotes 2.00 USD up front when the repository has more than 20 of them (0.50 USD below that) - one payment, no second 402. The large tier analyses up to 80 reviewable files (CI/Docker first, then code, manifests, docs), keeps up to 25 findings per file and returns an evidence[] array with bytes and finding count per analysed file, plus a coverage block (reviewable_files, selected, analyzed, not_analyzed).
+Xynaptic Repo Security Audit (large tier) — same scan on repositories above 20 reviewable files (up to 80 analysed): CI and Docker first, then code, manifests and docs, up to 25 findings per file, plus evidence[] (bytes and finding count per file) and a coverage block (reviewable_files, selected, analyzed, not_analyzed). POST { github_url }.
 
 ```
-GET https://api.xynaptic.io/v1/repo-security-audit
+GET https://api.xynaptic.io/v1/repo-security-audit-large
 ```
 
 ### domain-ownership-proof — $0.25
