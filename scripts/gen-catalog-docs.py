@@ -230,6 +230,32 @@ def compter(chemin, motif, valeur, rapports):
     return True
 
 
+def compter_deux(chemin, motif, valeur1, valeur2, rapports):
+    """Aligne une phrase qui porte DEUX compteurs (services + domaines).
+
+    Cas reel : README.md annoncait encore "219 services, 19 domaines" alors que le
+    catalogue en servait 220. Le motif doit exposer 5 groupes :
+    (prefixe)(nombre1)(separateur)(nombre2)(suffixe).
+    """
+    chemin = os.path.join(DEPOT, chemin)
+    s = open(chemin, encoding="utf8").read() if os.path.exists(chemin) else ""
+    neuf, n = re.subn(
+        motif,
+        lambda m: m.group(1) + str(valeur1) + m.group(3) + str(valeur2) + m.group(5),
+        s,
+    )
+    if n == 0:
+        rapports.append(("?", f"{chemin} — motif de compteur double absent ({motif})"))
+        return False
+    if neuf == s:
+        rapports.append(("=", f"{chemin} (compteurs {valeur1} services / {valeur2} domaines deja justes)"))
+        return False
+    rapports.append(("~", f"{chemin} (compteurs -> {valeur1} services / {valeur2} domaines, {n} endroit(s))"))
+    if not MODE_CHECK:
+        open(chemin, "w", encoding="utf8").write(neuf)
+    return True
+
+
 def main():
     catalogue = json.loads(lire(CATALOGUE, OFF_CAT))
     taxo = taxonomie(lire(DOCS, OFF_DOC), lire(TRUST, OFF_TRUST), cat=
@@ -266,6 +292,14 @@ def main():
     change |= compter("README.md", r"(\*\*)([0-9]+)( pay-per-request data & AI APIs)", total, rapports)
     change |= compter("docs/services/README.md", r"(\*\*)([0-9]+)( services across [0-9]+ domains\*\*)", total, rapports)
     change |= compter("package.json", r'("description": "Xynaptic MCP — )([0-9]+)( pay-per-request)', total, rapports)
+    # Compteurs que le generateur ignorait : ils ont derive (219 vs 220 en prod).
+    # index.js est le pont MCP : sa liste de secours est lue quand le reseau tombe,
+    # donc un compte faux y survit plus longtemps qu'ailleurs.
+    change |= compter_deux("README.md",
+                           r"(\*\*)([0-9]+)( services, )([0-9]+)( domains\*\*)",
+                           total, len(taxo), rapports)
+    change |= compter("index.js", r"(access any of the )([0-9]+)( Xynaptic services)", total, rapports)
+    change |= compter("index.js", r"(from a )([0-9]+)(-service x402/USDC catalog)", total, rapports)
 
     for tag, f in rapports:
         print(f"  {tag} {f}")
