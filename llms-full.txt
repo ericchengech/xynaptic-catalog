@@ -839,7 +839,7 @@ GET https://api.xynaptic.io/v1/restaurant-search
 
 ### restaurant-nearby — $0.05
 
-Xynaptic Restaurant Nearby — places to eat and drink around a point or across a city zone, merged from OSM and Overture: name, brand, cuisine, address, distance, opening_hours (OSM only, never inferred), rating signals and attribution. GET ?city=<slug>, ou ?lat=&lon=&radius_m=. Free-text search: restaurant-search. France et grandes villes EU.
+Xynaptic Restaurant Nearby — places to eat and drink around a point or across a city zone, merged from two independent bases: OpenStreetMap (ODbL) and Overture Maps Places (CDLA). Each record states which bases know it, and places Overture declares closed are removed. Street addresses are completed from the French national address base (BAN) and SIRENE (INSEE), both under Licence Ouverte 2.0, and address_source on each record says where its address came from. open_now is null when the hours are missing or unreadable, never guessed. Weekly dated snapshots, version and data_as_of in every response. Coverage grows wave by wave — France first, then other regions — and the live list of zones with their counts is free at /v1/restaurant-nearby/zones.
 
 ```
 GET https://api.xynaptic.io/v1/restaurant-nearby
