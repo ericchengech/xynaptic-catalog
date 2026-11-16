@@ -1,48 +1,123 @@
 # Skills — Xynaptic service reference
 
-> 17 pay-per-request services. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon. Machine-readable catalog: https://api.xynaptic.io
+> 17 pay-per-request services. No API key. No subscription. Pay in USDC via [x402](https://x402.org) on Base, Polygon or Solana. Machine-readable catalog: https://api.xynaptic.io — prices and routes re-verified against the live catalogue on 2026-11-16.
 
 **How x402 works**
 
-`GET` any endpoint → `402 Payment Required` → sign EIP-3009 (or any x402 client / Solana / Polygon) → retry with `PAYMENT-SIGNATURE` header → `200` JSON, agent-ready.
+`GET`/`POST` any endpoint → `402 Payment Required` (x402 **v2** challenge, CAIP-2 networks) → sign with any x402 client on Base, Polygon or Solana → retry the same request with the `PAYMENT-SIGNATURE` header → `200` JSON, agent-ready. The 402 is free to trigger: no USDC leaves your wallet until you sign.
+
+**Read this before you trust the 402 body.** The `402` also carries a discovery block (`extensions.bazaar.info.input.body`) with an example request body. For five of the six AI services below that example uses a field name the catalogue does not document, so an agent that copies it will send the wrong body:
+
+| service | field the docs use | field shown in the 402 example |
+|---|---|---|
+| `ai-chat` | `messages` | `prompt` |
+| `ai-search` | `question` | `query` |
+| `ai-translate` | `value` | `text` (+ `target`) |
+| `ai-brief-me` | `sirens` / `assets` / `news_regions` | `topic` |
+| `ai-validate` | `thesis` | `value` |
+| `ai-agent` | `task` | `task` (correct) |
+
+The parameter tables below follow the catalogue and the service descriptions, which is what the endpoints themselves document. The mismatch is reported upstream (2026-11-16); until it is fixed, treat the 402 example bodies as decoration, not as a contract.
 
 ---
 
 ## `ai-chat` — $0.02
 
-`POST https://api.xynaptic.io/v1/ai-chat` — `(body: messages[])`
+`POST https://api.xynaptic.io/v1/ai-chat` — OpenAI-compatible chat completion.
 
 **What it does.**
 
-Xynaptic AI Chat — LLM inference pay-per-call: OpenAI-compatible messages, model auto-routing (glm-5.3-flash / deepseek-v4.1-flash), JSON response with token usage. POST with body: {"model": "auto", "messages": [{"role": "user", "content": "..."}]}.
+One LLM completion per call, no API key. You send an OpenAI-style `messages` array; the service routes it server-side across its model pool (the catalogue names `deepseek-flash` / `deepseek-v4-pro`) and returns a completion with token usage. `"model": "auto"` lets the router choose.
 
-**How to use.**
+**Parameters.**
+
+| field | required | notes |
+|---|---|---|
+| `messages` | yes | array of `{role, content}`; OpenAI roles (`system`, `user`, `assistant`) |
+| `model` | no | `"auto"` for server-side routing; naming a specific model is not documented as supported |
+
+Nothing else is documented (no `max_tokens`, `temperature`, `stream`, tools or function-calling contract). Treat unlisted fields as unverified.
+
+**Verify without paying.** Unpaid call, observed on 2026-11-16 (this is the expected result — it proves the route is live and shows the price):
+
+```bash
+curl -s -i -X POST https://api.xynaptic.io/v1/ai-chat \
+  -H 'content-type: application/json' \
+  -d '{"model":"auto","messages":[{"role":"user","content":"Reply with OK."}]}'
+```
 
 ```
-POST https://api.xynaptic.io/v1/ai-chat (body: messages[])
--> 402 Payment Required (price: $0.02)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
+HTTP/2 402
+PAYMENT-REQUIRED: <base64 JSON>
 ```
+
+The 402 body is an x402 **v2** challenge (`"x402Version":2`) with three `accepts` entries — Base (`eip155:8453`), Polygon (`eip155:137`) and Solana (`solana:5eykt4...`) — each `"scheme":"exact"`, `"amount":"20000"` atomic USDC (6 decimals) = **$0.02**. Sign with any x402 client, retry the same request with the `PAYMENT-SIGNATURE` header, and the `200` body follows the shape below.
+
+**Response shape.**
+
+```json
+{
+  "id": "xyn-chat-8f3c1a9b2e",
+  "object": "chat.completion",
+  "created": 1762725600,
+  "model": "deepseek-flash",
+  "system_fingerprint": "xynaptic-v2.1",
+  "choices": [{"index": 0, "message": {"role": "assistant", "content": "..."}, "finish_reason": "stop"}],
+  "usage": {"prompt_tokens": 812, "completion_tokens": 96, "total_tokens": 908},
+  "service": "ai-chat",
+  "xynaptic": {"model_requested": "auto", "model_used": "deepseek-flash", "routing": "direct", "fallback_used": false}
+}
+```
+
+(Shape from the catalogue's documented example, not from a paid call.)
+
+**Limits — what you cannot expect.**
+
+- One completion per call, flat $0.02 whatever the token count; `usage` is informational.
+- No streaming, no tool/function-calling contract, no conversation memory: send the full history each time.
+- `xynaptic.model_used` is the only reliable statement about which model answered — the pool can change without notice.
 
 ---
 
 ## `ai-agent` — $0.05
 
-`POST https://api.xynaptic.io/v1/ai-agent` — `(task + siren?)`
+`POST https://api.xynaptic.io/v1/ai-agent` — one payment, a whole task.
 
 **What it does.**
 
-Xynaptic AI Agent — one payment, full task: orchestrates Xynaptic data services as tools (company registry, financials, officers, KYB) + LLM reasoning, returns a structured report. POST body: {task: ..., siren: 552032534 (optional)}. The premium AI layer.
+The orchestrator: it calls Xynaptic data services as tools (company registry, financials, officers, KYB) plus LLM reasoning, and returns a structured report for the task you describe. It is the premium layer over `ai-chat` — you buy the tool calls and the synthesis in one go.
 
-**How to use.**
+**Parameters.**
+
+| field | required | notes |
+|---|---|---|
+| `task` | yes | the task, in natural language |
+| `siren` | no | French company identifier to bind the tools to, e.g. `552032534` |
+
+**Verify without paying.** Unpaid call, observed on 2026-11-16 (this is the expected result — it proves the route is live and shows the price):
+
+```bash
+curl -s -i -X POST https://api.xynaptic.io/v1/ai-agent \
+  -H 'content-type: application/json' \
+  -d '{"task":"assess the financial health of this company","siren":"552032534"}'
+```
 
 ```
-POST https://api.xynaptic.io/v1/ai-agent (task + siren?)
--> 402 Payment Required (price: $0.05)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
+HTTP/2 402
+PAYMENT-REQUIRED: <base64 JSON>
 ```
+
+The 402 body is an x402 **v2** challenge (`"x402Version":2`) with three `accepts` entries — Base (`eip155:8453`), Polygon (`eip155:137`) and Solana (`solana:5eykt4...`) — each `"scheme":"exact"`, `"amount":"50000"` atomic USDC (6 decimals) = **$0.05**. Sign with any x402 client, retry the same request with the `PAYMENT-SIGNATURE` header, and the `200` body follows the shape below.
+
+**Response shape.**
+
+`id`, `object` (`agent.task`), `created`, `model`, `choices[0].message.content` (the report), `usage`, `service`, a `tools` array (`name`, `status`) showing which services ran, and `xynaptic` (`model_used`, `routing`, `fallback_used`).
+
+**Limits — what you cannot expect.**
+
+- No determinism: the orchestrator picks the tool chain, so two identical calls can use different tools.
+- No step budget is documented beyond the 60 s payment window — plan for a synchronous call.
+- Company-centric today (registry, financials, officers, KYB); it is not a general-purpose agent with arbitrary tool access.
 
 ---
 
@@ -86,77 +161,172 @@ POST https://api.xynaptic.io/v1/ai-finance (asset + question?)
 
 ## `ai-translate` — $0.01
 
-`POST https://api.xynaptic.io/v1/ai-translate` — `(raw value + target_schema?)`
+`POST https://api.xynaptic.io/v1/ai-translate` — messy text in, structured JSON out.
 
 **What it does.**
 
-Xynaptic AI Translate — bring your own data: paste raw text (CSV, table, email, notice, listing, any messy content) and get clean structured JSON back. POST body: { value: <raw text, max 12000 chars>, target_schema?: <short description of desired fields> }. The LLM extracts and structures it — your format translator for agents.
+Despite the name it is not a language translator: you paste raw content (CSV, table, email, notice, listing, anything unstructured) and an LLM extracts it into clean JSON, optionally following a short description of the fields you want. The format adapter for agents.
 
-**How to use.**
+**Parameters.**
+
+| field | required | notes |
+|---|---|---|
+| `value` | yes | the raw text, **max 12,000 characters** |
+| `target_schema` | no | short natural-language description of the desired fields (not a JSON Schema document) |
+
+**Verify without paying.** Unpaid call, observed on 2026-11-16 (this is the expected result — it proves the route is live and shows the price):
+
+```bash
+curl -s -i -X POST https://api.xynaptic.io/v1/ai-translate \
+  -H 'content-type: application/json' \
+  -d '{"value":"ACME SARL;12 rue de Rivoli;75001 Paris","target_schema":"name, street, postcode, city"}'
+```
 
 ```
-POST https://api.xynaptic.io/v1/ai-translate (raw value + target_schema?)
--> 402 Payment Required (price: $0.01)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
+HTTP/2 402
+PAYMENT-REQUIRED: <base64 JSON>
 ```
+
+The 402 body is an x402 **v2** challenge (`"x402Version":2`) with three `accepts` entries — Base (`eip155:8453`), Polygon (`eip155:137`) and Solana (`solana:5eykt4...`) — each `"scheme":"exact"`, `"amount":"10000"` atomic USDC (6 decimals) = **$0.01**. Sign with any x402 client, retry the same request with the `PAYMENT-SIGNATURE` header, and the `200` body follows the shape below.
+
+**Response shape.**
+
+Same envelope as `ai-chat`: `id`, `object` (`translate.result`), `created`, `model`, `choices[0].message.content`, `usage`, `service`, `xynaptic`. The structured result arrives **inside `choices[0].message.content`** — per the catalogue example, as JSON text ("one object per row"), so parse that string rather than expecting a top-level object.
+
+**Limits — what you cannot expect.**
+
+- 12,000 characters per call; longer documents must be split.
+- `target_schema` is a hint, not a contract: fields can be missing, renamed or inferred. Validate before writing to a database.
+- One call = one extraction; no pagination, no file upload, no OCR (text only).
 
 ---
 
 ## `ai-brief-me` — $0.05
 
-`POST https://api.xynaptic.io/v1/ai-brief-me` — `(sirens + assets + news_regions)`
+`POST https://api.xynaptic.io/v1/ai-brief-me` — one payment, a composite brief.
 
 **What it does.**
 
-Xynaptic Brief-Me — the shopping basket: ONE payment, a composite morning brief. Pick up to 3 companies (SIREN), 5 crypto assets, and 2 news regions; we collect everything internally (registry, market, headlines) and the LLM synthesizes one structured brief. POST body: { sirens?: [552032534...], assets?: [BTC, ETH...], news_regions?: [eu, world, us, tech...] }. Empty picks = general market brief.
+The shopping basket: pick companies, crypto assets and news regions, and the service collects everything internally (company registry, market data, headlines) and has an LLM synthesise a single structured brief. Empty picks give a general market brief.
 
-**How to use.**
+**Parameters.** All optional, all capped.
+
+| field | limits | notes |
+|---|---|---|
+| `sirens` | up to **3** | French company identifiers (SIREN), e.g. `552032534` |
+| `assets` | up to **5** | crypto symbols, e.g. `BTC`, `ETH` |
+| `news_regions` | up to **2** | e.g. `eu`, `world`, `us`, `tech` |
+
+**Verify without paying.** Unpaid call, observed on 2026-11-16 (this is the expected result — it proves the route is live and shows the price):
+
+```bash
+curl -s -i -X POST https://api.xynaptic.io/v1/ai-brief-me \
+  -H 'content-type: application/json' \
+  -d '{"sirens":["552032534"],"assets":["BTC","ETH"],"news_regions":["eu"]}'
+```
 
 ```
-POST https://api.xynaptic.io/v1/ai-brief-me (sirens + assets + news_regions)
--> 402 Payment Required (price: $0.05)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
+HTTP/2 402
+PAYMENT-REQUIRED: <base64 JSON>
 ```
+
+The 402 body is an x402 **v2** challenge (`"x402Version":2`) with three `accepts` entries — Base (`eip155:8453`), Polygon (`eip155:137`) and Solana (`solana:5eykt4...`) — each `"scheme":"exact"`, `"amount":"50000"` atomic USDC (6 decimals) = **$0.05**. Sign with any x402 client, retry the same request with the `PAYMENT-SIGNATURE` header, and the `200` body follows the shape below.
+
+**Response shape.**
+
+`id`, `object` (`brief.composite`), `created`, `model`, `choices[0].message.content` (the brief), `usage`, `service`, plus a `tools` array listing what was actually collected (e.g. `company-profile`, `crypto-price`, `news-eu`, each with a `status`) and the `xynaptic` block.
+
+**Limits — what you cannot expect.**
+
+- The caps above are per call; exceeding them is not documented as an error, but do not rely on the extra picks being processed.
+- The brief is narrative (`message.content`), not a fixed schema; downstream parsing must be tolerant.
+- $0.05 whether you pass one asset or fill every slot.
 
 ---
 
-## `ai-validate` — $0.1
+## `ai-validate` — $0.10
 
-`POST https://api.xynaptic.io/v1/ai-validate` — `(thesis + subject?)`
+`POST https://api.xynaptic.io/v1/ai-validate` — the devil's advocate for a thesis.
 
 **What it does.**
 
-Xynaptic AI Validate — the devil's advocate: submit your thesis (an investment idea, a company assessment, a market call) and we stress-test it against real data (company registry, crypto market, news) and an adversarial LLM review. POST body: { thesis: <your claim, max 4000 chars>, subject?: siren | crypto symbol }. Returns: strengths, weaknesses, factual contradictions with cited figures, counter-thesis, and a verdict: supported | partially_supported | contradicted, with confidence.
+Submit a claim (investment idea, company assessment, market call); the service stress-tests it against real data (company registry, crypto market, news) and an adversarial LLM review. It returns strengths, weaknesses, factual contradictions with cited figures, a counter-thesis and a verdict.
 
-**How to use.**
+**Parameters.**
+
+| field | required | notes |
+|---|---|---|
+| `thesis` | yes | your claim, **max 4,000 characters** |
+| `subject` | no | a SIREN or a crypto symbol to anchor the data lookup |
+
+Verdict values: `supported`, `partially_supported`, `contradicted`, each with a confidence.
+
+**Verify without paying.** Unpaid call, observed on 2026-11-16 (this is the expected result — it proves the route is live and shows the price):
+
+```bash
+curl -s -i -X POST https://api.xynaptic.io/v1/ai-validate \
+  -H 'content-type: application/json' \
+  -d '{"thesis":"ACME will grow revenue 20% in 2027","subject":"552032534"}'
+```
 
 ```
-POST https://api.xynaptic.io/v1/ai-validate (thesis + subject?)
--> 402 Payment Required (price: $0.1)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
+HTTP/2 402
+PAYMENT-REQUIRED: <base64 JSON>
 ```
+
+The 402 body is an x402 **v2** challenge (`"x402Version":2`) with three `accepts` entries — Base (`eip155:8453`), Polygon (`eip155:137`) and Solana (`solana:5eykt4...`) — each `"scheme":"exact"`, `"amount":"100000"` atomic USDC (6 decimals) = **$0.10**. Sign with any x402 client, retry the same request with the `PAYMENT-SIGNATURE` header, and the `200` body follows the shape below.
+
+**Response shape.**
+
+`id`, `object` (`validate.verdict`), `created`, `model`, `choices[0].message.content` (the review text — the catalogue example reads "Verdict: partially supported. Two strengths, three weaknesses, one factual contradiction."), `usage`, `service`, `xynaptic`.
+
+**Limits — what you cannot expect.**
+
+- It is a cited opinion, not an audit: contradictions are only as good as the underlying registry/market/news data.
+- The verdict lives in prose inside `message.content`; there is no documented top-level `verdict` field.
+- 4,000 characters of thesis, one shot per call, no follow-up questions.
 
 ---
 
 ## `ai-search` — $0.02
 
-`POST https://api.xynaptic.io/v1/ai-search` — `(question)`
+`POST https://api.xynaptic.io/v1/ai-search` — live web search plus a sourced answer.
 
 **What it does.**
 
-Xynaptic AI Search — the web access your agent is missing: ask any question, we run a REAL web search (DuckDuckGo), then an LLM synthesizes the answer with every claim traceable to its source (title + URL + snippet). POST body: { question, max_results?: 5 }. Freshness is real — this is live web data, not model memory. Nothing stored.
+You ask a question; the service runs a real DuckDuckGo search, then an LLM synthesises the answer and keeps every claim traceable to a source (title + URL + snippet). Freshness is real — this is live web data, not model memory. Nothing is stored.
 
-**How to use.**
+**Parameters.**
+
+| field | required | notes |
+|---|---|---|
+| `question` | yes | the question, in natural language |
+| `max_results` | no | number of web results used, default `5` |
+
+**Verify without paying.** Unpaid call, observed on 2026-11-16 (this is the expected result — it proves the route is live and shows the price):
+
+```bash
+curl -s -i -X POST https://api.xynaptic.io/v1/ai-search \
+  -H 'content-type: application/json' \
+  -d '{"question":"which x402 facilitators accept USDC on Base?","max_results":5}'
+```
 
 ```
-POST https://api.xynaptic.io/v1/ai-search (question)
--> 402 Payment Required (price: $0.02)
--> sign & retry with PAYMENT-SIGNATURE header
--> 200 JSON: facts, assessment, summary — agent-ready
+HTTP/2 402
+PAYMENT-REQUIRED: <base64 JSON>
 ```
+
+The 402 body is an x402 **v2** challenge (`"x402Version":2`) with three `accepts` entries — Base (`eip155:8453`), Polygon (`eip155:137`) and Solana (`solana:5eykt4...`) — each `"scheme":"exact"`, `"amount":"20000"` atomic USDC (6 decimals) = **$0.02**. Sign with any x402 client, retry the same request with the `PAYMENT-SIGNATURE` header, and the `200` body follows the shape below.
+
+**Response shape.**
+
+An OpenAI-style envelope — `id`, `object` (`search.answer`), `created`, `model`, `choices[0].message.content` (the synthesised answer), `usage` — plus `service`, `question`, and a `xynaptic` block (`model_used`, `routing`, `fallback_used`). The catalogue description promises the sources (title + URL + snippet) alongside the answer; the exact field name for that array is not shown in the catalogue example, so read the response keys instead of assuming one (to confirm on the first paid call).
+
+**Limits — what you cannot expect.**
+
+- It is a search-then-summarise pipeline, not a crawler: pages behind a login, JS-only pages and paywalled content may be unavailable.
+- Answers are only as good as DuckDuckGo's top `max_results`; no depth or recency parameter is documented.
+- No caching, and no citation guarantee beyond the snippets actually returned.
 
 ---
 
