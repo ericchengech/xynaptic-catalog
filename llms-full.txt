@@ -1,8 +1,6 @@
-> Complete reference for AI agents. 220 live services. Prices $0.001-$0.50, USDC via x402 (HTTP 402). No API key. Every response Ed25519-signed. Verify at https://api.xynaptic.io/trust
+> Complete reference for AI agents. 220 live services. Prices $0.001-$0.50, USDC via x402 (HTTP 402). No API key. Every response Ed25519-signed. Verify at https://xynaptic.io/trust
 
 Generated from the live catalogue by scripts/xynaptic/gen-catalog-docs.py — do not edit by hand, run the generator.
-
-- Listings page (human): https://xynaptic.io/#listings — every directory that tested and listed us
 
 ## Quick index
 
@@ -226,7 +224,7 @@ GET https://api.xynaptic.io/v1/crypto-onchain
 
 ### ai-chat — $0.02
 
-Xynaptic AI Chat — LLM inference pay-per-call: OpenAI-compatible messages, model auto-routing (glm-5.3-flash / deepseek-v4.1-flash), JSON response with token usage. POST with body: {"model": "auto", "messages": [{"role": "user", "content": "..."}]}.
+Xynaptic AI Chat — LLM inference pay-per-call: OpenAI-compatible messages, model auto-routing (deepseek-flash / deepseek-v4-pro), JSON response with token usage. POST with body: {"model": "auto", "messages": [{"role": "user", "content": "..."}]}.
 
 ```
 GET https://api.xynaptic.io/v1/ai-chat
@@ -833,7 +831,7 @@ GET https://api.xynaptic.io/v1/restaurant-detail
 
 ### restaurant-search — $0.03
 
-(no description in the catalogue)
+Xynaptic Restaurant Search — filter and facet search inside one restaurant zone: free-text on name and brand (?q=), cuisine (?cuisine=italien), brand, place type (?amenity=restaurant|cafe|bar), open-now honest against OpenStreetMap hours (?open_now=1), with pagination and facet counts over the matching set. Same merged layer as restaurant-nearby (OSM ODbL + Overture CDLA, addresses from BAN/SIRENE): each record says which bases know it. GET ?city=paris&cuisine=italien&open_now=1&limit=25.
 
 ```
 GET https://api.xynaptic.io/v1/restaurant-search
@@ -841,7 +839,7 @@ GET https://api.xynaptic.io/v1/restaurant-search
 
 ### restaurant-nearby — $0.05
 
-Xynaptic Restaurant Nearby — places to eat and drink around a point or across a city zone, merged from two independent bases: OpenStreetMap (ODbL) and Overture Maps Places (CDLA). Each record states which bases know it, and places Overture declares closed are removed. open_now is null when the hours are missing or unreadable, never guessed. Weekly dated snapshots, version and data_as_of in every response. Coverage grows wave by wave — France first, then other regions — and the live list of zones with their counts is free at /v1/restaurant-nearby/zones.
+Xynaptic Restaurant Nearby — places to eat and drink around a point or across a city zone, merged from two independent bases: OpenStreetMap (ODbL) and Overture Maps Places (CDLA). Each record states which bases know it, and places Overture declares closed are removed. Street addresses are completed from the French national address base (BAN) and SIRENE (INSEE), both under Licence Ouverte 2.0, and address_source on each record says where its address came from. open_now is null when the hours are missing or unreadable, never guessed. Weekly dated snapshots, version and data_as_of in every response. Coverage grows wave by wave — France first, then other regions — and the live list of zones with their counts is free at /v1/restaurant-nearby/zones.
 
 ```
 GET https://api.xynaptic.io/v1/restaurant-nearby
