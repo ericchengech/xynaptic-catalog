@@ -35,8 +35,12 @@ Overage always falls back to pay-per-call x402 — a call is never blocked.
 | `median` | $29/mo | full catalog | 3,000 units · 400/h |
 | `pro` | $49/mo | full catalog | 8,000 units · 800/h |
 | `devkit` | $15/mo | 6 dev endpoints | 1,000 units · 100/h |
-| `security` — **Audit & Security** | $19/mo | **9 audit endpoints** (8 routes) | 1,000 units · 100/h |
+| `security` — **Audit & Security** | $19/mo | **9 audit endpoints** (8 routes) | 1,000 units · 250/h |
 | `svc-<service>` | $4/mo | **one service only** (16 AI Skills endpoints) | 570 units · 20–57/h |
+
+The hourly ceiling is set per plan and must stay **at or above the cost of the most expensive
+service in scope** (`security-sim` costs 100 units, hence 250/h on the security pack). A plan
+that cannot serve its own priciest endpoint is a promise the API cannot keep.
 
 `POST https://api.xynaptic.io/v1/sub-buy` with `{"plan":"security"}` returns the x402
 challenge (19 USDC / 30 days), then the `sub_key` works as a Bearer token on every

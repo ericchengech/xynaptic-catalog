@@ -26,7 +26,7 @@ Each line was read from the registry's own page on 2026-11-13. The grade is thei
 - **Agentropolis** — provider entry `x402.xynaptic`, status *claimed*, trust score 60, **461 settlements and 17 verified buyers over 30 days**, no wash flags: https://agentropolis.io
 - **payforapi** — listed catalog entries (RU/EN x402 marketplace): https://payforapi.com
 - **SCVD passport** — currently EXPIRED (last observation 2026-10-20, re-attestation pending): https://scvd.store/passport/api.xynaptic.io
-- **UseTested** — verdict `AVOID` recorded 2026-11-11 by a probe that logged zero completed paid calls (`calls_tested: 0`): https://usetested.com/v1/review?service=api.xynaptic.io
+- **UseTested** — verdict passé de `AVOID` à `CAUTION` le 2026-11-16 (relevé 00:45 UTC), après un re-test payé 1,20 USDC le 13/11. Leur propre note reconnaît la cause : `coverage_guard_blocked`, c'est-à-dire un blocage de leur sonde, pas une panne vérifiée du service. `calls_tested` reste à 0 : https://usetested.com/v1/review?service=api.xynaptic.io
 - **npm** — xynaptic-mcp client (MIT): https://www.npmjs.com/package/xynaptic-mcp
 - **GitHub** — catalog and docs: https://github.com/ericchengech/xynaptic-catalog
 - **usdc.org/x402** — submission filed, not yet a listing.
