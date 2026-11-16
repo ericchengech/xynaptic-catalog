@@ -170,14 +170,14 @@ def corps_llms_full(catalogue, taxo):
                            "Live on a docs page but missing from the machine catalogue: "
                            "the two surfaces disagree, fix it before it costs a buyer.", ""]
                 continue
-            lignes += [f"### {n} — ${p}", "", s["description"], "",
+            lignes += [f"### {n} — ${p}", "", s.get("description") or "(no description published)", "",
                        "```", f"GET https://api.xynaptic.io{s['endpoint']}", "```", ""]
     if orphelins:
         lignes += ['<a id="newly-deployed"></a>', f"## Newly deployed ({len(orphelins)})", "",
                    "Live and paid, but not yet placed in a domain on the docs page.", ""]
         for s in orphelins:
             lignes += [f"### {s} — ${cat[s]['price_usd']}", "",
-                       cat[s]["description"], "",
+                       cat[s].get("description") or "(no description published)", "",
                        "```", f"GET https://api.xynaptic.io{cat[s]['endpoint']}", "```", ""]
     return "\n".join(lignes).rstrip() + "\n"
 
