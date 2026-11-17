@@ -12,7 +12,8 @@
     "start": "node index.js",
     "test": "node index.js < /dev/null",
     "catalog:check": "python3 scripts/gen-catalog-docs.py --check",
-    "catalog:sync": "python3 scripts/gen-catalog-docs.py"
+    "catalog:sync": "python3 scripts/gen-catalog-docs.py",
+    "test:counters": "python3 scripts/test-doc-counters.py"
   },
   "type": "commonjs",
   "keywords": [
