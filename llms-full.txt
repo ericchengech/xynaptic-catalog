@@ -1771,7 +1771,7 @@ GET https://api.xynaptic.io/v1/security-review
 
 ### mcp-audit — $0.5
 
-Xynaptic MCP Audit — static review of an MCP server configuration before you run it: for every declared server it reads the package reference and rates how far it can drift after approval (exact pin = SAFE, tag/latest = HIGH, range = MEDIUM, bare name or unpinned image = HIGH, shell wrapper with no selectable package = REVIEW), then returns a per-server verdict, the reason and the safer form. POST { config }. Nothing is executed, no package is resolved.
+Xynaptic MCP Audit — static review of an MCP server configuration before you run it: for every declared server it reads the package reference and rates how far it can drift after approval (exact pin = SAFE, tag/latest = HIGH, range = MEDIUM, bare name or unpinned image = HIGH, shell wrapper with no selectable package = REVIEW), then returns a per-server verdict, the reason and the safer form. POST { config }. Nothing is executed, no package is resolved; mutable references are reproducibility signals, never breach claims.
 
 ```
 GET https://api.xynaptic.io/v1/mcp-audit
