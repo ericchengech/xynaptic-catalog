@@ -1,6 +1,6 @@
 # Security Sim — Xynaptic service reference
 
-> **STATUS: UPCOMING — NOT YET LIVE.** Endpoint and pricing below are the committed specification; the service is under construction and not yet accepting payments.
+> **STATUS: LIVE.** The endpoint is in production and sells per scan: a paid call on a domain you own (ownership proof required) returns the probe report.
 
 > Authorized attacker-view fuzz brief for your own endpoints. No API key. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon. Live on the catalog: https://xynaptic.io — price **$1.00** per scan or **$5/month** with weekly re-scans.
 

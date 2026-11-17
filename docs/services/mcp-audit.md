@@ -1,6 +1,6 @@
 # MCP Audit — Xynaptic service reference
 
-> Static security review of MCP client configs. No API key. No subscription needed. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon. Live on the catalog: https://xynaptic.io — price **$0.25** per audit.
+> Static security review of MCP client configs. No API key. No subscription needed. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon. Live on the catalog: https://xynaptic.io — price **$0.50** per audit.
 
 **What it does.**
 
@@ -28,7 +28,7 @@ Static review only — **no server is executed, no package is resolved**. Mutabl
 ```
 POST https://api.xynaptic.io/v1/mcp-audit
    body: { "config": { "mcpServers": { ... } } }     // or JSON string, or array
--> 402 Payment Required (price: $0.25 in micro-USDC: 250000)
+-> 402 Payment Required (price: $0.50 in micro-USDC: 500000)
 -> sign & retry with PAYMENT-SIGNATURE header (or Authorization: Bearer sub_… for subscriber plans)
 -> 200 JSON:
 {
