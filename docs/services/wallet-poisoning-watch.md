@@ -40,6 +40,27 @@ POST https://api.xynaptic.io/v1/wallet-watch/status
 }
 ```
 
+**Real response (live 2026-11-18, merchant wallet watched with its QA wallet as ref — caught the 2026-11-16 poisoning twin):**
+
+```json
+{
+  "txs_checked": 35, "source": "blockscout", "blocks_scanned": 90000,
+  "suspects": [{
+    "counterparty": "0x8e812CDC6c95C3ee5d822CA8A63fe6bc7dcC9A3",
+    "tx_hash": "0x998520504645e0cd099c7ab9f47a6a400c7498c537c604de9bd1d559d9d8acb0",
+    "matched_reference": "0x8e813831d30c47aca0e12e92c35fe341eed0c9a3",
+    "reason": "shared_affixes", "distance": 27,
+    "shared_prefix": 4, "shared_suffix": 4,
+    "homoglyph_only": false, "homoglyph_folded": false
+  }],
+  "suspects_info": [],
+  "refs_watched": ["0x4ff893df9ab8603d5460fbbaee0d9b8c0fa4d5e9", "0x8e813831d30c47aca0e12e92c35fe341eed0c9a3"],
+  "last_checked": "2026-11-18T12:09:56Z", "webhook_notified": false,
+  "disclaimer": "heuristic look-alike detection on recent USDC transfers of the watched wallet + up to 5 reference wallets; unofficial-token look-alike transfers reported as suspects_info (informational) — always verify addresses character by character before signing."
+}
+```
+The imitated wallet here is the *reference* (QA), not the watched one — exactly the cross-wallet case E1 covers.
+
 **Detection heuristic.** Homoglyph folding (`o→0`, `i/l→1`) then Levenshtein distance ≤ 3 (`near_identical`) or shared prefix+suffix ≥ 4 (`shared_affixes`). Always verify addresses character by character before signing.
 
 **Error cases.**
