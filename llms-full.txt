@@ -1556,7 +1556,7 @@ GET https://api.xynaptic.io/v1/health-news
 
 ### ao — $0.05
 
-Xynaptic AO Digest — filtered French public procurement calls (trade + department, France).
+Xynaptic AO Digest — live French public procurement notices (BOAMP), ALL departments. GET ?dept=75 (optional) & ?metier=plomberie (optional): recent tenders with buyer, deadline, descriptors and link. National coverage, refreshed every 2h.
 
 ```
 GET https://api.xynaptic.io/v1/ao
