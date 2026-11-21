@@ -2,6 +2,20 @@
 
 Generated from the live catalogue by scripts/xynaptic/gen-catalog-docs.py — do not edit by hand, run the generator.
 
+## Pricing by network
+
+Payment settles on the network the buyer chooses, and settlement gas is paid by us. Micro-priced services therefore carry a per-network floor; the exact amount is always in the 402 `accepts` array before you pay.
+
+| network | minimum per call |
+| - | - |
+| Base (eip155:8453) | $0.01 |
+| Polygon (eip155:137) | $0.02 |
+| Arbitrum One (eip155:42161) | $0.02 |
+| Solana | $0.01 |
+
+Services priced above the floor are identical on every network.
+
+
 - Listings page (human): https://xynaptic.io/#listings — every directory that tested and listed us
 
 ## Quick index

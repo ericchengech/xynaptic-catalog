@@ -42,6 +42,22 @@ Xynaptic provides real-time, verifiable data for AI agents: French company regis
 - Client: https://www.npmjs.com/package/xynaptic-mcp
 - Open catalog: https://github.com/ericchengech/xynaptic-catalog
 
+
+
+## Pricing by network
+
+Payment settles on the network the buyer chooses, and settlement gas is paid by us. Micro-priced services therefore carry a per-network floor; the exact amount is always in the 402 `accepts` array before you pay.
+
+| network | minimum per call |
+| - | - |
+| Base (eip155:8453) | $0.01 |
+| Polygon (eip155:137) | $0.02 |
+| Arbitrum One (eip155:42161) | $0.02 |
+| Solana | $0.01 |
+
+Services priced above the floor are identical on every network.
+
+
 ## Services by domain — overview (220 total)
 
 ### Crypto — 24 services
