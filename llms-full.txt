@@ -1805,7 +1805,7 @@ GET https://api.xynaptic.io/v1/domain-ownership-proof
 
 ### security-sim — $1
 
-Xynaptic Security Sim — an authorised, non-destructive attack simulation against a target YOU own: probes TLS configuration, security headers, exposed admin paths, cookie flags, CORS and rate-limit behaviour, then returns a prioritised list of weaknesses with evidence and remediation. **Step 2 of the pair with Domain Ownership Proof**: this scan never runs alone — authorise the target first, either with POST /v1/domain-ownership-proof (certificate own_..., valid 7 days) or by publishing the line 'allow xynaptic-security-sim' at /.well-known/xynaptic-sim-authorization.txt on the target, or provide an ownership_certificate. POST body: { target, probe? }.
+Xynaptic Security Sim — step 2 of the pair with Domain Ownership Proof: never runs alone, the target must be authorised first (POST /v1/domain-ownership-proof, certificate own_... valid 7 days, or the /.well-known file). An authorised, non-destructive attack simulation against a target YOU own: probes TLS configuration, security headers, exposed admin paths, cookie flags, CORS and rate-limit behaviour, then returns a prioritised list of weaknesses with evidence and remediation. Requires proof of authorisation: publish the line 'allow xynaptic-security-sim' at /.well-known/xynaptic-sim-authorization.txt on the target, or provide an ownership_certificate. POST body: { target, probe? }.
 
 ```
 GET https://api.xynaptic.io/v1/security-sim
