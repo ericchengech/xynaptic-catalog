@@ -13,6 +13,9 @@ A light, rate-limited simulation of what an attacker would try against one of yo
 - headers and CORS misconfiguration
 - obvious injection-shaped error signatures
 
+**Step 2 of a pair with Domain Ownership Proof — the two are sold and documented together, and this one cannot run alone.**
+The order is fixed: `/v1/domain-ownership-proof` first (it certifies the domain), `/v1/security-sim` second (it scans it). The scan accepts either a recent certificate (`own_...`, valid 7 days) or the `/.well-known/xynaptic-sim-authorization.txt` file on the target. Without one of the two, the call is refused and no scan happens.
+
 **Authorization is mandatory.** We only scan what you can prove you own: before any scan, you must hold a verified certificate from `domain-ownership-proof` for the target's domain. The two services reinforce each other — proving your domain once unlocks the fuzz-brief.
 
 **Non-negotiable guardrails (built into the service).**

@@ -1,10 +1,12 @@
 # Domain Ownership Proof — Xynaptic service reference
 
-> **STATUS: UPCOMING — NOT YET LIVE.** Endpoint and pricing below are the committed specification; the service is under construction and not yet accepting payments.
+> **STATUS: LIVE.** The endpoint is in production and sells per challenge (0.25 USDC).
 
 > Verification oracle for domain ownership claims. No API key. Pay in USDC via [x402](https://x402.org) on Base, Solana or Polygon. Live on the catalog: https://xynaptic.io — price **$0.25** per verified challenge or **$2/month** unlimited (agencies).
 
 **What it does.**
+
+**Step 1 of a pair with Security Sim.** This proof is what authorises an active scan: `/v1/security-sim` refuses any target that does not come with a recent certificate (`own_...`, 7 days) or the `/.well-known/xynaptic-sim-authorization.txt` file. The two services are meant to be called in that order — proof first, scan second — and neither replaces the other.
 
 Directories, marketplaces and agent platforms keep asking you to prove that a domain is really yours. Instead of each of them inventing their own check, Xynaptic acts as a neutral **oracle**: the claimant publishes a one-time token under the `.well-known/` path of the domain they claim, we crawl the real domain and certify what we actually saw.
 
