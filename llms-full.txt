@@ -1039,7 +1039,7 @@ GET https://api.xynaptic.io/v1/watch-status
 
 ### ticket-buy — $0.5
 
-Xynaptic Ticket — prepaid credit: pay once (0.5-20 USDC), get a ticket_id|ticket_secret, consume any service with header X-TICKET at 20% off. Valid 90 days. POST { amount_usd }.
+Xynaptic Ticket — prepaid credit: pay once (0.5-20 USDC), get a ticket_id|ticket_secret, consume any service with header X-TICKET at 20% off. Valid 90 days. POST { amount_usd }. Credit is spent at the price of the network the ticket was bought on (network floors differ: Base 0.01, Polygon 0.02, Arbitrum 0.05 minimum per call).
 
 ```
 GET https://api.xynaptic.io/v1/ticket-buy
