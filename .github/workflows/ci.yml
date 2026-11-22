@@ -30,7 +30,7 @@ jobs:
       - name: Reponse a une entree vide (le pont ne doit pas se bloquer)
         run: node index.js < /dev/null
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
