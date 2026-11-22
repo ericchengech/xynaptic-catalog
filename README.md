@@ -375,6 +375,7 @@ Or search us on the **x402 Bazaar**: `searchX402Resources({ query: "orderflow" }
 
 - Base (eip155:8453) — USDC
 - Polygon (eip155:137) — USDC
+- Arbitrum One (eip155:42161) — USDC
 - Solana — USDC
 
 *Real-time sources: Kraken, Hyperliquid, DefiLlama, CoinGecko, SNCF/Navitia, aviationweather, EPEX/awattar, Open-Meteo, honeypot.is, DexScreener. Curated 2h digests for news. Built by an independent builder.*
