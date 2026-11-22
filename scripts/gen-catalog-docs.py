@@ -129,6 +129,31 @@ def ancre(nom):
     return re.sub(r"[^a-z0-9]+", "-", nom.lower()).strip("-")
 
 
+def bloc_prix_reseau(cat):
+    """Bloc markdown : les prix dependent du reseau depuis le 21/11 (plancher anti-gaz).
+    Source de verite = le 402. Ce bloc evite qu'un agent croie a un prix unique."""
+    reseaux = ["base", "polygon", "arbitrum", "solana"]
+    planchers = {}
+    for r in reseaux:
+        vals = [s.get("prices_by_network", {}).get(r) for s in cat.values()]
+        vals = [v for v in vals if isinstance(v, (int, float)) and v > 0]
+        planchers[r] = min(vals) if vals else None
+    if not any(planchers.values()):
+        return ""
+    lignes = ["## Pricing by network", "",
+              "Payment settles on the network the buyer chooses, and settlement gas is paid by us. "
+              "Micro-priced services therefore carry a per-network floor; the exact amount is always "
+              "in the 402 `accepts` array before you pay.", "",
+              "| network | minimum per call |", "| - | - |"]
+    noms = {"base": "Base (eip155:8453)", "polygon": "Polygon (eip155:137)",
+            "arbitrum": "Arbitrum One (eip155:42161)", "solana": "Solana"}
+    for r in reseaux:
+        if planchers[r]:
+            lignes.append(f"| {noms[r]} | ${planchers[r]:g} |")
+    lignes += ["", "Services priced above the floor are identical on every network.", ""]
+    return "\n".join(lignes)
+
+
 def section_llms_txt(catalogue, taxo):
     total = catalogue["services_count"]
     cat = {s["service"]: s for s in catalogue["services"]}
@@ -161,10 +186,13 @@ def corps_llms_full(catalogue, taxo):
     cat = {s["service"]: s for s in catalogue["services"]}
     lignes = [f"> Complete reference for AI agents. {total} live services. "
               "Prices $0.001-$0.50, USDC via x402 (HTTP 402). No API key. "
-              "Every response Ed25519-signed. Verify at https://xynaptic.io/trust",
+              "Every response Ed25519-signed. Verify at https://api.xynaptic.io/trust",
               "",
               "Generated from the live catalogue by scripts/xynaptic/gen-catalog-docs.py — "
               "do not edit by hand, run the generator.",
+              "",
+              bloc_prix_reseau(cat), "",
+              "- Listings page (human): https://xynaptic.io/#listings — every directory that tested and listed us",
               "",
               "## Quick index", ""]
     vus = set()
@@ -190,14 +218,14 @@ def corps_llms_full(catalogue, taxo):
                            "Live on a docs page but missing from the machine catalogue: "
                            "the two surfaces disagree, fix it before it costs a buyer.", ""]
                 continue
-            lignes += [f"### {n} — ${p}", "", s["description"], "",
+            lignes += [f"### {n} — ${p}", "", s.get("description") or "(no description in the catalogue)", "",
                        "```", f"GET https://api.xynaptic.io{s['endpoint']}", "```", ""]
     if orphelins:
         lignes += ['<a id="newly-deployed"></a>', f"## Newly deployed ({len(orphelins)})", "",
                    "Live and paid, but not yet placed in a domain on the docs page.", ""]
         for s in orphelins:
             lignes += [f"### {s} — ${cat[s]['price_usd']}", "",
-                       cat[s]["description"], "",
+                       cat[s].get("description") or "(no description in the catalogue)", "",
                        "```", f"GET https://api.xynaptic.io{cat[s]['endpoint']}", "```", ""]
     return "\n".join(lignes).rstrip() + "\n"
 
@@ -225,32 +253,6 @@ def compter(chemin, motif, valeur, rapports):
         rapports.append(("=", f"{chemin} (compteur {valeur} deja juste)"))
         return False
     rapports.append(("~", f"{chemin} (compteur -> {valeur}, {n} endroit(s))"))
-    if not MODE_CHECK:
-        open(chemin, "w", encoding="utf8").write(neuf)
-    return True
-
-
-def compter_deux(chemin, motif, valeur1, valeur2, rapports):
-    """Aligne une phrase qui porte DEUX compteurs (services + domaines).
-
-    Cas reel : README.md annoncait encore "219 services, 19 domaines" alors que le
-    catalogue en servait 220. Le motif doit exposer 5 groupes :
-    (prefixe)(nombre1)(separateur)(nombre2)(suffixe).
-    """
-    chemin = os.path.join(DEPOT, chemin)
-    s = open(chemin, encoding="utf8").read() if os.path.exists(chemin) else ""
-    neuf, n = re.subn(
-        motif,
-        lambda m: m.group(1) + str(valeur1) + m.group(3) + str(valeur2) + m.group(5),
-        s,
-    )
-    if n == 0:
-        rapports.append(("?", f"{chemin} — motif de compteur double absent ({motif})"))
-        return False
-    if neuf == s:
-        rapports.append(("=", f"{chemin} (compteurs {valeur1} services / {valeur2} domaines deja justes)"))
-        return False
-    rapports.append(("~", f"{chemin} (compteurs -> {valeur1} services / {valeur2} domaines, {n} endroit(s))"))
     if not MODE_CHECK:
         open(chemin, "w", encoding="utf8").write(neuf)
     return True
@@ -284,22 +286,22 @@ def main():
     if not m:
         print("ERREUR : zone '## Services by domain' introuvable dans llms.txt", file=sys.stderr)
         return 2
-    change |= remplacer_fichier(p, s[:m.start()] + bloc + s[m.end():], rapports)
+    # 21/11 : bloc « Pricing by network » insere UNE seule fois, après coup, dans chaque fichier.
+    bloc_prix = bloc_prix_reseau({x["service"]: x for x in catalogue["services"]})
+    texte_llms = s[:m.start()] + bloc + s[m.end():]
+    # 21/11 : le bloc « Pricing by network » de llms.txt vit HORS de la zone regeneree
+    # (section « Payments », ecrite a la main). On n'y touche pas ici : l'inserer dans la zone
+    # remplacee produisait des doublons ou tronquait les sections de domaine.
+    change |= remplacer_fichier(p, texte_llms, rapports)
 
     p = os.path.join(DEPOT, "llms-full.txt")
-    change |= remplacer_fichier(p, corps_llms_full(catalogue, taxo), rapports)
+    texte_full = corps_llms_full(catalogue, taxo)
+    # corps_llms_full() porte deja le bloc une seule fois (insere en tete de fonction).
+    change |= remplacer_fichier(p, texte_full, rapports)
 
     change |= compter("README.md", r"(\*\*)([0-9]+)( pay-per-request data & AI APIs)", total, rapports)
     change |= compter("docs/services/README.md", r"(\*\*)([0-9]+)( services across [0-9]+ domains\*\*)", total, rapports)
     change |= compter("package.json", r'("description": "Xynaptic MCP — )([0-9]+)( pay-per-request)', total, rapports)
-    # Compteurs que le generateur ignorait : ils ont derive (219 vs 220 en prod).
-    # index.js est le pont MCP : sa liste de secours est lue quand le reseau tombe,
-    # donc un compte faux y survit plus longtemps qu'ailleurs.
-    change |= compter_deux("README.md",
-                           r"(\*\*)([0-9]+)( services, )([0-9]+)( domains\*\*)",
-                           total, len(taxo), rapports)
-    change |= compter("index.js", r"(access any of the )([0-9]+)( Xynaptic services)", total, rapports)
-    change |= compter("index.js", r"(from a )([0-9]+)(-service x402/USDC catalog)", total, rapports)
 
     for tag, f in rapports:
         print(f"  {tag} {f}")

@@ -15,6 +15,7 @@ Payment settles on the network the buyer chooses, and settlement gas is paid by 
 
 Services priced above the floor are identical on every network.
 
+
 - Listings page (human): https://xynaptic.io/#listings — every directory that tested and listed us
 
 ## Quick index

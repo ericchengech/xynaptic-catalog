@@ -8,7 +8,7 @@
 "use strict";
 const readline = require("readline");
 const ENDPOINT = process.env.XYNAPTIC_MCP_ENDPOINT || "https://mcp.xynaptic.io/mcp";
-const VERSION = "1.3.16";
+const VERSION = "1.3.17";
 
 const rl = readline.createInterface({ input: process.stdin, terminal: false });
 let pending = 0;
