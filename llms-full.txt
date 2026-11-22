@@ -12,6 +12,7 @@ Payment settles on the network the buyer chooses, and settlement gas is paid by 
 | Polygon (eip155:137) | $0.02 |
 | Arbitrum One (eip155:42161) | $0.02 |
 | Solana | $0.01 |
+| Robinhood Chain (eip155:4663) | $0.01 |
 
 Services priced above the floor are identical on every network.
 
