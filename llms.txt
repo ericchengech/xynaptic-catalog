@@ -18,7 +18,7 @@ Xynaptic provides real-time, verifiable data for AI agents: French company regis
 3. Retry with payment header -> 200 with data + Ed25519 signature
 
 ## Payments
-- Networks: Base (eip155:8453), Polygon (eip155:137), Arbitrum One (eip155:42161), Solana (solana:mainnet)
+- Networks: Base (eip155:8453), Polygon (eip155:137), Arbitrum One (eip155:42161), Solana (solana:mainnet), Robinhood Chain (eip155:4663, USDG)
 - Pricing by network — settlement gas is paid by us, so micro-priced calls carry a per-network floor (the exact amount is always in the 402 `accepts` before you pay):
   - Base: minimum $0.01 · Polygon: minimum $0.02 · Arbitrum One: minimum $0.02 · Solana: minimum $0.01 · Robinhood Chain: minimum $0.01
   - Services priced above the floor cost the same on every network
