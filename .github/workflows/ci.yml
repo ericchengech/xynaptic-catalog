@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verifier:
+    name: node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ["18", "20", "22"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Syntaxe du pont MCP
+        run: node --check index.js
+
+      - name: Reponse a une entree vide (le pont ne doit pas se bloquer)
+        run: node index.js < /dev/null
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Coherence des compteurs de documentation
+        run: python3 scripts/test-doc-counters.py
+
+      # Ce controle interroge le catalogue en production et la page /docs :
+      # il peut echouer sur un hoquet reseau, sans que le depot soit en cause.
+      - name: Depot aligne sur le catalogue live
+        continue-on-error: true
+        run: python3 scripts/gen-catalog-docs.py --check
