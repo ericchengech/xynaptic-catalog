@@ -141,10 +141,29 @@ def corps_llms_full(catalogue, taxo):
     cat = {s["service"]: s for s in catalogue["services"]}
     lignes = [f"> Complete reference for AI agents. {total} live services. "
               "Prices $0.001-$0.50, USDC via x402 (HTTP 402). No API key. "
-              "Every response Ed25519-signed. Verify at https://xynaptic.io/trust",
+              "Every response Ed25519-signed. Verify at https://api.xynaptic.io/trust",
               "",
               "Generated from the live catalogue by scripts/xynaptic/gen-catalog-docs.py — "
               "do not edit by hand, run the generator.",
+              "",
+              # Bloc redige a la main, conserve ici : la regeneration ecrase le fichier
+              # entier, donc ce qui n'est pas dans ce gabarit est perdu a chaque passe.
+              "## Pricing by network",
+              "",
+              "Payment settles on the network the buyer chooses, and settlement gas is paid by us. "
+              "Micro-priced services therefore carry a per-network floor; the exact amount is "
+              "always in the 402 `accepts` array before you pay.",
+              "",
+              "| network | minimum per call |",
+              "| - | - |",
+              "| Base (eip155:8453) | $0.01 |",
+              "| Polygon (eip155:137) | $0.02 |",
+              "| Arbitrum One (eip155:42161) | $0.02 |",
+              "| Solana | $0.01 |",
+              "",
+              "Services priced above the floor are identical on every network.",
+              "",
+              "- Listings page (human): https://xynaptic.io/#listings — every directory that tested and listed us",
               "",
               "## Quick index", ""]
     vus = set()
