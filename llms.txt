@@ -11,6 +11,7 @@ Xynaptic provides real-time, verifiable data for AI agents: French company regis
 - MCP server for Claude / Cursor: https://mcp.xynaptic.io/mcp — or `npx xynaptic-mcp`
 - Docs & landing: https://xynaptic.io
 - Try for free (no payment): https://api.xynaptic.io/v1/ticket-status
+- Traffic counters (no payment): https://api.xynaptic.io/v1/popularity — `external_paid_requests` is customer traffic; `internal_qa_requests` is our own testing, reported apart and never ranked in `top_buyers`.
 
 ## How it works
 1. GET any endpoint without payment -> 402 response with price and payment info
